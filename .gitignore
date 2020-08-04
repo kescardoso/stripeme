@@ -1,0 +1,6 @@
+*.sqlite3
+*.pyc
+.gitpod.yml
+.gitpod.dockerfile
+__pycache__
+env.py
