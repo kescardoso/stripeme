@@ -4,3 +4,4 @@
 .gitpod.dockerfile
 __pycache__
 env.py
+.theia
