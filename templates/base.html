@@ -52,7 +52,7 @@
                     </a>
                 </div>
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                    <form method="GET" action="{% url 'products' %}"> 
+                    <form method="GET" action=""> 
                         <div class="input-group w-100">
                             <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search">
                             <div class="input-group-append">
@@ -96,7 +96,7 @@
                         <!-- Shopping Bag -->
                         <li class="list-inline-item">
                             <!-- If item is in the bag, display a list of items included -->
-                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                     <p class="my-0">
@@ -119,8 +119,8 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    {% include 'includes/mobile-top-header.html' %}
-                    {% include 'includes/main-nav.html' %}
+                    <!-- include 'includes/mobile-top-header.html' -->
+                    <!-- include 'includes/main-nav.html' -->
                 </nav>
             </div>
             <!-- Delivery Banner -->
