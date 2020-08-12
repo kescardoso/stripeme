@@ -7,6 +7,7 @@ body {
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
+    /* Font family from GoogleFonts */
     font-family: 'Lato';
 }
 
@@ -41,7 +42,7 @@ body {
 }
 
 /* -------------------------------------- from Bulma */
-/* to center and keep font size consistent for FontAwesome */
+/* to center and keep size consistent for FontAwesome */
 
 .icon {
     align-items: center;
