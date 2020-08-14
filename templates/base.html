@@ -46,13 +46,17 @@
         <!-- Header -->
         <header class="container-fluid fixed-top">
             <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+
+                <!-- Site Logo -->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                        <h2 class="logo-font text-black my-0"><strong>Stripe Me</strong> { kc.dev }</h2>
+                        <h2 class="logo-font text-black my-0"><strong>Stripe Me</strong> { kc }</h2>
                     </a>
                 </div>
+
+                <!-- Search Form -->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                    <form method="GET" action=""> 
+                    <form method="GET" action="">
                         <div class="input-group w-100">
                             <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search">
                             <div class="input-group-append">
@@ -65,18 +69,20 @@
                         </div>
                     </form>
                 </div>
+
                 <!-- Menu -->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+
+                        <!-- User Account -->
                         <li class="list-inline-item dropdown">
-                            <!-- Parent Menu -->
                             <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
                                     <div><i class="fas fa-user fa-lg"></i></div>
                                     <p class="my-0">My Account</p>
                                 </div>
                             </a>
-                            <!-- Dropdown Menu -->
+                            <!-- User Account: Dropdown Menu -->
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
@@ -93,6 +99,7 @@
                                 {% endif %}
                             </div>
                         </li>
+
                         <!-- Shopping Bag -->
                         <li class="list-inline-item">
                             <!-- If item is in the bag, display a list of items included -->
@@ -110,9 +117,11 @@
                                 </div>
                             </a>
                         </li>
+
                     </ul>
                 </div>
             </div>
+
             <!-- Navbar -->
             <div class="row bg-white">
                 <nav class="navbar navbar-expand-lg navbar-light w-100">

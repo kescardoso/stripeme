@@ -2,55 +2,57 @@
 
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
+        <!-- Menu: Home -->
         <li class="nav-item d-block d-md-none">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
                 Home
             </a>
         </li>
+        <!-- Menu Dropdown: Web Development -->
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                All Products
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="webdev-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Web Development
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href=""?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href=""?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
-                <a href=""?sort=category&direction=asc" class="dropdown-item ">By Category</a>
-                <a href="" class="dropdown-item">All Products</a>
+            <div class="dropdown-menu border-0" aria-labelledby="webdev-link">
+                <a href=""?category=webdev,portfolio,webdevfolio" class="dropdown-item">WebDev Portfolio</a>
+                <a href=""?category=webdev,blogger" class="dropdown-item">Blogger Site</a>
+                <a href=""?category=webdev,wordpress" class="dropdown-item">Wordpress Site</a>
+                <a href=""?category=webdev,python-django" class="dropdown-item">Python-Django Apps</a>
             </div>
         </li>
-
+        <!-- Menu Dropdown: Design -->
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Clothing
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="design-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Design
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href=""?category=activewear,essentials" class="dropdown-item">Activewear &amp; Essentials</a>
-                <a href=""?category=activewear,jeans" class="dropdown-item">Jeans</a>
-                <a href=""?category=activewear,shirts" class="dropdown-item">Shirts</a>
-                <a href=""?category=activewear,essentials,jeans,shirts" class="dropdown-item">All Clothing</a>
+            <div class="dropdown-menu border-0" aria-labelledby="design-link">
+                <a href=""?category=design,portfolio,designfolio" class="dropdown-item">Design Portfolio</a>
+                <a href=""?category=design,logo" class="dropdown-item">Brand Logo</a>
+                <a href=""?category=design,card-flyer" class="dropdown-item">Cards and Flyers</a>
+                <a href=""?category=design,social-media" class="dropdown-item">Social Media</a>
             </div>
         </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Homeware
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href=""?category=bed_bath" class="dropdown-item">Bed &amp; Bath</a>
-                <a href=""?category=kitchen_dining" class="dropdown-item">Kitchen &amp; Dining</a>
-                <a href=""?category=bed_bath,kitchen_dining" class="dropdown-item">All Homeware</a>
-            </div>
-        </li>
-
+        <!-- Menu Dropdown: Consultancy -->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Special Offers
+                Consultancy
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href=""?category=new_arrivals" class="dropdown-item">New Arrivals</a>
-                <a href=""?category=deals" class="dropdown-item">Deals</a>
-                <a href=""?category=clearance" class="dropdown-item">Clearance</a>
-                <a href=""?category=new_arrivals,deals, clearance" class="dropdown-item">All Specials</a>
+                <a href="" class="dropdown-item">Branding Session</a>
+                <a href="" class="dropdown-item">UX Strategy Session</a>
+                <a href="" class="dropdown-item">Master Session</a>
+            </div>
+        </li>
+        <!-- Menu Dropdown: About -->
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                K.C.
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+                <a href="" class="dropdown-item">About Me</a>
+                <a href="" class="dropdown-item">Client Testimonialss</a>
+                <a href="" class="dropdown-item">Links</a>
+                <a href="" class="dropdown-item">Contacts</a>
             </div>
         </li>
     </ul>
