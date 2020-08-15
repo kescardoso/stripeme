@@ -6,9 +6,10 @@ body {
     background: url('/media/hero.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #555;
+    color: #656565;
+    letter-spacing: 1px;
     /* Font family from GoogleFonts */
-    font-family: 'Lato';
+    font-family: 'Quicksand', sans-serif;
 }
 
 .logo-font {
@@ -19,14 +20,23 @@ body {
     width: fit-content;
 }
 
+.text-light {
+    color: #C5B4AA !important;
+}
 .text-black {
     color: #000 !important;
 }
 
+.border-light {
+    border: 1px solid #C5B4AA !important;
+}
 .border-black {
-    border: 1px solid black !important;
+    border: 1px solid #000 !important;
 }
 
+.bg-light {
+    background: #C5B4AA !important;
+}
 .bg-black {
     background: #000 !important;
 }
@@ -39,6 +49,10 @@ body {
 	position: fixed;
 	background: white;
 	z-index: -1;
+}
+
+.opening-quote {
+    line-height: 1.4em;
 }
 
 /* -------------------------------------- from Bulma */
@@ -317,7 +331,7 @@ input[name='q']::placeholder {
         font-size: 1rem;
     }
 
-    #delivery-banner h4 {
+    #10off-banner h4 {
         font-size: .9rem;
     }
 

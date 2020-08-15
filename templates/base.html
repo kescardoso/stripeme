@@ -20,7 +20,7 @@
             <!-- Custom CSS -->
             <link rel="stylesheet" href="{% static 'css/base.css' %}">
             <!-- Google Fonts: Lato -->
-            <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
         {% endblock %}
 
         {% block extra_css %}
@@ -50,7 +50,7 @@
                 <!-- Site Logo -->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                        <h2 class="logo-font text-black my-0"><strong>Stripe Me</strong> { kc }</h2>
+                        <h2 class="logo-font text-light my-0"><strong>Stripe Me</strong> { kc }</h2>
                     </a>
                 </div>
 
@@ -58,9 +58,9 @@
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <form method="GET" action="">
                         <div class="input-group w-100">
-                            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search">
+                            <input class="form-control border border-light rounded-0" type="text" name="q" placeholder="Search">
                             <div class="input-group-append">
-                                <button class="form-control btn btn-blck border border-black rounded-0" type="submit">
+                                <button class="form-control btn btn-blck border border-light rounded-0" type="submit">
                                     <span class="icon">
                                         <i class="fas fa-search"></i>
                                     </span>
@@ -76,7 +76,7 @@
 
                         <!-- User Account -->
                         <li class="list-inline-item dropdown">
-                            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="text-light nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
                                     <div><i class="fas fa-user fa-lg"></i></div>
                                     <p class="my-0">My Account</p>
@@ -103,7 +103,7 @@
                         <!-- Shopping Bag -->
                         <li class="list-inline-item">
                             <!-- If item is in the bag, display a list of items included -->
-                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-light{% endif %} nav-link" href="">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                     <p class="my-0">
@@ -133,10 +133,10 @@
                     {% include 'includes/main-nav.html' %}
                 </nav>
             </div>
-            <!-- Delivery Banner -->
-            <div id="delivery-banner" class="row text-center">
-                <div class="col bg-black text-white">
-                    <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>                
+            <!-- Newsletter Banner -->
+            <div id="10off-banner" class="row text-center">
+                <div class="col bg-light text-white">
+                    <h4 class="logo-font my-1">Sign up to get 10% off on your 1st order!</h4>                
                 </div>            
         </div>
         </header>

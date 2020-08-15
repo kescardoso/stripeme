@@ -4,13 +4,25 @@
     <ul class="navbar-nav w-auto mx-auto">
         <!-- Menu: Home -->
         <li class="nav-item d-block d-md-none">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
+            <a class="logo-font font-weight-bold nav-link text-light mr-5" href="{% url 'home' %}" id="home-link">
                 Home
             </a>
         </li>
+        <!-- Menu Dropdown: About -->
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="author-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Kes Cardoso
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="author-link">
+                <a href="" class="dropdown-item">Bio & Resume</a>
+                <a href="" class="dropdown-item">Client Testimonials</a>
+                <a href="" class="dropdown-item">Links</a>
+                <a href="" class="dropdown-item">Contacts</a>
+            </div>
+        </li>
         <!-- Menu Dropdown: Web Development -->
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="webdev-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="webdev-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Web Development
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="webdev-link">
@@ -22,7 +34,7 @@
         </li>
         <!-- Menu Dropdown: Design -->
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="design-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="design-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Design
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="design-link">
@@ -34,25 +46,13 @@
         </li>
         <!-- Menu Dropdown: Consultancy -->
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link" href="#" id="consultancy-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Consultancy
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+            <div class="dropdown-menu border-0" aria-labelledby="consultancy-link">
                 <a href="" class="dropdown-item">Branding Session</a>
                 <a href="" class="dropdown-item">UX Strategy Session</a>
                 <a href="" class="dropdown-item">Master Session</a>
-            </div>
-        </li>
-        <!-- Menu Dropdown: About -->
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                K.C.
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">About Me</a>
-                <a href="" class="dropdown-item">Client Testimonialss</a>
-                <a href="" class="dropdown-item">Links</a>
-                <a href="" class="dropdown-item">Contacts</a>
             </div>
         </li>
     </ul>
