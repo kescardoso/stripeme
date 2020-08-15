@@ -1,0 +1,87 @@
+[
+  {
+    "pk": 1,
+    "model": "services.category",
+    "fields": { "name": "webdev", "friendly_name": "Web Development" }
+  },
+  {
+    "pk": 2,
+    "model": "services.category",
+    "fields": { "name": "blogger", "friendly_name": "Blogger Site" }
+  },
+  {
+    "pk": 3,
+    "model": "services.category",
+    "fields": { "name": "wordpress", "friendly_name": "Wordpress Site" }
+  },
+  {
+    "pk": 4,
+    "model": "services.category",
+    "fields": { "name": "python-django", "friendly_name": "Python-Django App" }
+  },
+  {
+    "pk": 5,
+    "model": "services.category",
+    "fields": { "name": "design", "friendly_name": "Graphic Design" }
+  },
+  {
+    "pk": 6,
+    "model": "services.category",
+    "fields": { "name": "logo", "friendly_name": "Brand Logo" }
+  },
+  {
+    "pk": 7,
+    "model": "services.category",
+    "fields": { "name": "biscard", "friendly_name": "Business Card" }
+  },
+  {
+    "pk": 8,
+    "model": "services.category",
+    "fields": { "name": "flyer", "friendly_name": "Flyer" }
+  },
+  {
+    "pk": 9,
+    "model": "services.category",
+    "fields": { "name": "banner", "friendly_name": "Facebook Banner" }
+  },
+  {
+    "pk": 10,
+    "model": "services.category",
+    "fields": { "name": "posts", "friendly_name": "FB/IG Post" }
+  },
+  {
+    "pk": 11,
+    "model": "services.category",
+    "fields": { "name": "ads", "friendly_name": "FB/IG Ads" }
+  },
+  {
+    "pk": 12,
+    "model": "services.category",
+    "fields": { "name": "consultancy", "friendly_name": "Consultancy" }
+  },
+  {
+    "pk": 13,
+    "model": "services.category",
+    "fields": { "name": "branding", "friendly_name": "Branding Session" }
+  },
+  {
+    "pk": 14,
+    "model": "services.category",
+    "fields": { "name": "ux-strategy", "friendly_name": "UX Strategy Session" }
+  },
+  {
+    "pk": 15,
+    "model": "services.category",
+    "fields": { "name": "master", "friendly_name": "Master Session" }
+  },
+  {
+    "pk": 16,
+    "model": "portfolio.category",
+    "fields": { "name": "web-dev-folio", "friendly_name": "Web Development Folio" }
+  },
+  {
+    "pk": 17,
+    "model": "portfolio.category",
+    "fields": { "name": "design-folio", "friendly_name": "Graphic Design Folio" }
+  }
+]
