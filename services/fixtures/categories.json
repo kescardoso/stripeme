@@ -17,7 +17,7 @@
   {
     "pk": 4,
     "model": "services.category",
-    "fields": { "name": "python-django", "friendly_name": "Python-Django App" }
+    "fields": { "name": "python", "friendly_name": "Python App" }
   },
   {
     "pk": 5,
@@ -32,12 +32,12 @@
   {
     "pk": 7,
     "model": "services.category",
-    "fields": { "name": "biscard", "friendly_name": "Business Card" }
+    "fields": { "name": "cards", "friendly_name": "Business Cards" }
   },
   {
     "pk": 8,
     "model": "services.category",
-    "fields": { "name": "flyer", "friendly_name": "Flyer" }
+    "fields": { "name": "flyers", "friendly_name": "Flyers" }
   },
   {
     "pk": 9,
@@ -83,5 +83,15 @@
     "pk": 17,
     "model": "portfolio.category",
     "fields": { "name": "design-folio", "friendly_name": "Graphic Design Folio" }
+  },
+  {
+    "pk": 18,
+    "model": "services.category",
+    "fields": { "name": "social-media", "friendly_name": "Social Media" }
+  },
+  {
+    "pk": 19,
+    "model": "services.category",
+    "fields": { "name": "cards-flyers", "friendly_name": "Cards & Flyers" }
   }
 ]
