@@ -17,7 +17,7 @@
   {
     "pk": 4,
     "model": "services.category",
-    "fields": { "name": "python", "friendly_name": "Python App" }
+    "fields": { "name": "custom", "friendly_name": "Custom Web App" }
   },
   {
     "pk": 5,
@@ -27,32 +27,32 @@
   {
     "pk": 6,
     "model": "services.category",
-    "fields": { "name": "logo", "friendly_name": "Brand Logo" }
+    "fields": { "name": "logo", "friendly_name": "Logo" }
   },
   {
     "pk": 7,
     "model": "services.category",
-    "fields": { "name": "cards", "friendly_name": "Business Cards" }
+    "fields": { "name": "cards", "friendly_name": "Cards" }
   },
   {
     "pk": 8,
     "model": "services.category",
-    "fields": { "name": "flyers", "friendly_name": "Flyers" }
+    "fields": { "name": "flyer", "friendly_name": "Flyers" }
   },
   {
     "pk": 9,
     "model": "services.category",
-    "fields": { "name": "banner", "friendly_name": "Facebook Banner" }
+    "fields": { "name": "banner", "friendly_name": "Banners" }
   },
   {
     "pk": 10,
     "model": "services.category",
-    "fields": { "name": "posts", "friendly_name": "FB/IG Post" }
+    "fields": { "name": "social-media", "friendly_name": "Social Media" }
   },
   {
     "pk": 11,
     "model": "services.category",
-    "fields": { "name": "ads", "friendly_name": "FB/IG Ads" }
+    "fields": { "name": "cards-flyers", "friendly_name": "Cards & Flyers" }
   },
   {
     "pk": 12,
@@ -83,15 +83,5 @@
     "pk": 17,
     "model": "portfolio.category",
     "fields": { "name": "design-folio", "friendly_name": "Graphic Design Folio" }
-  },
-  {
-    "pk": 18,
-    "model": "services.category",
-    "fields": { "name": "social-media", "friendly_name": "Social Media" }
-  },
-  {
-    "pk": 19,
-    "model": "services.category",
-    "fields": { "name": "cards-flyers", "friendly_name": "Cards & Flyers" }
   }
 ]
