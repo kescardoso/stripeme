@@ -2,86 +2,56 @@
   {
     "pk": 1,
     "model": "services.category",
-    "fields": { "name": "webdev", "friendly_name": "Web Development" }
+    "fields": { "name": "blogger", "friendly_name": "Blogger Site" }
   },
   {
     "pk": 2,
     "model": "services.category",
-    "fields": { "name": "blogger", "friendly_name": "Blogger Site" }
+    "fields": { "name": "wordpress", "friendly_name": "Wordpress Site" }
   },
   {
     "pk": 3,
     "model": "services.category",
-    "fields": { "name": "wordpress", "friendly_name": "Wordpress Site" }
+    "fields": { "name": "custom", "friendly_name": "Custom Web App" }
   },
   {
     "pk": 4,
     "model": "services.category",
-    "fields": { "name": "custom", "friendly_name": "Custom Web App" }
+    "fields": { "name": "logo", "friendly_name": "Logo" }
   },
   {
     "pk": 5,
     "model": "services.category",
-    "fields": { "name": "design", "friendly_name": "Graphic Design" }
+    "fields": { "name": "cards-flyers", "friendly_name": "Cards & Flyers" }
   },
   {
     "pk": 6,
     "model": "services.category",
-    "fields": { "name": "logo", "friendly_name": "Logo" }
+    "fields": { "name": "social-media", "friendly_name": "Social Media" }
   },
   {
     "pk": 7,
     "model": "services.category",
-    "fields": { "name": "cards", "friendly_name": "Cards" }
+    "fields": { "name": "branding", "friendly_name": "Branding Session" }
   },
   {
     "pk": 8,
     "model": "services.category",
-    "fields": { "name": "flyer", "friendly_name": "Flyers" }
+    "fields": { "name": "ux-strategy", "friendly_name": "UX Strategy Session" }
   },
   {
     "pk": 9,
     "model": "services.category",
-    "fields": { "name": "banner", "friendly_name": "Banners" }
-  },
-  {
-    "pk": 10,
-    "model": "services.category",
-    "fields": { "name": "social-media", "friendly_name": "Social Media" }
-  },
-  {
-    "pk": 11,
-    "model": "services.category",
-    "fields": { "name": "cards-flyers", "friendly_name": "Cards & Flyers" }
-  },
-  {
-    "pk": 12,
-    "model": "services.category",
-    "fields": { "name": "consultancy", "friendly_name": "Consultancy" }
-  },
-  {
-    "pk": 13,
-    "model": "services.category",
-    "fields": { "name": "branding", "friendly_name": "Branding Session" }
-  },
-  {
-    "pk": 14,
-    "model": "services.category",
-    "fields": { "name": "ux-strategy", "friendly_name": "UX Strategy Session" }
-  },
-  {
-    "pk": 15,
-    "model": "services.category",
     "fields": { "name": "master", "friendly_name": "Master Session" }
   },
   {
-    "pk": 16,
+    "pk": 10,
     "model": "portfolio.category",
-    "fields": { "name": "web-dev-folio", "friendly_name": "Web Development Folio" }
+    "fields": { "name": "web-dev-folio", "friendly_name": "WebDev Portfolio" }
   },
   {
-    "pk": 17,
+    "pk": 11,
     "model": "portfolio.category",
-    "fields": { "name": "design-folio", "friendly_name": "Graphic Design Folio" }
+    "fields": { "name": "design-folio", "friendly_name": "Design Portfolio" }
   }
 ]
