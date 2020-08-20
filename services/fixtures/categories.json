@@ -22,7 +22,7 @@
   {
     "pk": 5,
     "model": "services.category",
-    "fields": { "name": "cards-flyers", "friendly_name": "Cards & Flyers" }
+    "fields": { "name": "prints", "friendly_name": "Cards & Flyers" }
   },
   {
     "pk": 6,
@@ -47,7 +47,7 @@
   {
     "pk": 10,
     "model": "portfolio.category",
-    "fields": { "name": "web-dev-folio", "friendly_name": "WebDev Portfolio" }
+    "fields": { "name": "webdev-folio", "friendly_name": "WebDev Portfolio" }
   },
   {
     "pk": 11,
