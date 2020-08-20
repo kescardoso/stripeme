@@ -2,11 +2,31 @@
   {
     "pk": 1,
     "model": "portfolio.category",
-    "fields": { "name": "webdev-folio", "friendly_name": "WebDev Portfolio" }
+    "fields": { "name": "webdev-blogger", "friendly_name": "Blogger" }
   },
   {
     "pk": 2,
     "model": "portfolio.category",
-    "fields": { "name": "design-folio", "friendly_name": "Design Portfolio" }
+    "fields": { "name": "webdev-wordpress", "friendly_name": "Wordpress" }
+  },
+  {
+    "pk": 3,
+    "model": "portfolio.category",
+    "fields": { "name": "webdev-custom", "friendly_name": "Custom" }
+  },
+  {
+    "pk": 4,
+    "model": "portfolio.category",
+    "fields": { "name": "design-social", "friendly_name": "Social Media" }
+  },
+  {
+    "pk": 5,
+    "model": "portfolio.category",
+    "fields": { "name": "design-prints", "friendly_name": "Cards & Flyers" }
+  },
+  {
+    "pk": 6,
+    "model": "portfolio.category",
+    "fields": { "name": "design-logo", "friendly_name": "Logo" }
   }
 ]

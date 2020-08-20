@@ -1,0 +1,145 @@
+[
+  {
+    "pk": 1,
+    "model": "webdev.portfolio",
+    "fields": {
+      "name": "Sapoti Noir",
+      "description": "Minimalist Blogger template (no sidebar)",
+      "repo_url": null,
+      "site_url": "https://sapotinoir-demo.blogspot.com/",
+      "category": 1,
+      "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/webdev-folio-bg-01.png",
+      "image": "webdev-folio-bg-01.png"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "webdev.portfolio",
+    "fields": {
+      "name": "Sapoti",
+      "description": "Minimalist Blogger template (no sidebar)",
+      "repo_url": null,
+      "site_url": "https://sapoti-demo.blogspot.com/",
+      "category": 1,
+      "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/webdev-folio-bg-02.png",
+      "image": "webdev-folio-bg-02.png"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "webdev.portfolio",
+    "fields": {
+      "name": "Pitanga",
+      "description": "Full width Blogger template (two sidebars)",
+      "repo_url": null,
+      "site_url": "https://pitanga-demo.blogspot.com/",
+      "category": 1,
+      "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/webdev-folio-bg-03.png",
+      "image": "webdev-folio-bg-03.png"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "webdev.portfolio",
+    "fields": {
+      "name": "Miss Natureba",
+      "description": "Blogger template with Shopping cart functionality (one sidebars)",
+      "repo_url": null,
+      "site_url": "https://missnatureba.blogspot.com/",
+      "category": 1,
+      "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/webdev-folio-bg-04.png",
+      "image": "webdev-folio-bg-04.png"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "webdev.portfolio",
+    "fields": {
+      "name": "Yoga & Sound",
+      "description": "Bootstrap & HTML Web App with Paypal Checkout",
+      "repo_url": "https://github.com/kescardoso/yinnsound",
+      "site_url": "https://kescardoso.github.io/yinnsound/",
+      "category": 3,
+      "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/webdev-folio-cust-01.png",
+      "image": "webdev-folio-cust-01.png"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "webdev.portfolio",
+    "fields": {
+      "name": "Map & Chill",
+      "description": "Bootstrap & HTML Web App with Google Places API Integration",
+      "repo_url": "https://github.com/kescardoso/mapnchill",
+      "site_url": "http://mapnchill.me/",
+      "category": 3,
+      "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/webdev-folio-cust-02.png",
+      "image": "webdev-folio-cust-02.png"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "webdev.portfolio",
+    "fields": {
+      "name": "Tea Drop",
+      "description": "Bootstrap & HTML Web App for commercial presentations",
+      "repo_url": "https://github.com/kescardoso/teadrop",
+      "site_url": "https://kescardoso.github.io/teadrop/",
+      "category": 3,
+      "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/webdev-folio-cust-03.png",
+      "image": "webdev-folio-cust-03.png"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "webdev.portfolio",
+    "fields": {
+      "name": "Rosie Resume",
+      "description": "Bootstrap & HTML Professional Resume Web App with Google Maps API Integration",
+      "repo_url": "https://github.com/kescardoso/rosie",
+      "site_url": "https://kescardoso.github.io/rosie/",
+      "category": 3,
+      "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/webdev-folio-cust-04.png",
+      "image": "webdev-folio-cust-04.png"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "webdev.portfolio",
+    "fields": {
+      "name": "The Cryptopedia World",
+      "description": "Python-Flask and Material Design Web App, with simple user login session ",
+      "repo_url": "https://github.com/kescardoso/cryptopedia",
+      "site_url": "https://thecryptopedia.world/",
+      "category": 3,
+      "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/webdev-folio-cust-05.png",
+      "image": "webdev-folio-cust-05.png"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "webdev.portfolio",
+    "fields": {
+      "name": "Boutique Ado",
+      "description": "Python-Django and Bootstrap e-commerce Web App, with Stripe Checkout",
+      "repo_url": "https://github.com/kescardoso/boutique_ado",
+      "site_url": "https://kika-boutique-ado.herokuapp.com/",
+      "category": 3,
+      "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/webdev-folio-cust-06.png",
+      "image": "webdev-folio-cust-06.png"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "webdev.portfolio",
+    "fields": {
+      "name": "Prana & Pixels",
+      "description": "Wordpress hosted website",
+      "repo_url": null,
+      "site_url": "http://www.kescardoso.com/",
+      "category": 2,
+      "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/webdev-folio-wp-01.png",
+      "image": "webdev-folio-wp-01.png"
+    }
+  }
+]
