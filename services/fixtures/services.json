@@ -6,7 +6,7 @@
       "sku": "ss001",
       "name": "Google's Blogger Website",
       "description": "Google's Blogger (also known as Blogspot) is one of the oldest and most established website-building platforms, along with Wordpress.org. At Blogger, you will be able to have your own domain, a premium responsive design (via installation), and widgets to increase your user experience. There are many advantages of having your homepage on Blogger such as: low cost (the Blogger platform is free and does not require external hosting services), simplicity (you can control your account with your Gmail address), high level of customization (so you can style it to your branding rules), lightweight, easy setup, automatic updates and low maintenance requirements from the user. So if you have a small budget, if you prefer little maintenance, or just want lightness and simplicity -- then Blogger is an excellent option for you. You can order your service package and receive your premium website built on Blogger promptly. Get started today by filling up the order form below!",
-      "price": 100,
+      "price": 250,
       "category": 1,
       "rating": 4.8,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/webdev-01-blogger.jpg",
@@ -20,7 +20,7 @@
       "sku": "ss002",
       "name": "Wordpress Hosted Website",
       "description": "Wordpress.org (or WordPress hosted website) is one of the most established and used website-building platforms for online businesses and professionals. It requires a more technical savvy comparing to Blogger, a higher budget, and a long term commitment to site updates, fees, and maintenance. At WordPress, you will be able to have your own domain, a premium responsive design (via installation), as well as widgets and plugins to increase your user experience. There are many advantages of having your homepage on WordPress, such as: A higher control over your design and functionality, a higher level of customization, the ability to build a robust e-commerce website with embedded checkout functionality. If you have a budget to invest, want a more robust website for your business, and if you are comfortable with a more sophisticated platform -- then a WordPress site is an excellent option. You can order your service package and receive your premium website built on Wordpress.org promptly. Get started today by filling up the order form below!",
-      "price": 300,
+      "price": 500,
       "category": 2,
       "rating": 4.8,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/webdev-02-wordpress.jpg",
@@ -34,7 +34,7 @@
       "sku": "ss003",
       "name": "Custom Website",
       "description": "Suppose you require a more complex development process for a completely tailored website or web app, with stand-alone hosting and hands-on control. In that case, a custom project is more indicated. A custom website is built on HTML and can integrate Python (with either the Flask or Django library), a CSS framework (Bootstrap or Material Design), and other add-ons to achieve your specific goals. This type of project requires a higher budget, a longer developing timeline, and it can integrate ongoing maintenance services accordingly. You will have your own domain, a premium responsive design, and other tools to improve functionality and user experience. If you have a fantastic idea for a project and need support to achieve it, and if you have a budget to invest in a unique and robust website for your business -- then a custom website is an excellent option. You can order your service package and get started today by filling up the order form below!",
-      "price": 900,
+      "price": 1500,
       "category": 3,
       "rating": 4.8,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/webdev-03-custom.jpg",
@@ -48,7 +48,7 @@
       "sku": "ss004",
       "name": "Logo",
       "description": "If you are looking for a creative and minimalist logo design to represent your business or project, this is the right place to look. I understand the value of having your perfect and elegant logo and can create a unique design according to your requirements. For this logo service, you will receive all the source files, the copyrights, and excellent customer service to achieve your professional goals. You can order your logo service package and get started today by filling up the order form below!",
-      "price": 550,
+      "price": 850,
       "category": 4,
       "rating": 4.8,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-01-logo.jpg",
@@ -62,7 +62,7 @@
       "sku": "ss005",
       "name": "Cards & Flyers",
       "description": "If you are looking for a creative and minimalist card, cupon, flyer or brochure design to represent or advertise your business or project, this is the right place to look. I understand the value of having your perfect and professional comunication prints and I can create a unique and user firendly design according to your requirements. For this cards & flyers service, you will receive source file ready for professional printing, the copyrights, and excellent customer service to achieve your professional goals. You can order your cards & flyers service package and get started today by filling up the order form below!",
-      "price": 250,
+      "price": 550,
       "category": 5,
       "rating": 4.8,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-02-prints.jpg",
@@ -81,6 +81,48 @@
       "rating": 4.8,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-03-social.jpg",
       "image": "design-03-social.jpg"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "services.service",
+    "fields": {
+      "sku": "ss007",
+      "name": "Branding Session",
+      "description": "Consulting sessions can help you set and plan your professional goals and save you time and stress. If you are just getting started or you've been an entrepreneur for a while and need to recalibrate your strategy: a branding consultancy session can help you reformulate your business and marketing strategy. I have more than 8 years of experience as an online entrepreneur, and I understand the struggles and the blessings in creating a unique business image and branding message that will take you further into success. You can order your 1-hour Branding session service and get started today by filling up the order form below!",
+      "price": 1.000,
+      "category": 7,
+      "rating": 4.8,
+      "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/consultancy-01-branding.jpg",
+      "image": "consultancy-01-branding.jpg"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "services.service",
+    "fields": {
+      "sku": "ss008",
+      "name": "UX Strategy Session",
+      "description": "Consulting sessions can help you set and plan your professional goals and save you time and stress. If you are just getting started or you've been an entrepreneur for a while and need to recalibrate your strategy: a UX Strategy consultancy session can help you reformulate your website and business image. I have more than 8 years of experience as an online entrepreneur, and with my experience as a software developer and UX strategy I understand the struggles and the blessings in creating a unique business image and user experience that will take you further into success. You can order your 1-hour UX Stratey session service and get started today by filling up the order form below!",
+      "price": 1.000,
+      "category": 8,
+      "rating": 4.8,
+      "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/consultancy-02-ux.jpg",
+      "image": "consultancy-02-ux.jpg"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "services.service",
+    "fields": {
+      "sku": "ss009",
+      "name": "Master Session",
+      "description": "Consulting sessions can help you set and plan your professional goals and save you time and stress. If you are just getting started or you've been an entrepreneur for a while and need a complete review to recalibrate your business strategy: a Master consultancy session encompasses all the elements to help you reformulate your website user experience, business branding and marketing strategy. I have more than 8 years of experience as an online marketer and online entrepreneur, and with my experience as a software developer and UX strategy I understand the struggles and the blessings in creating a unique and competitive business strategy and plan that will take you further into success. You can order your 2-hour Master session service and get started today by filling up the order form below!",
+      "price": 2.500,
+      "category": 9,
+      "rating": 4.8,
+      "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/consultancy-03-master.jpg",
+      "image": "consultancy-03-master.jpg"
     }
   }
 ]
