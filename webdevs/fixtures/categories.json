@@ -1,0 +1,17 @@
+[
+  {
+    "pk": 1,
+    "model": "webdevs.category",
+    "fields": { "name": "webdev-blogger", "friendly_name": "Blogger" }
+  },
+  {
+    "pk": 2,
+    "model": "webdevs.category",
+    "fields": { "name": "webdev-wordpress", "friendly_name": "Wordpress" }
+  },
+  {
+    "pk": 3,
+    "model": "webdevs.category",
+    "fields": { "name": "webdev-custom", "friendly_name": "Custom" }
+  }
+]

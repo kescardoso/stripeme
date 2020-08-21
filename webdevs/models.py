@@ -29,27 +29,11 @@ class Webdev(models.Model):
     image = models.ImageField(null=True,
                               blank=True)
     repo_url = models.URLField(max_length=1024,
-                                null=True,
-                                blank=True)
+                               null=True,
+                               blank=True)
     site_url = models.URLField(max_length=1024,
-                                null=True,
-                                blank=True)
-
-    def __str__(self):
-        return self.name
-
-
-class Design(models.Model):
-    category = models.ForeignKey('Category',
-                                 null=True,
-                                 blank=True,
-                                 on_delete=models.SET_NULL)
-    name = models.CharField(max_length=254)
-    image_url = models.URLField(max_length=1024,
-                                null=True,
-                                blank=True)
-    image = models.ImageField(null=True,
-                              blank=True)
+                               null=True,
+                               blank=True)
 
     def __str__(self):
         return self.name

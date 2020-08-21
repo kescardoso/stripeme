@@ -1,0 +1,17 @@
+[
+  {
+    "pk": 1,
+    "model": "designs.category",
+    "fields": { "name": "design-social", "friendly_name": "Social Media" }
+  },
+  {
+    "pk": 2,
+    "model": "designs.category",
+    "fields": { "name": "design-prints", "friendly_name": "Cards & Flyers" }
+  },
+  {
+    "pk": 3,
+    "model": "designs.category",
+    "fields": { "name": "design-logo", "friendly_name": "Logo" }
+  }
+]

@@ -34,7 +34,8 @@ INSTALLED_APPS = [
 
     'home',
     'services',
-    'portfolio',
+    'designs',
+    'webdevs',
 ]
 
 MIDDLEWARE = [

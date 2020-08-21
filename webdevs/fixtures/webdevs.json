@@ -1,7 +1,7 @@
 [
   {
     "pk": 1,
-    "model": "webdev.portfolio",
+    "model": "webdevs.webdev",
     "fields": {
       "name": "Sapoti Noir",
       "description": "Minimalist Blogger template (no sidebar)",
@@ -14,7 +14,7 @@
   },
   {
     "pk": 2,
-    "model": "webdev.portfolio",
+    "model": "webdevs.webdev",
     "fields": {
       "name": "Sapoti",
       "description": "Minimalist Blogger template (no sidebar)",
@@ -27,7 +27,7 @@
   },
   {
     "pk": 3,
-    "model": "webdev.portfolio",
+    "model": "webdevs.webdev",
     "fields": {
       "name": "Pitanga",
       "description": "Full width Blogger template (two sidebars)",
@@ -40,7 +40,7 @@
   },
   {
     "pk": 4,
-    "model": "webdev.portfolio",
+    "model": "webdevs.webdev",
     "fields": {
       "name": "Miss Natureba",
       "description": "Blogger template with Shopping cart functionality (one sidebars)",
@@ -53,7 +53,7 @@
   },
   {
     "pk": 5,
-    "model": "webdev.portfolio",
+    "model": "webdevs.webdev",
     "fields": {
       "name": "Yoga & Sound",
       "description": "Bootstrap & HTML Web App with Paypal Checkout",
@@ -66,7 +66,7 @@
   },
   {
     "pk": 6,
-    "model": "webdev.portfolio",
+    "model": "webdevs.webdev",
     "fields": {
       "name": "Map & Chill",
       "description": "Bootstrap & HTML Web App with Google Places API Integration",
@@ -79,7 +79,7 @@
   },
   {
     "pk": 7,
-    "model": "webdev.portfolio",
+    "model": "webdevs.webdev",
     "fields": {
       "name": "Tea Drop",
       "description": "Bootstrap & HTML Web App for commercial presentations",
@@ -92,7 +92,7 @@
   },
   {
     "pk": 8,
-    "model": "webdev.portfolio",
+    "model": "webdevs.webdev",
     "fields": {
       "name": "Rosie Resume",
       "description": "Bootstrap & HTML Professional Resume Web App with Google Maps API Integration",
@@ -105,7 +105,7 @@
   },
   {
     "pk": 9,
-    "model": "webdev.portfolio",
+    "model": "webdevs.webdev",
     "fields": {
       "name": "The Cryptopedia World",
       "description": "Python-Flask and Material Design Web App, with simple user login session ",
@@ -118,7 +118,7 @@
   },
   {
     "pk": 10,
-    "model": "webdev.portfolio",
+    "model": "webdevs.webdev",
     "fields": {
       "name": "Boutique Ado",
       "description": "Python-Django and Bootstrap e-commerce Web App, with Stripe Checkout",
@@ -131,7 +131,7 @@
   },
   {
     "pk": 11,
-    "model": "webdev.portfolio",
+    "model": "webdevs.webdev",
     "fields": {
       "name": "Prana & Pixels",
       "description": "Wordpress hosted website",

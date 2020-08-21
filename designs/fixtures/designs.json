@@ -1,150 +1,150 @@
 [
   {
     "pk": 1,
-    "model": "design.portfolio",
+    "model": "designs.design",
     "fields": {
       "name": "Facebook Event Cover",
-      "category": 4,
+      "category": 1,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-banner-01.png",
       "image": "design-folio-banner-01.png"
     }
   },
   {
     "pk": 2,
-    "model": "design.portfolio",
+    "model": "designs.design",
     "fields": {
       "name": "Facebook Event Cover",
-      "category": 4,
+      "category": 1,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-banner-02.png",
       "image": "design-folio-banner-02.png"
     }
   },
   {
     "pk": 3,
-    "model": "design.portfolio",
+    "model": "designs.design",
     "fields": {
       "name": "Facebook Event Cover",
-      "category": 4,
+      "category": 1,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-banner-02.png",
       "image": "design-folio-banner-02.png"
     }
   },
   {
     "pk": 4,
-    "model": "design.portfolio",
+    "model": "designs.design",
     "fields": {
       "name": "Facebook Event Cover",
-      "category": 4,
+      "category": 1,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-banner-02.png",
       "image": "design-folio-banner-02.png"
     }
   },
   {
     "pk": 5,
-    "model": "design.portfolio",
+    "model": "designs.design",
     "fields": {
       "name": "Cupon Card to be printed or shared online",
-      "category": 5,
+      "category": 2,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-card-01.png",
       "image": "design-folio-card-01.png"
     }
   },
   {
     "pk": 6,
-    "model": "design.portfolio",
+    "model": "designs.design",
     "fields": {
       "name": "Letter sized flyer for printing or online sharing",
-      "category": 5,
+      "category": 2,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-flyer-01.png",
       "image": "design-folio-flyer-01.png"
     }
   },
   {
     "pk": 7,
-    "model": "design.portfolio",
+    "model": "designs.design",
     "fields": {
       "name": "Letter sized flyer for printing or online sharing",
-      "category": 5,
+      "category": 2,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-flyer-02.png",
       "image": "design-folio-flyer-02.png"
     }
   },
   {
     "pk": 8,
-    "model": "design.portfolio",
+    "model": "designs.design",
     "fields": {
       "name": "Large sized Poster for printing or online sharing",
-      "category": 5,
+      "category": 2,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-flyer-03.png",
       "image": "design-folio-flyer-03.png"
     }
   },
   {
     "pk": 9,
-    "model": "design.portfolio",
+    "model": "designs.design",
     "fields": {
       "name": "Letter sized flyer for printing or online sharing",
-      "category": 5,
+      "category": 2,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-flyer-04.png",
       "image": "design-folio-flyer-04.png"
     }
   },
   {
     "pk": 10,
-    "model": "design.portfolio",
+    "model": "designs.design",
     "fields": {
       "name": "Letter sized flyer for printing or online sharing",
-      "category": 5,
+      "category": 2,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-flyer-05.png",
       "image": "design-folio-flyer-05.png"
     }
   },
   {
     "pk": 11,
-    "model": "design.portfolio",
+    "model": "designs.design",
     "fields": {
       "name": "One-page brochure for printing or online sharing",
-      "category": 5,
+      "category": 2,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-flyer-06.png",
       "image": "design-folio-flyer-06.png"
     }
   },
   {
     "pk": 12,
-    "model": "design.portfolio",
+    "model": "designs.design",
     "fields": {
       "name": "Logo",
-      "category": 6,
+      "category": 3,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-logo-01.png",
       "image": "design-folio-logo-01.png"
     }
   },
   {
     "pk": 13,
-    "model": "design.portfolio",
+    "model": "designs.design",
     "fields": {
       "name": "Logo",
-      "category": 6,
+      "category": 3,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-logo-02.png",
       "image": "design-folio-logo-02.png"
     }
   },
   {
     "pk": 14,
-    "model": "design.portfolio",
+    "model": "designs.design",
     "fields": {
       "name": "Logo",
-      "category": 6,
+      "category": 3,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-logo-03.png",
       "image": "design-folio-logo-03.png"
     }
   },
   {
     "pk": 15,
-    "model": "design.portfolio",
+    "model": "designs.design",
     "fields": {
       "name": "Logo",
-      "category": 6,
+      "category": 3,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-logo-04.png",
       "image": "design-folio-logo-04.png"
     }

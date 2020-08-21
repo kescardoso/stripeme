@@ -43,15 +43,5 @@
     "pk": 9,
     "model": "services.category",
     "fields": { "name": "master", "friendly_name": "Master Session" }
-  },
-  {
-    "pk": 10,
-    "model": "portfolio.category",
-    "fields": { "name": "webdev-folio", "friendly_name": "WebDev Portfolio" }
-  },
-  {
-    "pk": 11,
-    "model": "portfolio.category",
-    "fields": { "name": "design-folio", "friendly_name": "Design Portfolio" }
   }
 ]
