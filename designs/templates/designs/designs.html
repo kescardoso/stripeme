@@ -32,11 +32,11 @@
 
                                     <!-- Design Image -->
                                     {% if design.image %}
-                                        <a href="">
+                                        <a href="{% url 'design_detail' design.id %}">
                                             <img class="card-img-top img-fluid" src="{{ design.image.url }}" alt="{{ design.name }}">
                                         </a>
                                     {% else %}
-                                        <a href="">
+                                        <a href="{% url 'design_detail' design.id %}">
                                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ design.name }}">
                                         </a>
                                     {% endif %}

@@ -32,11 +32,11 @@
 
                                     <!-- Webdev Image -->
                                     {% if webdev.image %}
-                                        <a href="">
+                                        <a href="{% url 'webdev_detail' webdev.id %}">
                                             <img class="card-img-top img-fluid" src="{{ webdev.image.url }}" alt="{{ webdev.name }}">
                                         </a>
                                     {% else %}
-                                        <a href="">
+                                        <a href="{% url 'webdev_detail' webdev.id %}">
                                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ webdev.name }}">
                                         </a>
                                     {% endif %}
