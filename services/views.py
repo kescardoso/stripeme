@@ -1,10 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.contrib import messages
-from django.contrib.auth.decorators import login_required
-from django.db.models import Q
-from django.db.models.functions import Lower
-
-from .models import Service, Category
+from django.shortcuts import render, get_object_or_404
+from .models import Service
 
 
 def all_services(request):
@@ -17,3 +12,15 @@ def all_services(request):
     }
 
     return render(request, 'services/services.html', context)
+
+
+def service_detail(request, service_id):
+    """ A view to show individual service details """
+
+    service = get_object_or_404(Service, pk=service_id)
+
+    context = {
+        'service': service,
+    }
+
+    return render(request, 'services/service_detail.html', context)
