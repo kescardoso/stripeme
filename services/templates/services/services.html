@@ -12,11 +12,97 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                {{ services }}
+    <div class="overlay"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col text-center mt-3">
+                    <h2 class="logo-fornt">Services</h2>
+                    <hr class="w-50 mb-1">
+                </div>
+            </div>
+            <div class="row">
+                <div class="service-container col-10 offset-1">
+                    <div class="row mt-1 mb-2">
+                    </div>
+                    <div class="row">
+                        {% for service in services %}
+                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                                <!-- Service Card Loop -->
+                                <div class="card h-100 border-0">
+
+                                    <!-- Service Image -->
+                                    {% if service.image %}
+                                        <a href="">
+                                            <img class="card-img-top img-fluid" src="{{ service.image.url }}" alt="{{ service.name }}">
+                                        </a>
+                                    {% else %}
+                                        <a href="">
+                                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.name }}">
+                                        </a>
+                                    {% endif %}
+
+                                    <!-- Service Body: Name -->
+                                    <div class="card-body pb-0">
+                                        <p class="mb-0">{{ service.name }}</p>
+                                    </div>
+
+                                    <!-- Service Footer: Price, Category, Rating -->
+                                    <div class="card-footer bg-white pt-0 border-0 text-left">
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="lead mb-0 text-left font-weight-bold">${{ service.price }}</p>
+                                                {% if service.category %}
+                                                <p class="small mt-1 mb-0">
+                                                    <a class="text-muted" href="{% url 'services' %}?category={{ service.category.name }}">
+                                                        <i class="fas fa-tag mr-1"></i>{{ service.category.friendly_name }}
+                                                    </a>
+                                                </p>
+                                                {% endif %}
+                                                {% if service.rating %}
+                                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ service.rating }} / 5</small>
+                                                {% else %}
+                                                    <small class="text-muted">No Rating</small>
+                                                {% endif %}
+                                                {% if request.user.is_superuser %}
+                                                    <small class="ml-3">
+                                                        <a href="">Edit</a> | 
+                                                        <a class="text-danger" href="">Delete</a>
+                                                    </small>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Responsive Grid System with a loop to display and render service cards in all screens -->
+                            {% if forloop.counter|divisibleby:1 %}
+                                <div class="col-12 d-sm-none mb-5">
+                                    <hr>
+                                </div>
+                            {% endif %}                        
+                            {% if forloop.counter|divisibleby:2 %}
+                                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                                    <hr>
+                                </div>
+                            {% endif %}
+                            {% if forloop.counter|divisibleby:3 %}
+                                <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                                    <hr>
+                                </div>
+                            {% endif %}
+                            {% if forloop.counter|divisibleby:4 %}
+                                <div class="col-12 d-none d-xl-block mb-5">
+                                    <hr>
+                                </div>
+                            {% endif %}
+
+                        {% endfor %}
+
+                    </div>
+                </div>
+                    
             </div>
         </div>
-    </div>
 {% endblock %}
