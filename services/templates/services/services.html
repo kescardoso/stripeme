@@ -63,6 +63,8 @@
                                                 {% else %}
                                                     <small class="text-muted">No Rating</small>
                                                 {% endif %}
+
+                                                <!-- Admin Privileges: Edit and Delete -->
                                                 {% if request.user.is_superuser %}
                                                     <small class="ml-3">
                                                         <a href="">Edit</a> | 
