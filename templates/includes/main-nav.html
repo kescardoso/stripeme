@@ -26,10 +26,10 @@
                 Web Development
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="webdev-link">
-                <a href="?category=webdev" class="dropdown-item">Blogger Site</a>
-                <a href="?category=webdev" class="dropdown-item">Wordpress Site</a>
-                <a href="?category=webdev" class="dropdown-item">Custom WebApp</a>
-                <a href="?category=webdev" class="dropdown-item">All: WebDev</a>
+                <a href="{% url 'services' %}?category=blogger" class="dropdown-item">Blogger Site</a>
+                <a href="{% url 'services' %}?category=wordpress" class="dropdown-item">Wordpress Site</a>
+                <a href="{% url 'services' %}?category=custom" class="dropdown-item">Custom WebApp</a>
+                <a href="{% url 'services' %}?category=blogger,wordpress,custom" class="dropdown-item">All: WebDev</a>
                 <a href="{% url 'webdevs' %}" class="dropdown-item">Portfolio: WebDev</a>
             </div>
         </li>
@@ -39,10 +39,10 @@
                 Graphic Design
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="design-link">
-                <a href="?category=design" class="dropdown-item">Logo</a>
-                <a href="?category=design" class="dropdown-item">Cards & Flyers</a>
-                <a href="?category=design" class="dropdown-item">Social Media</a>
-                <a href="?category=design" class="dropdown-item">All: Design</a>
+                <a href="{% url 'services' %}?category=logo" class="dropdown-item">Logo</a>
+                <a href="{% url 'services' %}?category=prints" class="dropdown-item">Cards & Flyers</a>
+                <a href="{% url 'services' %}?category=social-media" class="dropdown-item">Social Media</a>
+                <a href="{% url 'services' %}?category=logo,prints,social-media" class="dropdown-item">All: Design</a>
                 <a href="{% url 'designs' %}" class="dropdown-item">Portfolio: Design</a>
             </div>
         </li>
@@ -52,10 +52,10 @@
                 Consultancy
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="consultancy-link">
-                <a href="?category=consultancy" class="dropdown-item">Branding Session</a>
-                <a href="?category=consultancy" class="dropdown-item">UX Strategy Session</a>
-                <a href="?category=consultancy" class="dropdown-item">Master Session</a>
-                <a href="?category=consultancy" class="dropdown-item">All Sessions</a>
+                <a href="{% url 'services' %}?category=branding" class="dropdown-item">Branding Session</a>
+                <a href="{% url 'services' %}?category=ux-strategy" class="dropdown-item">UX Strategy Session</a>
+                <a href="{% url 'services' %}?category=master" class="dropdown-item">Master Session</a>
+                <a href="{% url 'services' %}?category=branding,ux-strategy, master" class="dropdown-item">All Sessions</a>
             </div>
         </li>
     </ul>
