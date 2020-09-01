@@ -14,10 +14,21 @@
                 Kes Cardoso
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="author-link">
-                <a href="{% url 'services' %}" class="dropdown-item">All Services</a>
                 <a href="" class="dropdown-item">Bio & Resume</a>
                 <a href="" class="dropdown-item">Testimonials</a>
                 <a href="" class="dropdown-item">Contact</a>
+            </div>
+        </li>
+        <!-- Menu Dropdown: All Services -->
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="author-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                All Services
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="author-link">
+                <a href="{% url 'services' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'services' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                <a href="{% url 'services' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                <a href="{% url 'services' %}" class="dropdown-item">All Services</a>
             </div>
         </li>
         <!-- Menu Dropdown: Web Development -->

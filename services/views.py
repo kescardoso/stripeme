@@ -10,15 +10,31 @@ def all_services(request):
     services = Service.objects.all()
     query = None
     categories = None
+    sort = None
+    direction = None
 
     if request.GET:
-        """ Filter for category queries """
+        """ Sort by price, rating and category """
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower-name'
+                services = services.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            services = services.order_by(sortkey)
+
+        """ Filter by category queries """
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             services = services.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
-        """ Filter for search queries """
+        """ Filter by search queries """
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -26,14 +42,17 @@ def all_services(request):
                                "You didn't enter any search criteria.")
                 return redirect(reverse('services'))
 
-            """ Search queries in name or description """
+            """ Search queries through name or description """
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             services = services.filter(queries)
+
+    current_sorting = f'{sort}_{direction}'
 
     context = {
         'services': services,
         'search_term': query,
         'current_categories': categories,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'services/services.html', context)
