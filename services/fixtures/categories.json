@@ -17,7 +17,7 @@
   {
     "pk": 4,
     "model": "services.category",
-    "fields": { "name": "logo", "friendly_name": "Logo" }
+    "fields": { "name": "logo", "friendly_name": "Custom Logo" }
   },
   {
     "pk": 5,
@@ -27,7 +27,7 @@
   {
     "pk": 6,
     "model": "services.category",
-    "fields": { "name": "social-media", "friendly_name": "Social Media" }
+    "fields": { "name": "social-media", "friendly_name": "Social Media Branding" }
   },
   {
     "pk": 7,

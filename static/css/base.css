@@ -37,6 +37,10 @@ body {
     color: #C5B4AA !important;
 }
 
+.text-gray {
+    color: #656565 !important;
+}
+
 .text-black {
     color: #000 !important;
 }
@@ -122,6 +126,8 @@ a.category-badge > span.badge:hover {
     color: white;
 }
 
+/* Back to the Top Button */
+
 .btt-button {
     height: 42px;
     width: 42px;
@@ -135,6 +141,8 @@ a.category-badge > span.badge:hover {
 .remove-item {
     cursor: pointer;
 }
+
+/*  */
 
 input[name='q']::placeholder {
     color: #aab7c4;

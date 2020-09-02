@@ -18,6 +18,8 @@
 
                 <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
                     <div class="image-container m-5">
+                        <!-- Service Heading -->
+                        <h5 class="text-uppercase text-center mb-3">{{ service.name }}</h5>
                         <!-- Service Image -->
                         {% if service.image %}
                             <a href="{{ service.image.url }}" target="_blank">
@@ -28,6 +30,7 @@
                                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.name }}">
                             </a>
                         {% endif %}
+                        
                     </div>
                 </div>
 
