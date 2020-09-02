@@ -6,39 +6,10 @@ body {
     background: url('/media/hero.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #656565;
+    color: #000;
     letter-spacing: 1px;
     /* Font family from GoogleFonts */
     font-family: 'Quicksand', sans-serif;
-}
-
-.logo-font {
-    text-transform: uppercase;
-}
-
-.main-logo-link {
-    width: fit-content;
-}
-
-.text-light {
-    color: #C5B4AA !important;
-}
-.text-black {
-    color: #000 !important;
-}
-
-.border-light {
-    border: 1px solid #C5B4AA !important;
-}
-.border-black {
-    border: 1px solid #000 !important;
-}
-
-.bg-light {
-    background: #C5B4AA !important;
-}
-.bg-black {
-    background: #000 !important;
 }
 
 /* White background overlay */
@@ -52,12 +23,47 @@ body {
 	z-index: -1;
 }
 
+/* ------------------------------ Typography, Borders & Backgrounds */
+
+.logo-font {
+    text-transform: uppercase;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
+.text-light {
+    color: #C5B4AA !important;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.border-light {
+    border: 1px solid #C5B4AA !important;
+}
+
+.border-black {
+    border: 1px solid #000 !important;
+}
+
+.bg-light {
+    background: #C5B4AA !important;
+}
+
+.bg-black {
+    background: #000 !important;
+}
+
+/* Home call to action */
 .opening-quote {
     line-height: 1.4em;
 }
 
 /* -------------------------------------- from Bulma */
-/* to center and keep size consistent for FontAwesome */
+/* To center and keep size consistent for FontAwesome */
 
 .icon {
     align-items: center;
@@ -67,11 +73,17 @@ body {
     width: 1.5rem;
 }
 
-/* ------------------------------------------ Badge */
+/* ------------------------------- Account & Bag Nav Icons */
+
+.my-0 a:hover {
+    color: #000 !important;
+}
+
+/* ------------------------------------ Category Badge */
 
 a.category-badge > span.badge:hover {
-    background: #212529 !important;
-    color: #fff !important;
+    background: #C5B4AA !important;
+    color: #000 !important;
 }
 
 /* ---------------------------------------- Buttons */

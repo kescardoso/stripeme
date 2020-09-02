@@ -35,8 +35,9 @@
                     <div class="service-details-container mb-5 mt-md-5">
                         <!-- Service Name -->
                         <p class="mb-0">{{ service.name }}</p>
+                        <!-- Service Price -->    
                         <p class="lead mb-0 text-left font-weight-bold">${{ service.price }}</p>
-                        <!-- Service Price, Category, Rating -->            
+                        <!-- Service Category -->           
                         {% if service.category %}
                             <p class="small mt-1 mb-0">
                                 <a class="text-muted" href="{% url 'services' %}?category={{ service.category.name }}">
@@ -44,11 +45,13 @@
                                 </a>
                             </p>
                         {% endif %}
+                        <!-- Service Rating -->
                         {% if service.rating %}
                             <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ service.rating }} / 5</small>
                         {% else %}
                             <small class="text-muted">No Rating</small>
                         {% endif %}
+                        <!-- Service Description -->    
                         <p class="mt-3">{{ service.description }}</p>
                         <!-- Admin Privileges: Edit and Delete -->
                         {% if request.user.is_superuser %}
