@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+
+<h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
+<h6>Promo: ${{ promo|floatformat:2 }}</h6>
+<h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+{% if ten_off_delta > 0 %}
+    <p class="mb-1 text-danger">
+        You could get 10% Off by spending just <strong>${{ 10_off_delta }}</strong> more!
+    </p>
+{% endif %}
