@@ -27,7 +27,7 @@
   {
     "pk": 6,
     "model": "services.category",
-    "fields": { "name": "social-media", "friendly_name": "Social Media Branding" }
+    "fields": { "name": "social-media", "friendly_name": "Social Media Graphics" }
   },
   {
     "pk": 7,

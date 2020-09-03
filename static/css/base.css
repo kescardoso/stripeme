@@ -92,6 +92,24 @@ a.category-badge > span.badge:hover {
 
 /* ---------------------------------------- Buttons */
 
+/* Back to the Top Button */
+
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+/*  */
+
 .shop-now-button {
     background: black;
     color: white;
@@ -124,22 +142,6 @@ a.category-badge > span.badge:hover {
 .btn-black:focus {
     background: #222;
     color: white;
-}
-
-/* Back to the Top Button */
-
-.btt-button {
-    height: 42px;
-    width: 42px;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-}
-
-.btt-link,
-.update-link,
-.remove-item {
-    cursor: pointer;
 }
 
 /*  */

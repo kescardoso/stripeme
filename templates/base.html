@@ -103,7 +103,7 @@
                         <!-- Shopping Bag -->
                         <li class="list-inline-item">
                             <!-- If item is in the bag, display a list of items included -->
-                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-light{% endif %} nav-link" href="">
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-light{% endif %} nav-link" href="{% url 'view_bag' %}">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                     <p class="my-0">
@@ -136,7 +136,7 @@
             <!-- Newsletter Banner -->
             <div id="10off-banner" class="row text-center">
                 <div class="col bg-light text-white">
-                    <h4 class="logo-font my-1">Sign up to get 10% off on your 1st order!</h4>                
+                    <h4 class="logo-font my-1">Sign up and get 10% off on your 1st order!${{ ten_off_threshold }}</h4>                
                 </div>            
         </div>
         </header>
