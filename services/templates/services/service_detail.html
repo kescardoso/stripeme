@@ -70,7 +70,7 @@
                                 {% with service.has_webdev_options as w %}
 
                                 <!-- Enter Project Goals/Content Message -->
-                                
+                                {% with service.has_message as m %}
 
                                     <!-- Dimensions -->
                                     {% if s %}
@@ -129,6 +129,14 @@
                                                 <label for="op6"> Regular Maintenance</label><br>
                                         </div>
                                     {% endif %}
+
+                                    <!-- user message describing project-->
+                                    {% if m %}
+                                        <div class="col-12 mt-3">
+                                            <p><strong>Please, describe your project goals, desired functionalities and design intentions:</strong></p>
+                                            <textarea rows="6" cols="55" maxlength="250" name="message" form="userform" class="text-muted">Enter text here...</textarea>
+                                        </div>
+                                    {% endif %}
                     
                                     <!-- Service Quantity & Service Id -->
                                     <div class="col-12">
@@ -171,6 +179,7 @@
                                     </div>
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
 
+                                {% endwith %}
                                 {% endwith %}
                                 {% endwith %}
                                 {% endwith %}

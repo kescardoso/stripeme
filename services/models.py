@@ -43,18 +43,22 @@ class Service(models.Model):
         Option box iterates in for-loops through service details page
         and bag page via a python shell command.
      """
-    # design size option dropdwon box
+    # design size options
     has_sizes = models.BooleanField(default=False,
                                     null=True,
                                     blank=True)
-    # design color option dropdown box
+    # design color options
     has_colors = models.BooleanField(default=False,
                                      null=True,
                                      blank=True)
-    # webdev options check box
+    # webdev options
     has_webdev_options = models.BooleanField(default=False,
                                              null=True,
                                              blank=True)
+    # project message
+    has_message = models.BooleanField(default=False,
+                                          null=True,
+                                          blank=True)
 
     def __str__(self):
         return self.name
