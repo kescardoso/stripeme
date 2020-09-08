@@ -17,6 +17,7 @@ class Category(models.Model):
 
 
 class Service(models.Model):
+    """ Service Form Fields """
     category = models.ForeignKey('Category',
                                  null=True,
                                  blank=True,
@@ -26,6 +27,18 @@ class Service(models.Model):
                            blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
+    """
+        Service Boolean Fields: instead of listing options on the database,
+        the options are listed here for service customizations:
+     """
+    # design size options
+    has_sizes = models.BooleanField(default=False,
+                                    null=True,
+                                    blank=True)
+    # design color options
+    has_colors = models.BooleanField(default=False,
+                                     null=True,
+                                     blank=True)
     image_url = models.URLField(max_length=1024,
                                 null=True,
                                 blank=True)

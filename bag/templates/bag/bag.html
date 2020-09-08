@@ -48,6 +48,7 @@
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0"><strong>{{ item.service.name }}</strong></p>
+                                        <p class="my-0"><strong>Dimensions: </strong>{% if item.service.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                                         <p class="my-0 small text-muted">SKU: {{ item.service.sku|upper }}</p>
                                     </td>
                                     <td class="py-3">

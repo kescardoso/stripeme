@@ -59,48 +59,69 @@
 
                         <form class="form" action="{% url 'add_to_bag' service.id %}" method="POST">
                             {% csrf_token %} <!-- Form with POST method, needs csrf token for Django form's protection -->
+
+                            <div class="form-row">
+
+                                <!-- Choose Service Dimensions -->
+                                {% with service.has_sizes as s %}
+                                    {% if s %}
+                                        <div class="col-12">
+                                            <p><strong>Project Dimensions:</strong></p>
+                                            <select class="form-control rounded-0 w-50" name="project_dimensions" id="id_project_dimensions">
+                                                <option value="square">Logo Square</option>
+                                                <option value="rectangular">Logo Rectangular</option>
+                                                <option value="round">Logo Round</option>
+                                                <option value="coupon">Coupon Card</option>
+                                                <option value="brochure">Brochure</option>
+                                                <option value="card">Business Card</option>
+                                                <option value="website" selected>Responsive Website</option>
+                                            </select>
+                                        </div>
+                                    {% endif %}
                     
-                                <!-- Service Quantity & Service Id -->
-                                <div class="col-12">
-                                    <p class="mt-3"><strong>Quantity:</strong></p>
-                                    <div class="form-group w-50">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <button class="decrement-qty btn btn-black rounded-0" 
-                                                    data-item_id="{{ service.id }}" id="decrement-qty_{{ service.id }}">
-                                                    <span class="icon">
-                                                        <i class="fas fa-minus"></i>
-                                                    </span>
-                                                </button>
-                                            </div>
-                                            <input class="form-control qty_input" type="number"
-                                                name="quantity" value="1" min="1" max="99"
-                                                data-item_id="{{ service.id }}"
-                                                id="id_qty_{{ service.id }}">
-                                            <div class="input-group-append">
-                                                <button class="increment-qty btn btn-black rounded-0"
-                                                    data-item_id="{{ service.id }}" id="increment-qty_{{ service.id }}">
-                                                    <span class="icon">
-                                                        <i class="fas fa-plus"></i>
-                                                    </span>
-                                                </button>
+                                    <!-- Service Quantity & Service Id -->
+                                    <div class="col-12">
+                                        <p class="mt-3"><strong>Quantity:</strong></p>
+                                        <div class="form-group w-50">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <button class="decrement-qty btn btn-black rounded-0" 
+                                                        data-item_id="{{ service.id }}" id="decrement-qty_{{ service.id }}">
+                                                        <span class="icon">
+                                                            <i class="fas fa-minus"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <input class="form-control qty_input" type="number"
+                                                    name="quantity" value="1" min="1" max="99"
+                                                    data-item_id="{{ service.id }}"
+                                                    id="id_qty_{{ service.id }}">
+                                                <div class="input-group-append">
+                                                    <button class="increment-qty btn btn-black rounded-0"
+                                                        data-item_id="{{ service.id }}" id="increment-qty_{{ service.id }}">
+                                                        <span class="icon">
+                                                            <i class="fas fa-plus"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- Submit buttom and keep shopping button -->
-                                <div class="col{% if s %}-12 mt-2{% endif %}">
-                                    <a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 mt-5">
-                                        <span class="icon">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </span>
-                                        <span class="text-uppercase">Keep Shopping</span>
-                                    </a>
-                                    <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
-                                </div>
-                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                            
+                                    <!-- Submit buttom and keep shopping button -->
+                                    <div class="col{% if s %}-12 mt-2{% endif %}">
+                                        <a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 mt-5">
+                                            <span class="icon">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </span>
+                                            <span class="text-uppercase">Keep Shopping</span>
+                                        </a>
+                                        <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                                    </div>
+                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+
+                                {% endwith %}
+                            </div>
                         </form>
 
                         <!-- Admin Privileges: Edit and Delete -->

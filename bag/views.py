@@ -16,7 +16,7 @@ def add_to_bag(request, item_id):
     service = get_object_or_404(Service, pk=item_id)
     quantity = int(request.POST.get('quantity'))  # Service quantity in bag
     redirect_url = request.POST.get('redirect_url')  # Url redirect from bag
-    bag = request.session.get('bag', {})  # Bag content is stored in session
+    bag = request.session.get('bag', {})  # Get or create bag in session
 
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
