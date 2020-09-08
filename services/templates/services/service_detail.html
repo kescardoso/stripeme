@@ -62,28 +62,35 @@
 
                             <div class="form-row">
 
-                                <!-- Choose Service Dimensions and Color Scheme -->
+                                <!-- Choose Dimensions and Color Scheme -->
                                 {% with service.has_sizes as s %}
                                 {% with service.has_colors as c %}
 
+                                <!-- Choose WebDev Options -->
+                                {% with service.has_webdev_options as w %}
+
+                                <!-- Enter Project Goals/Content Message -->
+                                
+
                                     <!-- Dimensions -->
                                     {% if s %}
-                                        <div class="col-12">
-                                            <p><strong>Project's Dimensions:</strong></p>
-                                            <select class="form-control rounded-0 w-50" name="project_size" id="id_project_size">
+                                        <div class="col-12 mt-3">
+                                            <p><strong>Project's dimensions:</strong></p>
+                                            <select class="form-control rounded-0 w-65" name="project_size" id="id_project_size">
                                                 <option value="choose" selected disabled>Choose Dimensions:</option>
-                                                <optgroup label="- Logo Design -">
+                                                <optgroup label="- Logo -">
                                                     <option value="square">Logo Square</option>
                                                     <option value="rectangular">Logo Rectangular</option>
                                                     <option value="round">Logo Round</option>
                                                 </optgroup>
-                                                <optgroup label="- Printable Design -">
-                                                    <option value="coupon">Coupon Card</option>
-                                                    <option value="brochure">Brochure</option>
+                                                <optgroup label="- Printables -">
                                                     <option value="card">Business Card</option>
+                                                    <option value="coupon">Coupon Card</option>
+                                                    <option value="brochure">Flyer</option>
+                                                    <option value="poster">Poster</option>
                                                 </optgroup>
-                                                <optgroup label="- Web Development -">
-                                                    <option value="website">Responsive Website</option>
+                                                <optgroup label="- Social Media -">
+                                                    <option value="fb-event">Facebook Event Cover</option>
                                                 </optgroup>
                                             </select>
                                         </div>
@@ -92,14 +99,34 @@
                                     <!-- Color Scheme -->
                                     {% if c %}
                                         <div class="col-12 mt-3">
-                                            <p><strong>Project's Color Scheme:</strong></p>
-                                            <select class="form-control rounded-0 w-50" name="project_color" id="id_project_color">
+                                            <p><strong>Project's color scheme:</strong></p>
+                                            <select class="form-control rounded-0 w-65" name="project_color" id="id_project_color">
                                                 <option value="choose" selected disabled>Choose Color Scheme:</option>
                                                 <option value="summer">SUMMER: muted warm tones (watered-green, peach-rose, vanilla, sand-beije, golden...)</option>
                                                 <option value="autumn">AUTUMN: neutral earth tones (rust-red, mustard-yellow, olive-green, wood-brown, camel...)</option>
                                                 <option value="winter">WINTER: deep cool tones (berry-red, emerald-green, navy-blue, silver, charcoal...)</option>
                                                 <option value="spring">SPRING: fresh pastel tones (coral-pink, mint-green, lavander, mauve, lemony-yellow...)</option>
                                             </select>
+                                        </div>
+                                    {% endif %}
+
+                                    <!-- Webdev Options -->
+                                    {% if w %}
+                                        <div class="col-12 mt-3">
+                                            <p><strong>What does your project require:</strong><br/>
+                                            <spam class=" small text-muted">Please check all that apply</spam></p>
+                                                <input type="checkbox" name="op1" value="domain">
+                                                <label for="op1"> Domain name (search and installation)</label><br>
+                                                <input type="checkbox" name="op2" value="ecart">
+                                                <label for="op2"> E-commerce cart integration</label><br>
+                                                <input type="checkbox" name="op3" value="emailmkt">
+                                                <label for="op3"> Newsletter form integration</label><br>
+                                                <input type="checkbox" name="op4" value="plugin">
+                                                <label for="op4"> Special plugin installation</label><br>
+                                                <input type="checkbox" name="op5" value="seo">
+                                                <label for="op5"> Optimization (SEO)</label><br>
+                                                <input type="checkbox" name="op6" value="maintain">
+                                                <label for="op6"> Regular Maintenance</label><br>
                                         </div>
                                     {% endif %}
                     
@@ -133,7 +160,7 @@
                                     </div>
 
                                     <!-- Submit buttom and keep shopping button -->
-                                    <div class="col{% if s %}{% if c %}-12 mt-2{% endif %}{% endif %}">
+                                    <div class="col{% if s %}{% if c %}{% if w %}-12 mt-2{% endif %}{% endif %}{% endif %}">
                                         <a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 mt-5">
                                             <span class="icon">
                                                 <i class="fas fa-chevron-left"></i>
@@ -144,6 +171,7 @@
                                     </div>
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
 
+                                {% endwith %}
                                 {% endwith %}
                                 {% endwith %}
                             </div>

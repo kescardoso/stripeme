@@ -26,19 +26,7 @@ class Service(models.Model):
                            null=True,
                            blank=True)
     name = models.CharField(max_length=254)
-    description = models.TextField()
-    """
-        Service Boolean Fields: instead of listing options on the database,
-        the options are listed here for service customizations:
-     """
-    # design size options
-    has_sizes = models.BooleanField(default=False,
-                                    null=True,
-                                    blank=True)
-    # design color options
-    has_colors = models.BooleanField(default=False,
-                                     null=True,
-                                     blank=True)
+    description = models.TextField()                     
     image_url = models.URLField(max_length=1024,
                                 null=True,
                                 blank=True)
@@ -49,6 +37,24 @@ class Service(models.Model):
                                  decimal_places=2,
                                  null=True,
                                  blank=True)
+    """
+        Service Boolean Fields: instead of listing options on the database,
+        the options are listed here for service customizations.
+        Option box iterates in for-loops through service details page
+        and bag page via a python shell command.
+     """
+    # design size option dropdwon box
+    has_sizes = models.BooleanField(default=False,
+                                    null=True,
+                                    blank=True)
+    # design color option dropdown box
+    has_colors = models.BooleanField(default=False,
+                                     null=True,
+                                     blank=True)
+    # webdev options check box
+    has_webdev_options = models.BooleanField(default=False,
+                                             null=True,
+                                             blank=True)
 
     def __str__(self):
         return self.name
