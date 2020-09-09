@@ -7,7 +7,9 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
     name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+    friendly_name = models.CharField(max_length=254,
+                                     null=True,
+                                     blank=True)
 
     def __str__(self):
         return self.name
@@ -26,7 +28,7 @@ class Service(models.Model):
                            null=True,
                            blank=True)
     name = models.CharField(max_length=254)
-    description = models.TextField()                     
+    description = models.TextField()
     image_url = models.URLField(max_length=1024,
                                 null=True,
                                 blank=True)
@@ -42,6 +44,7 @@ class Service(models.Model):
         the options are listed here for service customizations.
         Option box iterates in for-loops through service details page
         and bag page via a python shell command.
+        Service options can be accessed by the admin panel.
      """
     # design size options
     has_sizes = models.BooleanField(default=False,
@@ -57,8 +60,8 @@ class Service(models.Model):
                                              blank=True)
     # project message
     has_message = models.BooleanField(default=False,
-                                          null=True,
-                                          blank=True)
+                                      null=True,
+                                      blank=True)
 
     def __str__(self):
         return self.name

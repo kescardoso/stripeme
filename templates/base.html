@@ -86,8 +86,8 @@
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
-                                        <!-- If user IS authenticated AND IS SUPERUSER, show link to product management -->
-                                        <a href="" class="dropdown-item">Product Management</a>
+                                        <!-- If user IS authenticated AND IS SUPERUSER, show link to service management -->
+                                        <a href="" class="dropdown-item">Service Management</a>
                                     {% endif %}
                                         <!-- If user IS authenticated, show links to profile and logout -->
                                         <a href="" class="dropdown-item">My Profile</a>

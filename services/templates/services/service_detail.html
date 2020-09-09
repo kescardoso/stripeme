@@ -76,7 +76,7 @@
                                     {% if s %}
                                         <div class="col-12 mt-3">
                                             <p><strong>Project's dimensions:</strong></p>
-                                            <select class="form-control rounded-0 w-65" name="project_size" id="id_project_size">
+                                            <select class="form-control rounded-0 w-65" name="service_size" id="id_service_size">
                                                 <option value="choose" selected disabled>Choose Dimensions:</option>
                                                 <optgroup label="- Logo -">
                                                     <option value="square">Logo Square</option>
@@ -100,12 +100,16 @@
                                     {% if c %}
                                         <div class="col-12 mt-3">
                                             <p><strong>Project's color scheme:</strong></p>
-                                            <select class="form-control rounded-0 w-65" name="project_color" id="id_project_color">
+                                            <select class="form-control rounded-0 w-65" name="service_color" id="id_service_color">
                                                 <option value="choose" selected disabled>Choose Color Scheme:</option>
-                                                <option value="summer">SUMMER: muted warm tones (watered-green, peach-rose, vanilla, sand-beije, golden...)</option>
-                                                <option value="autumn">AUTUMN: neutral earth tones (rust-red, mustard-yellow, olive-green, wood-brown, camel...)</option>
-                                                <option value="winter">WINTER: deep cool tones (berry-red, emerald-green, navy-blue, silver, charcoal...)</option>
-                                                <option value="spring">SPRING: fresh pastel tones (coral-pink, mint-green, lavander, mauve, lemony-yellow...)</option>
+                                                <option value="summer">SUMMER: muted warm tones</option>
+                                                    <option value="smr" disabled>(watered-green, peach-rose, vanilla, sand-beije, golden...)</option>
+                                                <option value="autumn">AUTUMN: neutral earth tones</option>
+                                                    <option value="atm" disabled>(rust-red, mustard-yellow, olive-green, wood-brown, camel...)</option>
+                                                <option value="winter">WINTER: deep cool tones</option>
+                                                    <option value="wtr" disabled>(berry-red, emerald-green, navy-blue, silver, charcoal...)</option>
+                                                <option value="spring">SPRING: fresh pastel tones</option>
+                                                    <option value="spg" disabled>(coral-pink, mint-green, lavander, mauve, lemony-yellow...)</option>
                                             </select>
                                         </div>
                                     {% endif %}
@@ -115,6 +119,8 @@
                                         <div class="col-12 mt-3">
                                             <p><strong>What does your project require:</strong><br/>
                                             <spam class=" small text-muted">Please check all that apply</spam></p>
+
+                                            <div name="service_options" id="id_service_options"> 
                                                 <input type="checkbox" name="op1" value="domain">
                                                 <label for="op1"> Domain name (search and installation)</label><br>
                                                 <input type="checkbox" name="op2" value="ecart">
@@ -127,14 +133,17 @@
                                                 <label for="op5"> Optimization (SEO)</label><br>
                                                 <input type="checkbox" name="op6" value="maintain">
                                                 <label for="op6"> Regular Maintenance</label><br>
+                                            </div>
                                         </div>
                                     {% endif %}
 
                                     <!-- user message describing project-->
                                     {% if m %}
                                         <div class="col-12 mt-3">
-                                            <p><strong>Please, describe your project goals, desired functionalities and design intentions:</strong></p>
-                                            <textarea rows="6" cols="55" maxlength="250" name="message" form="userform" class="text-muted">Enter text here...</textarea>
+                                            <p><strong>Please, enter the content for your design project (company name, contact details, message, etc..) and describe briefly your project goals and desired functionalities and features:</strong></p>
+                                            <div name="service_message" id="id_service_message">
+                                                <textarea rows="6" cols="55" maxlength="250" name="message" form="userform"></textarea>
+                                            </div>
                                         </div>
                                     {% endif %}
                     

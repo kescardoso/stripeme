@@ -48,11 +48,12 @@
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0"><strong>{{ item.service.name }}</strong></p>
-                                        <p class="my-0 text-muted">Color Scheme: {% if item.service.has_colors %}{{ item.color|upper }}{% else %}N/A{% endif %}</p>
-                                        <p class="my-0 text-muted">Dimensions: {% if item.service.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
-                                        <p class="my-0 text-muted">Options: {% if item.service.has_webdev_options %}{{ item.color|upper }}{% else %}N/A{% endif %}</p>
-                                        <p class="my-0 text-muted">Description: {% if item.service.has_message %}{{ item.color|upper }}{% else %}N/A{% endif %}</p>
-                                        <p class="my-0 small text-muted">SKU: {{ item.service.sku|upper }}</p>
+                                        <p class="my-0 small text-muted">[ SKU: {{ item.service.sku|upper }} ]</p>
+                                        <p class="my-0 small font-weight-bold">Color Scheme: {% if item.service.has_colors %}{{ item.color }}{% else %}N/A{% endif %}</p>
+                                        <p class="my-0 small font-weight-bold">Dimensions: {% if item.service.has_sizes %}{{ item.size }}{% else %}N/A{% endif %}</p>
+                                        <p class="my-0 small font-weight-bold">Options: {% if item.service.has_webdev_options %}{{ item.color }}{% else %}N/A{% endif %}</p>
+                                        <p class="my-0 small font-weight-bold">Description: {% if item.service.has_message %}{{ item.color }}{% else %}N/A{% endif %}</p>
+                                        
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.service.price }}</p>
