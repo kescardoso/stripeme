@@ -69,8 +69,8 @@
                                 <!-- Choose WebDev Options -->
                                 {% with service.has_webdev_options as w %}
 
-                                <!-- Enter Project Goals/Content Message -->
-                                {% with service.has_message as m %}
+                                <!-- Project Goals/Content Message -->
+                                {% with service.has_user_message as m %}
 
                                     <!-- Dimensions -->
                                     {% if s %}
@@ -120,7 +120,7 @@
                                             <p><strong>What does your project require:</strong><br/>
                                             <spam class=" small text-muted">Please check all that apply</spam></p>
 
-                                            <div name="service_options" id="id_service_options"> 
+                                            <div name="service_webdev_options" id="id_service_webdev_options"> 
                                                 <input type="checkbox" name="op1" value="domain">
                                                 <label for="op1"> Domain name (search and installation)</label><br>
                                                 <input type="checkbox" name="op2" value="ecart">
@@ -140,8 +140,8 @@
                                     <!-- user message describing project-->
                                     {% if m %}
                                         <div class="col-12 mt-3">
-                                            <p><strong>Please, enter the content for your design project (company name, contact details, message, etc..) and describe briefly your project goals and desired functionalities and features:</strong></p>
-                                            <div name="service_message" id="id_service_message">
+                                            <p><strong>Please, enter below the copy or content for your project (company name, contact details, message, etc..). Also, describe briefly your project goals and desired functionalities and features:</strong></p>
+                                            <div name="service_user_message" id="id_service_user_message">
                                                 <textarea rows="6" cols="55" maxlength="250" name="message" form="userform"></textarea>
                                             </div>
                                         </div>
@@ -177,7 +177,7 @@
                                     </div>
 
                                     <!-- Submit buttom and keep shopping button -->
-                                    <div class="col{% if s %}{% if c %}{% if w %}-12 mt-2{% endif %}{% endif %}{% endif %}">
+                                    <div class="col{% if s %}{% if c %}{% if w %}{% if m %}-12 mt-2{% endif %}{% endif %}{% endif %}{% endif %}">
                                         <a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 mt-5">
                                             <span class="icon">
                                                 <i class="fas fa-chevron-left"></i>

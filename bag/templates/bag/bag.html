@@ -28,8 +28,15 @@
                 <!-- View List of bag content -->
                 {% if bag_items %}
 
+                {{ bag_items }}
+                <br>
+                <br>
+                {{ request.session.bag }}
+                <br>
+                <br>
+
                     <div class="table-responsive rounded d-none d-md-block">
-                        
+
                         <table class="table table-sm table-borderless">
                             <thead class="text-black">
                                 <tr>
@@ -50,9 +57,8 @@
                                         <p class="my-0"><strong>{{ item.service.name }}</strong></p>
                                         <p class="my-0 small text-muted">[ SKU: {{ item.service.sku|upper }} ]</p>
                                         <p class="my-0 small font-weight-bold">Color Scheme: {% if item.service.has_colors %}{{ item.color }}{% else %}N/A{% endif %}</p>
+                                        <p class="my-0 small font-weight-bold">Development: {% if item.service.has_webdev_options %}{{ item.color }}{% else %}N/A{% endif %}</p>
                                         <p class="my-0 small font-weight-bold">Dimensions: {% if item.service.has_sizes %}{{ item.size }}{% else %}N/A{% endif %}</p>
-                                        <p class="my-0 small font-weight-bold">Options: {% if item.service.has_webdev_options %}{{ item.color }}{% else %}N/A{% endif %}</p>
-                                        <p class="my-0 small font-weight-bold">Description: {% if item.service.has_message %}{{ item.color }}{% else %}N/A{% endif %}</p>
                                         
                                     </td>
                                     <td class="py-3">
@@ -69,7 +75,7 @@
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
                                     <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
-                                    <h6>Promo: ${{ promo|floatformat:2 }}</h6>
+                                    <h6>Promo Disccount: ${{ promo|floatformat:2 }}</h6>
                                     <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
                                     {% if ten_off_delta > 0 %}
                                         <p class="mb-1 text-danger">

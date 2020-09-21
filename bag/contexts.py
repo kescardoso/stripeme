@@ -22,26 +22,61 @@ def bag_contents(request):
                 'quantity': item_data,
                 'service': service,
             })
+
         else:
             service = get_object_or_404(Service, pk=item_id)
-            for size, quantity in item_data['items_by_size'].items():
-                total += quantity * service.price
-                service_count += quantity
-                bag_items.append({
-                    'item_id': item_id,
-                    'quantity': quantity,
-                    'service': service,
-                    'size': size,
-                })
+            for size, quantity in item_data['items_by_data'].items():
+                if size:
+                    total += quantity * service.price
+                    service_count += quantity
+                    bag_items.append({
+                        'item_id': item_id,
+                        'quantity': quantity,
+                        'service': service,
+                        'size': size,
+                        # 'webdev_options': ,
+                        # 'color': ,
+                    })
+
+                else:
+                    service = get_object_or_404(Service, pk=item_id)
+                    for color, quantity in item_data['items_by_data'].items():
+                        if color:
+                            total += quantity * service.price
+                            service_count += quantity
+                            bag_items.append({
+                                'item_id': item_id,
+                                'quantity': item_data,
+                                'service': service,
+                                'color': color,
+                                # 'webdev_options': ,
+                                # 'size': ,
+                            })
+                        else:
+                            service = get_object_or_404(Service, pk=item_id)
+                            for webdev_options, quantity in item_data['items_by_data'].items():
+                                if webdev_options:
+                                    total += quantity * service.price
+                                    service_count += quantity
+                                    bag_items.append({
+                                        'item_id': item_id,
+                                        'quantity': item_data,
+                                        'service': service,
+                                        'webdev_options': webdev_options,
+                                        # 'color': ,
+                                        # 'size': ,
+                                    })
 
     if total < settings.TEN_OFF_THRESHOLD:
-        """ 10% Off Promo using $100 as purchase threshold """
+        """ 10% Off Promo using $500 as purchase threshold """
+
         # If order counts to the minimum amount in TEN_OFF_THRESHOLD
         # then user can get 10% off with STANDARD_PROMO_PERCENTAGE.
         # Decimal is prefered and more accurate for financial transactions.
 
         promo = total * Decimal(settings.STANDARD_PROMO_PERCENTAGE / 100)
         ten_off_delta = settings.TEN_OFF_THRESHOLD - total
+
     else:
         promo = 0
         ten_off_delta = 0

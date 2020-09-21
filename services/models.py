@@ -40,7 +40,7 @@ class Service(models.Model):
                                  null=True,
                                  blank=True)
     """
-        Service Boolean Fields: instead of listing options on the database,
+        Boolean Fields: instead of listing options on the database,
         the options are listed here for service customizations.
         Option box iterates in for-loops through service details page
         and bag page via a python shell command.
@@ -59,7 +59,7 @@ class Service(models.Model):
                                              null=True,
                                              blank=True)
     # project message
-    has_message = models.BooleanField(default=False,
+    has_user_message = models.BooleanField(default=False,
                                       null=True,
                                       blank=True)
 
