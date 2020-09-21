@@ -207,3 +207,9 @@
             </div>
         </div>
 {% endblock %}
+
+<!-- Custom Js from services templates includes -->
+{% block postloadjs %}
+{{ block.super }}
+{% include 'services/includes/quantity_input_script.html' %}
+{% endblock %}
