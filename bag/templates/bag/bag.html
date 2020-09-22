@@ -90,13 +90,13 @@
                                                     </button>
                                                 </div>
                                                 {% if item.service.has_sizes %}
-                                                    <input type="hiden" name="product_size" value="{{ item.size }}">
+                                                    <input type="hiden" name="service_size" value="{{ item.size }}">
                                                 {% endif %}
                                             </div>
                                         </div>
                                         </form>
                                         <a class="update-link text-info"><small>Update</small></a>
-                                        <a class="remove-link text-danger float-right" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><small>Remove</small></a>
+                                        <a class="remove-link text-danger float-right" id="remove_{{ item.item_id }}" data_service_size="{{ item.size }}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.service.price }}</p>
@@ -170,7 +170,7 @@
     })
 
     // Remove item and reload on click
-    $('.remove-item').click(function(e) {
+    $('.remove-link').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var size = $(this).data('service_size');
