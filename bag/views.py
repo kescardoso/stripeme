@@ -11,10 +11,8 @@ def view_bag(request):
 
 
 def add_to_bag(request, item_id):
-    """ Add a quantity of the specified service to the shopping bag """
-
-    service = get_object_or_404(Service, pk=item_id)
-    quantity = int(request.POST.get('quantity'))  # Service quantity in bag
+    """ Add service options to the shopping bag """
+    
     redirect_url = request.POST.get('redirect_url')  # Url redirect from bag
 
     size = None
@@ -31,54 +29,27 @@ def add_to_bag(request, item_id):
     if 'service_user_message' in request.POST:
         user_message = request.POST.get('service_user_message')
 
-    bag = request.session.get('bag', {})  # Get or create bag in session
+    bag = request.session.get('bag', [])  # Get or create bag in session
+    temp_item = {}
+    temp_item["item_id"] = item_id
 
     # If size option is selected (Dimensions Dropdown)
     if size:
-        if item_id in list(bag.keys()):
-            if size in bag[item_id].keys():
-                bag[item_id]['items_by_data'][size] += quantity
-            else:
-                bag[item_id]['items_by_data'][size] = quantity
-        else:
-            bag[item_id] = {'items_by_data': {size: quantity}}
+        temp_item["size"] = size
 
     # if color option is selected (Color Scheme Dropdown)
-    elif color:
-        if item_id in list(bag.keys()):
-            if color in bag[item_id].keys():
-                bag[item_id]['items_by_data'] += quantity
-            else:
-                bag[item_id]['items_by_data'][color] = quantity
-        else:
-            bag[item_id] = {'items_by_data': {color: quantity}}
+    if color:
+        temp_item["color"] = color
 
     # if webdev_options is selected (Webdev Options Checkbox)
-    elif webdev_options:
-        if item_id in list(bag.keys()):
-            if webdev_options in bag[item_id].keys():
-                bag[item_id]['items_by_data'][webdev_options] += quantity
-            else:
-                bag[item_id]['items_by_data'][webdev_options] = quantity
-        else:
-            bag[item_id] = {'items_by_data': {webdev_options: quantity}}
+    if webdev_options:
+        temp_item["webdev_options"] = webdev_options
 
     # if message is selected (Service message text field)
-    elif user_message:
-        if item_id in list(bag.keys()):
-            if user_message in bag[item_id].keys():
-                bag[item_id]['items_by_data'][user_message] += quantity
-            else:
-                bag[item_id]['items_by_data'][user_message] = quantity
-        else:
-            bag[item_id] = {'items_by_data': {user_message: quantity}}
+    if user_message:
+        temp_item["user_message"] = user_message
 
-    # if only quantity is selected (default: 1)
-    else:
-        if item_id in list(bag.keys()):
-            bag[item_id] += quantity
-        else:
-            bag[item_id] = quantity
+    bag.append(temp_item)
 
     request.session['bag'] = bag
     return redirect(redirect_url)

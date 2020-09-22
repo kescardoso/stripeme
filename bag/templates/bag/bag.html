@@ -28,13 +28,6 @@
                 <!-- View List of bag content -->
                 {% if bag_items %}
 
-                {{ bag_items }}
-                <br>
-                <br>
-                {{ request.session.bag }}
-                <br>
-                <br>
-
                     <div class="table-responsive rounded d-none d-md-block">
 
                         <table class="table table-sm table-borderless">
@@ -54,12 +47,21 @@
                                         <img class="img-fluid rounded" src="{{ item.service.image.url }}">
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0"><strong>{{ item.service.name }}</strong></p>
-                                        <p class="my-0 small text-muted">[ SKU: {{ item.service.sku|upper }} ]</p>
-                                        <p class="my-0 small font-weight-bold">Color Scheme: {% if item.service.has_colors %}{{ item.color }}{% else %}N/A{% endif %}</p>
-                                        <p class="my-0 small font-weight-bold">Development: {% if item.service.has_webdev_options %}{{ item.color }}{% else %}N/A{% endif %}</p>
-                                        <p class="my-0 small font-weight-bold">Dimensions: {% if item.service.has_sizes %}{{ item.size }}{% else %}N/A{% endif %}</p>
+                                        <!-- Service Name and SKU -->
+                                        <p class="my-0 logo-font text-black">{{ item.service.name }}</p>
+                                        <p class="my-0 mb-2 small text-muted">SKU: {{ item.service.sku|upper }}</p>
                                         
+                                        <!-- Chosen Color -->
+                                        <p class="my-0 small"><strong>Color Scheme:</strong> {% if item.service.has_colors %}{{ item.color|upper }}{% else %}N/A{% endif %}</p>
+
+                                        <!-- Chosen Dimensions -->
+                                        <p class="my-0 small"><strong>Dimensions:</strong> {% if item.service.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+
+                                        <!-- Chosen Dev Options -->
+                                        <p class="my-0 small"><strong>Features:</strong> {% if item.service.has_webdev_options %}{{ item.webdev_options }}{% else %}N/A{% endif %}</p>
+
+                                        <!-- Chosen Message -->
+                                        <p class="my-0 small"><strong>Message:</strong> {% if item.service.has_user_message %}{{ item.user_message }}{% else %}N/A{% endif %}</p>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.service.price }}</p>
@@ -89,9 +91,6 @@
                                                         </span>
                                                     </button>
                                                 </div>
-                                                {% if item.service.has_sizes %}
-                                                    <input type="hiden" name="service_size" value="{{ item.size }}">
-                                                {% endif %}
                                             </div>
                                         </div>
                                         </form>
