@@ -24,7 +24,6 @@ def bag_contents(request):
             'service': service,
             'color': item["color"] if 'color' in item else None,
             'size': item["size"] if 'size' in item else None,
-            'webdev_options': item["webdev_options"] if 'webdev_options' in item else None,
             'user_message': item["user_message"] if 'user_message' in item else None,
         })
 

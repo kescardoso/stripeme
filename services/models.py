@@ -54,14 +54,10 @@ class Service(models.Model):
     has_colors = models.BooleanField(default=False,
                                      null=True,
                                      blank=True)
-    # webdev options
-    has_webdev_options = models.BooleanField(default=False,
-                                             null=True,
-                                             blank=True)
     # project message
     has_user_message = models.BooleanField(default=False,
-                                      null=True,
-                                      blank=True)
+                                           null=True,
+                                           blank=True)
 
     def __str__(self):
         return self.name
