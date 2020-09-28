@@ -62,6 +62,7 @@
                                     <!-- Item Price -->
                                     <td class="py-3">
                                         <p class="my-0">${{ item.service.price }}</p>
+                                        <a class="remove-link text-danger text-center" id="remove_{{ item.item_id }}" data-service_color="{{ item.color }}"><small>Remove</small></a>
                                     </td>
 
                                 </tr>
@@ -130,4 +131,22 @@
     {{ block.super }}
     <!-- Back to Top Js -->
     <script src="{% static 'js/backtop.js' %}"></script>
+
+    <script type="text/javascript">
+    // Remove item and reload on click
+    $('.remove-link').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var color = $(this).data('service_color');
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'service_color': color};
+
+        // Reload Page
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
+
 {% endblock %}
