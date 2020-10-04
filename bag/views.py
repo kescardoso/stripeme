@@ -14,7 +14,7 @@ def add_to_bag(request, item_id):
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')  # Url redirect from bag
-    bag = request.session.get('bag', {})
+    bag = request.session.get('bag', {}) #  Creates bag session with a bag dictionary
 
     user_message = None
     if 'service_user_message' in request.POST:
@@ -28,14 +28,14 @@ def add_to_bag(request, item_id):
                 bag[item_id]['items_by_details'][user_message] = quantity
         else:
             bag[item_id] = {'items_by_details': {user_message: quantity}}
-    # else:
-    #     if item_id in list(bag.keys()):
-    #         bag[item_id] += quantity
-    #     else:
-    #         bag[item_id] = quantity
+    else:
+        if item_id in list(bag.keys()):
+            bag[item_id] += quantity
+        else:
+            bag[item_id] = quantity
 
     request.session['bag'] = bag
-    print()
+    print(request.session['bag'])
     return redirect(redirect_url)
 
 
