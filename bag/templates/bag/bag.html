@@ -142,22 +142,6 @@
     {{ block.super }}
     <!-- Back to Top Js -->
     <script src="{% static 'js/backtop.js' %}"></script>
-
-    <script type="text/javascript">
-    // Remove item and reload on click
-    $('.remove-link').click(function(e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var color = $(this).data('service_color');
-        var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'service_color': color};
-
-        // Reload Page
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
-    })
-</script>
-
+    <!-- Update/Remove Item Js -->
+    <script src="{% static 'js/quantity_input.js' %}"></script>
 {% endblock %}
