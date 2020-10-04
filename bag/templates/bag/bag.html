@@ -68,8 +68,38 @@
 
                                     <!-- Item Quantity -->
                                     <td class="py-3 w-25">
-                                        <p class="my-0">{{ item.quantity }}</p>
-                                        <a class="remove-link text-danger text-center" id="remove_{{ item.item_id }}" data-service_user_message="{{ item.color }}"><small>Remove</small></a>
+                                        <form class="form update-form" method="POST" action="">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <button class="decrement-qty btn btn-sm btn-black rounded-0" 
+                                                            data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                            <span>
+                                                                <i class="fas fa-minus fa-sm"></i>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                    <input class="form-control form-control-sm qty_input" type="number"
+                                                        name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                                        data-item_id="{{ item.item_id }}"
+                                                        id="id_qty_{{ item.item_id }}">
+                                                    <div class="input-group-append">
+                                                        <button class="increment-qty btn btn-sm btn-black rounded-0"
+                                                            data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                            <span>
+                                                                <i class="fas fa-plus fa-sm"></i>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                    {% if item.service.has_user_message %}
+                                                        <input type="hidden" name="service_user_message" value="{{ item.user_message }}">
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <a class="update-link text-info"><small>Update</small></a>
+                                        <a class="remove-link text-danger float-right" id="remove_{{ item.item_id }}" data-service_user_message="{{ item.user_message }}"><small>Remove</small></a>
                                     </td>
 
                                     <!-- SubTotal -->
@@ -142,6 +172,29 @@
     {{ block.super }}
     <!-- Back to Top Js -->
     <script src="{% static 'js/backtop.js' %}"></script>
-    <!-- Update/Remove Item Js -->
+    <!-- Quantity Box/Button Js -->
     <script src="{% static 'js/quantity_input.js' %}"></script>
+
+    <script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-link').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var user_message = $(this).data('service_user_message');
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'service_user_message': user_message};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
+
 {% endblock %}

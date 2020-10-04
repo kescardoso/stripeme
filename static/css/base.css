@@ -102,11 +102,10 @@ a.category-badge > span.badge:hover {
 }
 
 .btt-link,
+.update-link,
 .remove-link {
     cursor: pointer;
 }
-
-/*  */
 
 .shop-now-button {
     background: black;
