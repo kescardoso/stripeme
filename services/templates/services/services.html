@@ -21,7 +21,7 @@
                     <!-- View top links to multiple categories when selected -->
                     {% for c in current_categories %}
                         <a class="category-badge text-decoration-none" href="{% url 'services' %}?category={{ c.name }}">
-                            <span class="p-2 mt-2 badge badge-white text-light rounded-0 border border-light">{{ c.friendly_name }}</span>
+                            <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-light">{{ c.friendly_name }}</span>
                         </a>
                     {% endfor %}
                     <hr class="w-50 mb-1">
@@ -44,8 +44,6 @@
                                     <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
                                     <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
                                     <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                                    <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
-                                    <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
                                 </select>
                             </div>
                         </div>
@@ -54,7 +52,7 @@
                         <div class="col-12 col-md-6 order-md-first">
                             <p class="text-muted mt-3 text-center text-md-left">
                                 {% if search_term or current_categories or current_sorting != 'None_None' %}
-                                    <span class="small"><a href="{% url 'services' %}">Back to All Services</a> | </span>
+                                    <span class="small"><a href="{% url 'services' %}">All Services</a> | </span>
                                 {% endif %}
                                 {{ services|length }} Services{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                             </p>
@@ -163,4 +161,6 @@
     {{ block.super }}
     <!-- Back to Top Link Js -->
     <script src="{% static 'js/backtop.js' %}"></script>
+    <!-- Service Sorting Js -->
+    <script src="{% static 'js/service_sorting.js' %}"></script>
 {% endblock %}

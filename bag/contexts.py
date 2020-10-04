@@ -8,40 +8,46 @@ def bag_contents(request):
 
     bag_items = []
     total = 0
-    grand_total = 0
     service_count = 0
-    bag = request.session.get('bag', [])  # bag contents are an array
+    bag = request.session.get('bag', {})
 
-    for item in bag:
-        """ View a list of items in bag """
-
-        service = get_object_or_404(Service, pk=item["item_id"])
-        total = service.price
-        grand_total += total
-
-        bag_items.append({
-            'item_id': item["item_id"],
-            'service': service,
-            'color': item["color"] if 'color' in item else None,
-            'size': item["size"] if 'size' in item else None,
-            'user_message': item["user_message"] if 'user_message' in item else None,
-        })
+    # for item_id, item_data in bag.items():
+    #     if isinstance(item_data, int):
+    #         service = get_object_or_404(Service, pk=item_id)
+    #         total += item_data * service.price
+    #         service_count += item_data
+    #         bag_items.append({
+    #             'item_id': item_id,
+    #             'quantity': item_data,
+    #             'service': service,
+    #         })
+        # else:
+        #     service = get_object_or_404(Service, pk=item_id)
+        #     for user_message, quantity in item_data['items_by_details'].items():
+        #         total += quantity * service.price
+        #         service_count += quantity
+        #         bag_items.append({
+        #             'item_id': item_id,
+        #             'quantity': quantity,
+        #             'service': service,
+        #             'user_message': user_message,
+        #         })
 
     if total < settings.TEN_OFF_THRESHOLD:
         """ 10% Off Promo using $500 as purchase threshold """
 
         # If order counts to the minimum amount in TEN_OFF_THRESHOLD
         # then user can get 10% off with STANDARD_PROMO_PERCENTAGE.
-        # Decimal is prefered and more accurate for financial transactions.
-
-        promo = grand_total * Decimal(settings.STANDARD_PROMO_PERCENTAGE / 100)
+        # Decimal is prefered over Flow and
+        # more accurate for financial transactions.
+        promo = total * Decimal(settings.STANDARD_PROMO_PERCENTAGE / 100)
         ten_off_delta = settings.TEN_OFF_THRESHOLD - total
 
     else:
         promo = 0
         ten_off_delta = 0
 
-    grand_total = promo + grand_total
+    grand_total = promo + total
 
     context = {
         'bag_items': bag_items,

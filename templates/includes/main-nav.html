@@ -9,7 +9,7 @@
             </a>
         </li>
         <!-- Menu Dropdown: About -->
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="author-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Kes Cardoso
             </a>
@@ -18,7 +18,7 @@
                 <a href="" class="dropdown-item">Testimonials</a>
                 <a href="" class="dropdown-item">Contact</a>
             </div>
-        </li>
+        </li> -->
         <!-- Menu Dropdown: All Services -->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="all-services-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -27,7 +27,7 @@
             <div class="dropdown-menu border-0" aria-labelledby="all-services-link">
                 <a href="{% url 'services' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                 <a href="{% url 'services' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
-                <a href="{% url 'services' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                <a href="{% url 'services' %}?sort=name&direction=asc" class="dropdown-item ">By Name</a>
                 <a href="{% url 'services' %}" class="dropdown-item">All Services</a>
             </div>
         </li>
@@ -40,7 +40,7 @@
                 <a href="{% url 'service_detail' 1 %}" class="dropdown-item">Blogger Site</a>
                 <a href="{% url 'service_detail' 2 %}" class="dropdown-item">Wordpress Site</a>
                 <a href="{% url 'service_detail' 3 %}" class="dropdown-item">Custom WebApp</a>
-                <a href="{% url 'services' %}?category=blogger,wordpress,custom" class="dropdown-item">All: WebDev</a>
+                <a href="{% url 'services' %}?category=blogger,wordpress,custom" class="dropdown-item">All WebDev Services</a>
                 <a href="{% url 'webdevs' %}" class="dropdown-item">Portfolio: WebDev</a>
             </div>
         </li>
@@ -53,7 +53,7 @@
                 <a href="{% url 'service_detail' 4 %}" class="dropdown-item">Logo</a>
                 <a href="{% url 'service_detail' 5 %}" class="dropdown-item">Cards & Flyers</a>
                 <a href="{% url 'service_detail' 6 %}" class="dropdown-item">Social Media</a>
-                <a href="{% url 'services' %}?category=logo,prints,social-media" class="dropdown-item">All: Design</a>
+                <a href="{% url 'services' %}?category=logo,prints,social-media" class="dropdown-item">All Design Services</a>
                 <a href="{% url 'designs' %}" class="dropdown-item">Portfolio: Design</a>
             </div>
         </li>
@@ -66,7 +66,7 @@
                 <a href="{% url 'service_detail' 7 %}" class="dropdown-item">Branding Session</a>
                 <a href="{% url 'service_detail' 8 %}" class="dropdown-item">UX Strategy Session</a>
                 <a href="{% url 'service_detail' 9 %}" class="dropdown-item">Master Session</a>
-                <a href="{% url 'services' %}?category=branding,ux-strategy,master" class="dropdown-item">All Sessions</a>
+                <a href="{% url 'services' %}?category=branding,ux-strategy,master" class="dropdown-item">All Consultancy Services</a>
             </div>
         </li>
     </ul>

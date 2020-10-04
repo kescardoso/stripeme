@@ -30,6 +30,8 @@
 
                     <div class="table-responsive rounded d-none d-md-block">
 
+                    {{ bag_items }}
+
                         <table class="table table-sm table-borderless">
                             <thead class="text-black">
                                 <tr>
@@ -62,7 +64,7 @@
                                     <!-- Item Price -->
                                     <td class="py-3">
                                         <p class="my-0">${{ item.service.price }}</p>
-                                        <a class="remove-link text-danger text-center" id="remove_{{ item.item_id }}" data-service_color="{{ item.color }}"><small>Remove</small></a>
+                                        <a class="remove-link text-danger text-center" id="remove_{{ item.item_id }}" data-service_user_message="{{ item.color }}"><small>Remove</small></a>
                                     </td>
 
                                 </tr>
