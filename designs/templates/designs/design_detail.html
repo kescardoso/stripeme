@@ -45,12 +45,14 @@
                         {% endif %}
                         <p class="mt-3">{{ design.description }}</p>
                         <!-- Admin Privileges: Edit and Delete -->
-                        {% if request.user.is_superuser %}
-                            <small class="ml-3">
-                                <a href="">Edit</a> | 
-                                <a class="text-danger" href="">Delete</a>
-                            </small>
-                        {% endif %}
+                        <div>
+                            {% if request.user.is_superuser %}
+                                <small class="ml-3">
+                                    <a href="">Edit</a> | 
+                                    <a class="text-danger" href="">Delete</a>
+                                </small>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>        
             </div>

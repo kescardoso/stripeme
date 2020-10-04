@@ -55,9 +55,19 @@
                         {% else %}
                             <small class="text-muted">No Rating</small>
                         {% endif %}
+                        <!-- Admin Privileges: Edit and Delete -->
+                        <div>
+                            {% if request.user.is_superuser %}
+                                <small class="ml-3">
+                                    <a href="">Edit</a> | 
+                                    <a class="text-danger" href="">Delete</a>
+                                </small>
+                        {% endif %}
+                        </div>
                         <!-- Service Description -->    
                         <p class="mt-3">{{ service.description }}</p>
 
+                        <!-- SERVICE FORM -->
                         <form class="form" action="{% url 'add_to_bag' service.id %}" method="POST">
                             {% csrf_token %} <!-- Form with POST method, needs csrf token for Django form's protection -->
 
@@ -132,18 +142,33 @@
                                     {% endif %}
 
                                     <!-- Quantity Form -->
-                                    <form class="form" action="{% url 'add_to_bag' service.id %}" method="POST">
-                                        {% csrf_token %}
-                                        <div class="form-row">
-                                            <div class="col-12">
-                                                <p class="mt-3"><strong>Quantity:</strong></p>
-                                                <div class="form-group w-50">
-                                                    <div class="input-group">
-                                                        <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ service.id }}" id="id_qty_{{ service.id }}">
-                                                    </div>
+                                    <div class="col-12">
+                                        <p class="mt-3"><strong>Quantity:</strong></p>
+                                        <div class="form-group w-50">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <button class="decrement-qty btn btn-black rounded-0" 
+                                                        data-item_id="{{ service.id }}" id="decrement-qty_{{ service.id }}">
+                                                        <span class="icon">
+                                                            <i class="fas fa-minus"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <input class="form-control qty_input" type="number"
+                                                    name="quantity" value="1" min="1" max="99"
+                                                    data-item_id="{{ service.id }}"
+                                                    id="id_qty_{{ service.id }}">
+                                                <div class="input-group-append">
+                                                    <button class="increment-qty btn btn-black rounded-0"
+                                                        data-item_id="{{ service.id }}" id="increment-qty_{{ service.id }}">
+                                                        <span class="icon">
+                                                            <i class="fas fa-plus"></i>
+                                                        </span>
+                                                    </button>
                                                 </div>
                                             </div>
-
+                                        </div>
+                                    </div>
 
                                     <!-- Submit buttom and keep shopping button -->
                                     <div class="col{% if s %}{% if c %}{% if m %}-12 mt-2{% endif %}{% endif %}{% endif %}">
@@ -160,16 +185,9 @@
                                 {% endwith %}
                                 {% endwith %}
                                 {% endwith %}
+
                             </div>
                         </form>
-
-                        <!-- Admin Privileges: Edit and Delete -->
-                        {% if request.user.is_superuser %}
-                            <small class="ml-3">
-                                <a href="">Edit</a> | 
-                                <a class="text-danger" href="">Delete</a>
-                            </small>
-                        {% endif %}
                     </div>
                 </div>        
             </div>
