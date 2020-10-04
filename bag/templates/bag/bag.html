@@ -30,14 +30,14 @@
 
                     <div class="table-responsive rounded d-none d-md-block">
 
-                    {{ bag_items }}
-
                         <table class="table table-sm table-borderless">
                             <thead class="text-black">
                                 <tr>
                                     <th scope="col">Your Order Info</th>
                                     <th scope="col"></th>
                                     <th scope="col">Price</th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">Subtotal</th>
                                 </tr>
                             </thead>
 
@@ -64,9 +64,18 @@
                                     <!-- Item Price -->
                                     <td class="py-3">
                                         <p class="my-0">${{ item.service.price }}</p>
+                                    </td>
+
+                                    <!-- Item Quantity -->
+                                    <td class="py-3 w-25">
+                                        <p class="my-0">{{ item.quantity }}</p>
                                         <a class="remove-link text-danger text-center" id="remove_{{ item.item_id }}" data-service_user_message="{{ item.color }}"><small>Remove</small></a>
                                     </td>
 
+                                    <!-- SubTotal -->
+                                    <td class="py-3">
+                                        <p class="my-0">${{ item.service.price }}</p>
+                                    </td>
                                 </tr>
                             {% endfor %}
 
