@@ -166,9 +166,10 @@
         {% endblock %}
 
         {% block postloadjs %}
+        <!-- Toast JS (must stay on base.html to work in all pages) -->
         <script type="text/javascript">
             $('.toast').toast('show');
         </script>
         {% endblock %}
     </body>
-    </html>
+</html>

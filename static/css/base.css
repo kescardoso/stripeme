@@ -146,7 +146,7 @@ input[name='q']::placeholder {
     color: #aab7c4;
 }
 
-/* ------------------------------- Bootstrap toasts */
+/* ------------------------------- Bootstrap Toasts */
 
 .message-container {
     position: fixed;
