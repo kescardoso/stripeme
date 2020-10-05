@@ -10,13 +10,13 @@
         </button>
     </div>
     <div class="toast-body bg-white">
-        <!-- <div class="row"> -->
-            <!-- <div class="col"> -->
+        <div class="row">
+            <div class="col">
                 {{ message }}
-                <!-- <hr class="mt-1 mb-3">
-            </div> -->
-        <!-- </div> -->
-        <!-- {% if grand_total and not on_profile_page %}
+                <hr class="mt-1 mb-3">
+            </div>
+        </div>
+        {% if grand_total and not on_profile_page %}
             <p class="logo-font bg-white text-black py-1">Your Bag ({{ service_count }})</p>
             <div class="bag-notification-wrapper">
                 {% for item in bag_items %}
@@ -44,7 +44,7 @@
                     </p></strong>
                     {% if ten_off_delta > 0 %}
                         <p class="mb-0 p-2 bg-warning shadow-sm text-black text-center">
-                            Spend <strong>${{ ten_off_delta }}</strong> more to get free 10% Off!
+                            Spend <strong>${{ ten_off_delta }}</strong> more to get 10% Off!
                         </p>
                     {% endif %}
                     <a href="{% url 'view_bag' %}" class="btn btn-black btn-block rounded-0">
@@ -55,6 +55,6 @@
                     </a>
                 </div>
             </div>
-        {% endif %} -->
+        {% endif %}
     </div>
 </div>
