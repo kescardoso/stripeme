@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect
+
+from django.shortcuts import render, redirect, reverse
 from django.shortcuts import HttpResponse
-from services.models import Service
 
 
 def view_bag(request):
@@ -14,7 +14,7 @@ def add_to_bag(request, item_id):
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')  # Url redirect from bag
-    bag = request.session.get('bag', {}) #  Creates bag session with a bag dictionary
+    bag = request.session.get('bag', {})  # Bag session + bag dictionary
 
     user_message = None
     if 'service_user_message' in request.POST:
@@ -39,21 +39,50 @@ def add_to_bag(request, item_id):
     return redirect(redirect_url)
 
 
-# def remove_from_bag(request, item_id):
-#     """ Remove specific services from the shopping bag """
+def adjust_bag(request, item_id):
+    """ Adjust the quantity of a service """
 
-#     user_message = None
-#     if 'service_user_message' in request.POST:
-#         user_message = request.POST.get('service_user_message')
+    quantity = int(request.POST.get('quantity'))
+    user_message = None
+    if 'service_user_message' in request.POST:
+        user_message = request.POST['service_user_message']
+    bag = request.session.get('bag', {})
 
-#     bag = request.session.get('bag', [])
+    if user_message:
+        if quantity > 0:
+            bag[item_id]['items_by_details'][user_message] = quantity
+        else:
+            del bag[item_id]['items_by_details'][user_message]
+            if not bag[item_id]['items_by_details']:
+                bag.pop(item_id)
+    else:
+        if quantity > 0:
+            bag[item_id] = quantity
+        else:
+            bag.pop(item_id)
 
-#     if user_message:
-#         del bag[item_id][user_message]
-#         if not bag[item_id]:
-#             bag.pop(item_id)
-#     else:
-#         bag.pop(item_id)
+    request.session['bag'] = bag
+    return redirect(reverse('view_bag'))
 
-#     request.session['bag'] = bag
-#     return HttpResponse(status=200)
+
+def remove_from_bag(request, item_id):
+    """ Remove the item from the shopping bag """
+
+    try:
+        user_message = None
+        if 'service_user_message' in request.POST:
+            user_message = request.POST['service_user_message']
+        bag = request.session.get('bag', {})
+
+        if user_message:
+            del bag[item_id]['items_by_details'][user_message]
+            if not bag[item_id]['items_by_details']:
+                bag.pop(item_id)
+        else:
+            bag.pop(item_id)
+
+        request.session['bag'] = bag
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        return HttpResponse(status=500)
