@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'designs',
     'webdevs',
     'bag',
+    'checkout',
 ]
 
 MIDDLEWARE = [
