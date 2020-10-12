@@ -5,7 +5,7 @@
 {% load bag_tools %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'static/css/checkout.css' %}">
+    <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -109,6 +109,7 @@
 							{% endif %}
 						</div>
                     </fieldset>
+                    
                     <!-- SECURE STRIPE CARD PAYEMENT FIELDS -->
                     <fieldset class="px-3">
                         <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
@@ -158,5 +159,5 @@
     {{ block.super }}
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}
     {{ client_secret|json_script:"id_client_secret" }}
-    <script src="{% static 'static/js/stripe_elements.js' %}"></script>
+    <script src="{% static 'js/stripe_elements.js' %}"></script>
 {% endblock %}
