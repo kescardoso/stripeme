@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse
 from django.shortcuts import get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
@@ -8,22 +9,137 @@ from .forms import OrderForm
 from .models import Order, OrderLineItem
 
 from services.models import Service
-
 from bag.contexts import bag_contents
+
+import stripe
+import json
 
 
 def checkout(request):
+    # Create payment intent (dictionary)
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
+
+    if request.method == 'POST':
+        bag = request.session.get('bag', {})
+
+        form_data = {
+            'full_name': request.POST['full_name'],
+            'email': request.POST['email'],
+            'phone_number': request.POST['phone_number'],
+            'street_address1': request.POST['street_address1'],
+            'street_address2': request.POST['street_address2'],
+            'town_or_city': request.POST['town_or_city'],
+            'county': request.POST['county'],
+            'postcode': request.POST['postcode'],
+            'country': request.POST['country'],
+        }
+        order_form = OrderForm(form_data)
+        if order_form.is_valid():
+            order_form.save()
+            for item_id, item_data in bag.items():
+                try:
+                    service = Service.objects.get(id=item_id)
+                    if isinstance(item_data, int):
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            service=service,
+                            quantity=item_data,
+                        )
+                        order_line_item.save()
+                    else:
+                        for user_message, quantity in item_data['items_by_details'].items():
+                            order_line_item = OrderLineItem(
+                                order=order,
+                                service=service,
+                                quantity=quantity,
+                                service_user_message=user_message,
+                            )
+                            order_line_item.save()
+                except Service.DoesNotExist:
+                    messages.error(request, (
+                        "One of the items in your bag wasn't found in our database. "
+                        "Please call us for assistance!")
+                    )
+                    order.delete()
+                    return redirect(reverse('view_bag'))
+
+            # Save the info to the user's profile if all is well
+            request.session['save_info'] = 'save-info' in request.POST
+            return redirect(reverse('checkout_success', args=[order.order_number]))
+        else:
+            messages.error(request, 'There was an error with your form. \
+                Please double check your information.')
+
     bag = request.session.get('bag', {})
     if not bag:
         messages.error(request, "There's nothing in your bag at the moment")
         return redirect(reverse('services'))
 
+    current_bag = bag_contents(request)
+    total = current_bag['grand_total']
+    stripe_total = round(total * 100)
+    # Set stripe secret key and create payment intent:
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
+
+    # Alert in case stripe public key is missing
+    if not stripe_public_key:
+        messages.warning(request, 'Stripe public key is missing. \
+            Did you forget to set it in your environment?')
+
     order_form = OrderForm()
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
-        'stripe_public_key': 'pk_test_51HbQtKLzw1nOifV1h0UC0IaDughxZIEUKhV8GRaqF6JjR8OmxpMQfyatmo2dvQCSTunuRyGv1wDFuhzed7HxwqdQ0004tGcdn7',
-        'client_secret': 'test client secret',
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
+    }
+
+    return render(request, template, context)
+
+
+def checkout_success(request, order_number):
+    """
+    Handle successful checkouts
+    """
+    save_info = request.session.get('save_info')
+    order = get_object_or_404(Order, order_number=order_number)
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        order.user_profile = profile
+        order.save()
+
+        # Save the user's info
+        if save_info:
+            profile_data = {
+                'default_phone_number': order.phone_number,
+                'default_country': order.country,
+                'default_postcode': order.postcode,
+                'default_town_or_city': order.town_or_city,
+                'default_street_address1': order.street_address1,
+                'default_street_address2': order.street_address2,
+                'default_county': order.county,
+            }
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
+
+    messages.success(request, f'Order successfully processed! \
+        Your order number is {order_number}. A confirmation \
+        email will be sent to {order.email}.')
+
+    if 'bag' in request.session:
+        del request.session['bag']
+
+    template = 'checkout/checkout_success.html'
+    context = {
+        'order': order,
     }
 
     return render(request, template, context)
