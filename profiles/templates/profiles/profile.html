@@ -36,7 +36,7 @@
             </div>
             <div class="col-12 col-lg-6">
                 <p class="text-muted">Order History</p>
-                <!-- <div class="order-history table-responsive">
+                <div class="order-history table-responsive">
                     <table class="table table-sm table-borderless">
                         <thead>
                             <tr>
@@ -59,9 +59,9 @@
                                         <ul class="list-unstyled">
                                             {% for item in order.lineitems.all %}
                                                 <li class="small">
-                                                    {% if item.product.has_sizes %}
-                                                        Size {{ item.product.size|upper }}
-                                                    {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                                    {% if item.service.has_user_message %}
+                                                        Message {{ item.service.user_message|upper }}
+                                                    {% endif %}{{ item.service.name }} x{{ item.quantity }}
                                                 </li>
                                             {% endfor %}
                                         </ul>
@@ -71,7 +71,7 @@
                             {% endfor %}
                         </tbody>
                     </table>
-                </div> -->
+                </div>
             </div>
         </div>
 
