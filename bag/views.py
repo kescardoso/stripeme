@@ -34,12 +34,12 @@ def add_to_bag(request, item_id):
                 bag[item_id]['items_by_details'][user_message] = quantity
                 messages.success(
                     request,
-                    f'Added message {user_message.upper()} for {service.name} to your bag')
+                    f'Added {service.name} to your bag')
         else:
             bag[item_id] = {'items_by_details': {user_message: quantity}}
             messages.success(
                 request,
-                f'Added message {user_message.upper()} for {service.name} to your bag')
+                f'Added {service.name} to your bag')
     else:
         if item_id in list(bag.keys()):
             bag[item_id] += quantity
