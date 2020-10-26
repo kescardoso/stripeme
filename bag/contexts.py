@@ -33,7 +33,7 @@ def bag_contents(request):
                     'user_message': user_message,
                 })
 
-    if total < settings.TEN_OFF_THRESHOLD:
+    if total > settings.TEN_OFF_THRESHOLD:
         """ 10% Off Promo using $500 as purchase threshold """
 
         # If order counts to the minimum amount in TEN_OFF_THRESHOLD
@@ -47,7 +47,7 @@ def bag_contents(request):
         promo = 0
         ten_off_delta = 0
 
-    grand_total = promo + total
+    grand_total = total - promo
 
     context = {
         'bag_items': bag_items,
