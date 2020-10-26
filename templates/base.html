@@ -90,7 +90,7 @@
                                         <a href="" class="dropdown-item">Service Management</a>
                                     {% endif %}
                                         <!-- If user IS authenticated, show links to profile and logout -->
-                                        <a href="" class="dropdown-item">My Profile</a>
+                                        <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                         <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                                     {% else %}
                                         <!-- If user IS NOT authenticated, show links to register and login -->
