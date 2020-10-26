@@ -143,4 +143,4 @@ def delete_service(request, service_id):
     service = get_object_or_404(Service, pk=service_id)
     service.delete()
     messages.success(request, 'Service deleted!')
-    return redirect(reverse('sevrices'))
+    return redirect(reverse('services'))
