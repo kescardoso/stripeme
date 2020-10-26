@@ -87,7 +87,7 @@
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
                                         <!-- If user IS authenticated AND IS SUPERUSER, show link to service management -->
-                                        <a href="" class="dropdown-item">Service Management</a>
+                                        <a href="{% url 'add_service' %}" class="dropdown-item">Service Management</a>
                                     {% endif %}
                                         <!-- If user IS authenticated, show links to profile and logout -->
                                         <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
