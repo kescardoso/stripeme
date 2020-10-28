@@ -49,11 +49,11 @@ class Order(models.Model):
         """
         self.order_total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        if self.order_total < settings.TEN_OFF_THRESHOLD:
+        if self.order_total > settings.TEN_OFF_THRESHOLD:
             self.promo_cost = self.order_total * settings.STANDARD_PROMO_PERCENTAGE / 100
         else:
             self.promo_cost = 0
-        self.grand_total = self.order_total + self.promo_cost
+        self.grand_total = self.order_total - self.promo_cost
         self.save()
 
     def save(self, *args, **kwargs):
