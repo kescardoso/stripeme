@@ -10,21 +10,22 @@
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  height: 100px;
-  width: 100px;
-  font-weight: bold;
-  font-size: 150%;
+    background-image: none;
+    height: 100px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 150%;
 }
 
 .carousel-control-next-icon:after
 {
-  content: '⇢';
-  color: black;
+    content: '⇢';
+    color: black;
 }
 
 .carousel-control-prev-icon:after {
-  content: '⇠';
-  color: black;
+    content: '⇠';
+    color: black;
 }
 
 .carousel-indicators li {

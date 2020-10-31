@@ -35,7 +35,7 @@
                         {% endfor %}
                     </ol>
 
-                    <div class="carousel-inner col-10 mx-auto">
+                    <div class="carousel-inner col-sm-10 mx-auto">
                         {% for webdev in webdevs %}
                             <!-- Webdev Carousel Loop -->
                             <div class="carousel-item {% if forloop.first %} active {% endif %}">
@@ -45,8 +45,8 @@
                                 {% endif %}
                                 <!-- Name, Description, Links -->
                                 <div class="carousel-caption mb-4 d-block p-4">
-                                    <h6 class="mb-0 text-uppercase">{{ webdev.name }}</h6>
-                                    <p class="mb-0 text-muted small">{{ webdev.description }}</p>
+                                    <h6 class="text-black mb-0 text-uppercase d-block">{{ webdev.name }}</h6>
+                                    <p class="mb-0 text-muted small d-none d-sm-block">{{ webdev.description }}</p>
                                     {% if webdev.repo_url %}
                                         <p class="link small mt-1 mb-0 p-2 mt-2 badge badge-white text-black rounded-0 border border-light">
                                             <a href="{{ webdev.repo_url }}" target="_blank">Repository</a>  
