@@ -4,7 +4,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Sapoti Noir",
-      "description": "Minimalist Blogger template (no sidebar)",
+      "description": "A minimalist, one-column, mono-chromatic (black-to-white) Blogger template with no sidebar",
       "repo_url": null,
       "site_url": "https://sapotinoir-demo.blogspot.com/",
       "category": 1,
@@ -17,7 +17,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Sapoti",
-      "description": "Minimalist Blogger template (no sidebar)",
+      "description": "A minimalist, one-column, mono-chromatic (brown-to-golden) Blogger template with no sidebar",
       "repo_url": null,
       "site_url": "https://sapoti-demo.blogspot.com/",
       "category": 1,
@@ -30,7 +30,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Pitanga",
-      "description": "Full width Blogger template (two sidebars)",
+      "description": "A full width Blogger template with two sidebars",
       "repo_url": null,
       "site_url": "https://pitanga-demo.blogspot.com/",
       "category": 1,
@@ -43,7 +43,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Miss Natureba",
-      "description": "Blogger template with Shopping cart functionality (one sidebars)",
+      "description": "A minimalist logger template with an added shopping cart functionality, and one sidebar",
       "repo_url": null,
       "site_url": "https://missnatureba.blogspot.com/",
       "category": 1,
@@ -56,7 +56,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Yoga & Sound",
-      "description": "Bootstrap & HTML Web App with Paypal Checkout",
+      "description": "A Bootstrap & HTML web-app with integrated Paypal checkout and Mailchimp newsletter",
       "repo_url": "https://github.com/kescardoso/yinnsound",
       "site_url": "https://kescardoso.github.io/yinnsound/",
       "category": 3,
@@ -69,7 +69,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Map & Chill",
-      "description": "Bootstrap & HTML Web App with Google Places API Integration",
+      "description": "A Bootstrap & HTML web-app with Google Places and Maps API Integration with a search bar",
       "repo_url": "https://github.com/kescardoso/mapnchill",
       "site_url": "http://mapnchill.me/",
       "category": 3,
@@ -82,7 +82,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Tea Drop",
-      "description": "Bootstrap & HTML Web App for commercial presentations",
+      "description": "A Bootstrap & HTML web-app built for commercial an e-shop presentation or business",
       "repo_url": "https://github.com/kescardoso/teadrop",
       "site_url": "https://kescardoso.github.io/teadrop/",
       "category": 3,
@@ -95,7 +95,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Rosie Resume",
-      "description": "Bootstrap & HTML Professional Resume Web App with Google Maps API Integration",
+      "description": "A Bootstrap & HTML web-app for a personal or professional resume or portfolio, built with Google Maps API Integration",
       "repo_url": "https://github.com/kescardoso/rosie",
       "site_url": "https://kescardoso.github.io/rosie/",
       "category": 3,
@@ -108,7 +108,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "The Cryptopedia World",
-      "description": "Python-Flask and Material Design Web App, with simple user login session ",
+      "description": "A Python-Flask and Material Design web-app, built with a simple user login session and interactive user priviledges",
       "repo_url": "https://github.com/kescardoso/cryptopedia",
       "site_url": "https://thecryptopedia.world/",
       "category": 3,
@@ -121,7 +121,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Boutique Ado",
-      "description": "Python-Django and Bootstrap e-commerce Web App, with Stripe Checkout",
+      "description": "A Python-Django and Bootstrap e-commerce Web App, built with Stripe checkout integration",
       "repo_url": "https://github.com/kescardoso/boutique_ado",
       "site_url": "https://kika-boutique-ado.herokuapp.com/",
       "category": 3,
@@ -134,7 +134,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Prana & Pixels",
-      "description": "Wordpress hosted website",
+      "description": "A Wordpress hosted website, built with the Genesis Platform, Woocommerce and several plugins for personal brands or online businesses",
       "repo_url": null,
       "site_url": "http://www.kescardoso.com/",
       "category": 2,

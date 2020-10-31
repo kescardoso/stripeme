@@ -1,0 +1,44 @@
+.mycarousel-row {
+    width: 75%;
+}
+
+.carousel-caption {
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '⇢';
+  color: black;
+}
+
+.carousel-control-prev-icon:after {
+  content: '⇠';
+  color: black;
+}
+
+.carousel-indicators li {
+    background-color: grey;
+}
+
+.carousel-indicators .active{
+    background-color: black;
+}
+
+a {
+    color: #000 !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
