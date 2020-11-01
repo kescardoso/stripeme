@@ -20,7 +20,7 @@
     <div class="container h-100">
 
         <div class="row">
-            <div class="col text-center mt-4 mb-2">
+            <div class="col text-center mt-2 mb-2">
                 <h3 class="logo-font text-gray">Design Portfolio</h3>
             </div>
         </div>
@@ -55,6 +55,12 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
 
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
                         <!-- Modal Body -->
                         <div class="modal-body">
 
@@ -67,6 +73,11 @@
                                         <div class="carousel-item {% if forloop.first %} active {% endif %}">
                                             <!-- Carousel Image -->
                                             <img class="d-block w-100" src="{{ design.image.url }}" alt="{{ design.name }}">
+                                            <!-- Name, Description, Links -->
+                                            <div class="carousel-caption mb-4 d-block p-4">
+                                                <h6 class="mb-0 d-block">{{ design.name }}</h6>
+                                                <p class="mb-0 text-muted small d-none d-sm-block">{{ design.description }}</p>
+                                            </div>
                                         </div>
                                     {% endfor %}
                                 </div>

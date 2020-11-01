@@ -20,14 +20,14 @@
         <div class="container h-100">
 
             <div class="row">
-                <div class="col text-center mt-4 mb-2">
+                <div class="col text-center mt-2 mb-2">
                     <h3 class="logo-font text-gray">Web Development Portfolio</h3>
                 </div>
             </div>
             
             <div class="row mycarousel-row mx-auto my-auto">
 
-                <div class="col mt-1 mb-1 carousel slide" id="carouselExampleIndicators" data-ride="carousel">
+                <div class="col mt-1 carousel slide" id="carouselExampleIndicators" data-ride="carousel">
 
                     <ol class="carousel-indicators my-4">
                         {% for webdev in webdevs %}
@@ -43,7 +43,7 @@
                                 <img class="d-block w-100" src="{{ webdev.image.url }}">
                                 <!-- Name, Description, Links -->
                                 <div class="carousel-caption mb-4 d-block p-4">
-                                    <h6 class="text-black mb-0 text-uppercase d-block">{{ webdev.name }}</h6>
+                                    <h6 class="text-black mb-0 d-block">{{ webdev.name }}</h6>
                                     <p class="mb-0 text-muted small d-none d-sm-block">{{ webdev.description }}</p>
                                     {% if webdev.repo_url %}
                                         <p class="link small mt-1 mb-0 p-2 mt-2 badge badge-white text-black rounded-0 border border-light">

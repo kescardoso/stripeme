@@ -1,3 +1,11 @@
+a {
+    color: #000 !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
 .mycarousel-row {
     width: 75%;
 }
@@ -34,12 +42,4 @@
 
 .carousel-indicators .active{
     background-color: black;
-}
-
-a {
-    color: #000 !important;
-}
-
-a:hover {
-    text-decoration: none !important;
 }
