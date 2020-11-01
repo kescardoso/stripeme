@@ -43,7 +43,7 @@
     "pk": 5,
     "model": "designs.design",
     "fields": {
-      "name": "Cupon Card to be printed or shared online",
+      "name": "Cupon card: to be printed or shared online",
       "category": 2,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-card-01.png",
       "image": "design-folio-card-01.png"
@@ -53,7 +53,7 @@
     "pk": 6,
     "model": "designs.design",
     "fields": {
-      "name": "Letter sized flyer for printing or online sharing",
+      "name": "Flyer: letter-sized, to be printed or shared online",
       "category": 2,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-flyer-01.png",
       "image": "design-folio-flyer-01.png"
@@ -63,7 +63,7 @@
     "pk": 7,
     "model": "designs.design",
     "fields": {
-      "name": "Letter sized flyer for printing or online sharing",
+      "name": "Flyer: letter-sized, to be printed or shared online",
       "category": 2,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-flyer-02.png",
       "image": "design-folio-flyer-02.png"
@@ -73,7 +73,7 @@
     "pk": 8,
     "model": "designs.design",
     "fields": {
-      "name": "Large sized Poster for printing or online sharing",
+      "name": "Poster: large-sized A6, to be printed or shared online",
       "category": 2,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-flyer-03.png",
       "image": "design-folio-flyer-03.png"
@@ -83,7 +83,7 @@
     "pk": 9,
     "model": "designs.design",
     "fields": {
-      "name": "Letter sized flyer for printing or online sharing",
+      "name": "Flyer: letter-sized, to be printed or shared online",
       "category": 2,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-flyer-04.png",
       "image": "design-folio-flyer-04.png"
@@ -93,7 +93,7 @@
     "pk": 10,
     "model": "designs.design",
     "fields": {
-      "name": "Letter sized flyer for printing or online sharing",
+      "name": "Flyer: letter-sized, to be printed or shared online",
       "category": 2,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-flyer-05.png",
       "image": "design-folio-flyer-05.png"
@@ -103,7 +103,7 @@
     "pk": 11,
     "model": "designs.design",
     "fields": {
-      "name": "One-page brochure for printing or online sharing",
+      "name": "Brochure: a one-page simple brochure for printing or online sharing",
       "category": 2,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-folio-flyer-06.png",
       "image": "design-folio-flyer-06.png"
