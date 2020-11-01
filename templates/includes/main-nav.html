@@ -59,7 +59,7 @@
         </li>
         <!-- Menu Dropdown: Consultancy -->
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link" href="#" id="consultancy-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="consultancy-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Consultancy
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="consultancy-link">
@@ -67,6 +67,16 @@
                 <a href="{% url 'service_detail' 8 %}" class="dropdown-item">UX Strategy Session</a>
                 <a href="{% url 'service_detail' 9 %}" class="dropdown-item">Master Session</a>
                 <a href="{% url 'services' %}?category=branding,ux-strategy,master" class="dropdown-item">All Consultancy Services</a>
+            </div>
+        </li>
+        <!-- Menu Dropdown: Portfolio -->
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="portfolio-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Portfolio
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="portfolio-link">
+                <a href="{% url 'webdevs' %}" class="dropdown-item">Portfolio: WebDev</a>
+                <a href="{% url 'designs' %}" class="dropdown-item">Portfolio: Design</a>
             </div>
         </li>
     </ul>
