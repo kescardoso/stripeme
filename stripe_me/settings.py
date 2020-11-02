@@ -13,12 +13,17 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'yx47@&*q!5$g*^dyd1qz(@fvhuu$z$$m*uv60z!!e!+)62*6ys'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+if os.environ.get("DEVELOPMENT"):
+    development = True
+else:
+    development = False
 
-ALLOWED_HOSTS = ['kika-stripe-me.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['localhost',
+                 'kika-stripe-me.herokuapp.com']
 
 
 # Application definition
