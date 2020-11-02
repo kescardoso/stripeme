@@ -16,11 +16,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-if os.environ.get("DEVELOPMENT"):
-    development = True
-else:
-    development = False
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['localhost',
                  'kika-stripe-me.herokuapp.com']
@@ -197,6 +193,8 @@ if 'USE_AWS' in os.environ:
     # Override static and media URLs in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+
 
 # Stripe and 10% Off Promo
 
