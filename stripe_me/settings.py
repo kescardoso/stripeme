@@ -18,7 +18,7 @@ SECRET_KEY = 'yx47@&*q!5$g*^dyd1qz(@fvhuu$z$$m*uv60z!!e!+)62*6ys'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kika-stripe-me.herokuapp.com', 'localhost']
 
 
 # Application definition
