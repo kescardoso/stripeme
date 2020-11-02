@@ -50,7 +50,6 @@ def add_to_bag(request, item_id):
             messages.success(request, f'Added {service.name} to your bag')
 
     request.session['bag'] = bag
-    print(bag)
     return redirect(redirect_url)
 
 

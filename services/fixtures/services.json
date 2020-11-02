@@ -10,7 +10,10 @@
       "category": 1,
       "rating": 4.4,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/webdev-01-blogger.jpg",
-      "image": "webdev-01-blogger.jpg"
+      "image": "webdev-01-blogger.jpg",
+      "has_user_message": true,
+      "has_sizes": false,
+      "has_colors": true
     }
   },
   {
@@ -24,7 +27,10 @@
       "category": 2,
       "rating": 4.6,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/webdev-02-wordpress.jpg",
-      "image": "webdev-02-wordpress.jpg"
+      "image": "webdev-02-wordpress.jpg",
+      "has_user_message": true,
+      "has_sizes": false,
+      "has_colors": true
     }
   },
   {
@@ -38,7 +44,10 @@
       "category": 3,
       "rating": 4.8,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/webdev-03-custom.jpg",
-      "image": "webdev-03-custom.jpg"
+      "image": "webdev-03-custom.jpg",
+      "has_user_message": true,
+      "has_sizes": false,
+      "has_colors": true
     }
   },
   {
@@ -52,7 +61,10 @@
       "category": 4,
       "rating": 4.5,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-01-logo.jpg",
-      "image": "design-01-logo.jpg"
+      "image": "design-01-logo.jpg",
+      "has_user_message": true,
+      "has_sizes": true,
+      "has_colors": true
     }
   },
   {
@@ -66,7 +78,10 @@
       "category": 5,
       "rating": 4.7,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-02-prints.jpg",
-      "image": "design-02-prints.jpg"
+      "image": "design-02-prints.jpg",
+      "has_user_message": true,
+      "has_sizes": true,
+      "has_colors": true
     }
   },
   {
@@ -80,7 +95,10 @@
       "category": 6,
       "rating": 4.4,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/design-03-social.jpg",
-      "image": "design-03-social.jpg"
+      "image": "design-03-social.jpg",
+      "has_user_message": true,
+      "has_sizes": true,
+      "has_colors": true
     }
   },
   {
@@ -94,7 +112,10 @@
       "category": 7,
       "rating": 4.9,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/consultancy-01-branding.jpg",
-      "image": "consultancy-01-branding.jpg"
+      "image": "consultancy-01-branding.jpg",
+      "has_user_message": true,
+      "has_sizes": false,
+      "has_colors": false
     }
   },
   {
@@ -108,7 +129,10 @@
       "category": 8,
       "rating": 4.9,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/consultancy-02-ux.jpg",
-      "image": "consultancy-02-ux.jpg"
+      "image": "consultancy-02-ux.jpg",
+      "has_user_message": true,
+      "has_sizes": false,
+      "has_colors": false
     }
   },
   {
@@ -122,7 +146,10 @@
       "category": 9,
       "rating": 5,
       "image_url": "https://fe7ecc7d-70fe-4f77-83bf-b9b93c53d92f.ws-eu01.gitpod.io/mini-browser/workspace/stripeme/media/consultancy-03-master.jpg",
-      "image": "consultancy-03-master.jpg"
+      "image": "consultancy-03-master.jpg",
+      "has_user_message": true,
+      "has_sizes": false,
+      "has_colors": false
     }
   }
 ]

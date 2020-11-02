@@ -44,14 +44,13 @@ class StripeWH_Handler:
         Handle the payment_intent.succeeded webhook from Stripe
         """
         intent = event.data.object
-        print(intent)
 
         pid = intent.id
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
-        shipping_details = intent.shipping
+        # shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
         # Clean data in the billing details

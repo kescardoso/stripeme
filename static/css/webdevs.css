@@ -43,3 +43,14 @@ a:hover {
 .carousel-indicators .active{
     background-color: black;
 }
+
+.carousel-item {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.carousel-item:before {
+  content: "";
+  display: block;
+}

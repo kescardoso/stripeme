@@ -1,0 +1,1 @@
+web: gunicorn stripe_me.wsgi:application
