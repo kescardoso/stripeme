@@ -27,6 +27,7 @@
         </div>
         <div class="row">
             <div class="col-12 col-lg-6">
+                <p>Hi {profile}!</p>
                 <p class="text-muted">Default Contact and Billing Information</p>
                 <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
