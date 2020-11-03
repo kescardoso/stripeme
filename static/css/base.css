@@ -113,6 +113,11 @@ a.category-badge > span.badge:hover {
     min-width: 260px;
 }
 
+.btn-beige {
+    background: #c5b4aa;
+    color: white;
+}
+
 .btn-black {
     background: black;
     color: white;
