@@ -65,19 +65,14 @@
                     {% for item in order.lineitems.all %}
                         <div class="row">
                             <div class="col-12 col-md-4">
-                                <p class="mb-0 text-black font-weight-bold">Service:</p>
+                                <p class="mb-0 text-black font-weight-bold">Order Summary:</p>
                             </div>
                             <div class="col-12 col-md-8 text-md-right">
                                 <p class="small mb-0">{{ item.quantity }} x {{ item.service.name }} @ ${{ item.service.price }} each</p>
                             </div>
-                            <div class="col-12 col-md-4">
-                                <p class="mb-0 text-black font-weight-bold">
-                                    {% if item.service.has_user_message %}Your Message:{% endif %}
-                                </p>
-                            </div>
                             <div class="col-12 col-md-8 text-md-right">
                                 <p class="small mb-0">
-                                     <p class="small mb-0">{% if item.service.has_user_message %}{{ item.service_user_message }}{% endif %}</p>
+                                     <p class="small mb-0">{% if item.service.has_user_message %}<strong>Your message:</strong> {{ item.service_user_message }}{% endif %}</p>
                                 </p>
                             </div>
                         </div>
