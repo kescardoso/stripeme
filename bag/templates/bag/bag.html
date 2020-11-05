@@ -56,13 +56,13 @@
                                         <p class="my-0 logo-font text-black">{{ item.service.name }}</p>
                                         <p class="my-0 mb-2 small text-muted">SKU: {{ item.service.sku|upper }}</p>
                                         
-                                        <!-- Chosen Color -->
-                                        <p class="my-0 small"><strong>Color Scheme:</strong> {% if item.service.has_colors %}{{ item.color|upper }}{% else %}N/A{% endif %}</p>
+                                        <!-- If Color -->
+                                        <p class="my-0 small"><strong>Colors:</strong> {% if item.service.has_colors %}<i>(field under development)</i>{{ item.color }}{% else %}N/A{% endif %}</p>
 
-                                        <!-- Chosen Dimensions -->
-                                        <p class="my-0 small"><strong>Dimensions:</strong> {% if item.service.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                                        <!-- If Dimensions -->
+                                        <p class="my-0 small"><strong>Dimensions:</strong> {% if item.service.has_sizes %}<i>(field under development)</i>{{ item.size }}{% else %}N/A{% endif %}</p>
 
-                                        <!-- Chosen Message -->
+                                        <!-- If Message -->
                                         <p class="my-0 small"><strong>Message:</strong> {% if item.service.has_user_message %}{{ item.user_message }}{% else %}N/A{% endif %}</p>
                                     </td>
 

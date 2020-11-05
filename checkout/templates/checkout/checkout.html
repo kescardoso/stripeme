@@ -52,11 +52,10 @@
                         </div>
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.service.name }}</strong></p>
-                            <p class="my-0 small">{% if item.service.has_colors %}<strong>Colors:</strong>{% endif %} {% if item.service.has_colors %}{{ item.color }}{% endif %}</p>
-                            <p class="my-0 small">{% if item.service.has_sizes %}<strong>Dimensions:</strong>{% endif %} {% if item.service.has_sizes %}{{ item.size }}{% endif %}</p>
-                            <p class="my-0 small">{% if item.service.has_user_message %}<strong>Your Message:</strong>{% endif %} {% if item.service.has_user_message %}{{ item.user_message }}{% endif %}</p>
+                            <p class="my-0 small">{% if item.service.has_colors %}<strong>Colors:</strong> <i>(in development)</i>{{ item.color }}{% endif %}</p>
+                            <p class="my-0 small">{% if item.service.has_sizes %}<strong>Dimensions:</strong> <i>(in  development)</i>{{ item.size }}{% endif %}</p>
+                            <p class="my-0 small">{% if item.service.has_user_message %}<strong>Your Message:</strong> {{ item.user_message }}{% endif %}</p>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
-                            <br class="mt-1 mb-1">
                         </div>
                         <div class="col-3 text-right">
                             <p class="my-0 small text-muted">${{ item.service.price | calc_subtotal:item.quantity }}</p>
