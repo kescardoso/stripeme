@@ -68,7 +68,7 @@ def adjust_bag(request, item_id):
             bag[item_id]['items_by_details'][user_message] = quantity
             messages.success(
                 request,
-                f'Updated message {user_message.upper()} for {service.name} quantity to {bag[item_id]["items_by_details"][user_message]}'
+                f'Updated {service.name} quantity to {bag[item_id]["items_by_details"][user_message]}'
             )
         else:
             del bag[item_id]['items_by_details'][user_message]
@@ -76,7 +76,7 @@ def adjust_bag(request, item_id):
                 bag.pop(item_id)
                 messages.success(
                     request,
-                    f'Removed message {user_message.upper()} for {service.name} from your bag')
+                    f'Removed {service.name} from your bag')
     else:
         if quantity > 0:
             bag[item_id] = quantity
@@ -106,7 +106,7 @@ def remove_from_bag(request, item_id):
                 bag.pop(item_id)
                 messages.success(
                     request,
-                    f'Removed message {user_message.upper()} for {service.name} from your bag')
+                    f'Removed {service.name} from your bag')
         else:
             bag.pop(item_id)
             messages.success(request, f'Removed {service.name} from your bag')
