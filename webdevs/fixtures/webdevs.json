@@ -4,7 +4,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Sapoti Noir",
-      "description": "A minimalist, one-column, mono-chromatic (black-to-white) Blogger template with no sidebar",
+      "description": "A minimalist, one-column black-to-white Blogger template (no sidebar)",
       "repo_url": null,
       "site_url": "https://sapotinoir-demo.blogspot.com/",
       "category": 1,
@@ -17,7 +17,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Sapoti",
-      "description": "A minimalist, one-column, mono-chromatic (brown-to-golden) Blogger template with no sidebar",
+      "description": "A minimalist, one-column brown-to-golden Blogger template (no sidebar)",
       "repo_url": null,
       "site_url": "https://sapoti-demo.blogspot.com/",
       "category": 1,
@@ -43,7 +43,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Miss Natureba",
-      "description": "A minimalist logger template with an added shopping cart functionality, and one sidebar",
+      "description": "A minimalist, one-sidebar Blogger template with a simple shopping cart integration",
       "repo_url": null,
       "site_url": "https://missnatureba.blogspot.com/",
       "category": 1,
@@ -69,7 +69,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Map & Chill",
-      "description": "A Bootstrap & HTML web-app with Google Places and Maps API Integration with a search bar",
+      "description": "A Bootstrap & HTML web-app with Google Maps and Search integration",
       "repo_url": "https://github.com/kescardoso/mapnchill",
       "site_url": "http://mapnchill.me/",
       "category": 3,
@@ -82,7 +82,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Tea Drop",
-      "description": "A Bootstrap & HTML web-app built for commercial an e-shop presentation or business",
+      "description": "A Bootstrap & HTML web-app for an e-commerce presentation",
       "repo_url": "https://github.com/kescardoso/teadrop",
       "site_url": "https://kescardoso.github.io/teadrop/",
       "category": 3,
@@ -95,7 +95,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Rosie Resume",
-      "description": "A Bootstrap & HTML web-app for a personal or professional resume or portfolio, built with Google Maps API Integration",
+      "description": "A Bootstrap/HTML web-app for resume presentation, with Google and Github API Integration",
       "repo_url": "https://github.com/kescardoso/rosie",
       "site_url": "https://kescardoso.github.io/rosie/",
       "category": 3,
@@ -108,7 +108,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "The Cryptopedia World",
-      "description": "A Python-Flask and Material Design web-app, built with a simple user login session and interactive user priviledges",
+      "description": "A Python/Flask and MaterialDesign web-app, with a simple user login session and priviledges",
       "repo_url": "https://github.com/kescardoso/cryptopedia",
       "site_url": "https://thecryptopedia.world/",
       "category": 3,
@@ -121,7 +121,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Boutique Ado",
-      "description": "A Python-Django and Bootstrap e-commerce Web App, built with Stripe checkout integration",
+      "description": "A Python/Django and Bootstrap e-commerce web-app, with Stripe checkout integration",
       "repo_url": "https://github.com/kescardoso/boutique_ado",
       "site_url": "https://kika-boutique-ado.herokuapp.com/",
       "category": 3,
@@ -134,7 +134,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Prana & Pixels",
-      "description": "A Wordpress hosted website, built with the Genesis Platform, Woocommerce and several plugins for personal brands or online businesses",
+      "description": "A Wordpress hosted website, with the Genesis Platform and Woocommerce, for personal online brands",
       "repo_url": null,
       "site_url": "http://www.kescardoso.com/",
       "category": 2,
