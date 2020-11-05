@@ -40,16 +40,16 @@
         {% block extra_js %}
         {% endblock %}
 
+        <title>StripeMe {% block extra_title %}{% endblock %}</title>
+
         <!-- Favicon and Home Screen Shortcuts -->
         <!-- Created with http://Canva.com/ and Generated with https://favicon.io/ and  -->
-        <link rel="apple-touch-icon" sizes="180x180" href="{% media 'apple-touch-icon.png' %}">
-        <link rel="android-chrome" sizes="192x192" href="{% media 'android-chrome-192x192.png' %}">
-        <link rel="android-chrome" sizes="512x512" href="{% media 'android-chrome-512x512.png %}">
-        <link rel="icon" type="image/x-icon" sizes="32x32" href="{% media 'favicon-32x32.png' %}">
-        <link rel="icon" type="image/x-icon" sizes="16x16" href="{% media 'favicon-16x16.png' %}">
-        <link rel="icon" type="image/x-icon" href="{% media 'favicon.ico' %}">
-
-        <title>StripeMe {% block extra_title %}{% endblock %}</title>
+        <link rel="apple-touch-icon" href="{% static 'media/apple-touch-icon.png' %}">
+        <link rel="android-chrome" href="{% static 'media/android-chrome-192x192.png' %}">
+        <link rel="android-chrome" href="{% static 'media/android-chrome-512x512.png %}">
+        <link rel="icon" href="{% static 'media/favicon-32x32.png' %}">
+        <link rel="icon" href="{% static 'media/favicon-16x16.png' %}">
+        <link rel="icon" href="{% static 'media/favicon.ico' %}">
     </head>
     <body>
         <!-- Header -->
