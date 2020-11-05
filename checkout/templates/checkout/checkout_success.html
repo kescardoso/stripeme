@@ -68,9 +68,19 @@
                                 <p class="mb-0 text-black font-weight-bold">Order Summary:</p>
                             </div>
                             <div class="col-12 col-md-8 text-md-right">
+                                <!-- Item: name, quantity, price -->
                                 <p class="small mb-0">
                                     {{ item.quantity }} x {{ item.service.name }} @ ${{ item.service.price }} each
                                 </p>
+                                <!-- Item: if color -->
+                                <p class="small mb-0">
+                                    {% if item.service.has_colors %}<strong>Colors:</strong> {{ item.service_color }}{% endif %}
+                                </p>
+                                <!-- Item: if size -->
+                                <p class="small mb-0">
+                                    {% if item.service.has_sizes %}<strong>Dimensions:</strong> {{ item.service_size }}{% endif %}
+                                </p>
+                                <!-- Item: if user message -->
                                 <p class="small mb-0">
                                     {% if item.service.has_user_message %}<strong>Your message:</strong> {{ item.service_user_message }}{% endif %}
                                 </p>
