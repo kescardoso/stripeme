@@ -52,7 +52,7 @@
                         </div>
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.service.name }}</strong></p>
-                            <p class="my-0 small">{% if item.service.has_colors %}<strong>Colors:</strong> <i class="text-muted">in development</i>{{ item.color }}{% else %}N/A{% endif %}</p>
+                            <p class="my-0 small">{% if item.service.has_colors %}<strong>Colors:</strong> <i class="text-muted">in development</i>{% if item.service.color %}{{ item.color }}{% else %}N/A{% endif %}{% endif %}</p>
                             <p class="my-0 small">{% if item.service.has_sizes %}<strong>Dimensions:</strong> <i class="text-muted">in development</i>{{ item.size }}{% else %}N/A{% endif %}</p>
                             <p class="my-0 small">{% if item.service.has_user_message %}<strong>Your Message:</strong> {% if item.user_message %}{{ item.user_message }}{% else %}N/A{% endif %}{% endif %}</p>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>

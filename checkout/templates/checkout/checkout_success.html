@@ -73,11 +73,11 @@
                                 </p>
                                 <!-- Item: if color -->
                                 <p class="small mb-0 mt-1">
-                                    {% if item.service.has_colors %}<strong>Colors:</strong> <i class="text-muted">in development</i>{{ item.service_color }}{% else %}N/A{% endif %}
+                                    {% if item.service.has_colors %}<strong>Colors:</strong> {% if item.color %}<i class="text-muted">in development</i>{{ item.color }}{% else %}N/A{% endif %}{% endif %}
                                 </p>
                                 <!-- Item: if size -->
                                 <p class="small mb-0 mt-1">
-                                    {% if item.service.has_sizes %}<strong>Dimensions:</strong> <i class="text-muted">in development</i>{{ item.service_size }}{% else %}N/A{% endif %}
+                                    {% if item.service.has_sizes %}<strong>Dimensions:</strong> {% if item.size %}<i class="text-muted">in development</i>{{ item.size }}{% else %}N/A{% endif %}{% endif %}
                                 </p>
                                 <!-- Item: if user message -->
                                 <p class="small mb-0 mt-1">
