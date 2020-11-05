@@ -41,7 +41,7 @@
                 </div>
                 {% for item in bag_items %}
                     <div class="row">
-                        <div class="col-2 mb-1">
+                        <div class="col-2 mb-1 mt-2">
                             <a href="{% url 'service_detail' item.service.id %}">
                                 {% if item.service.image %}
                                     <img class="w-100" src="{{ item.service.image.url }}" alt="{{ service.name }}">
@@ -52,8 +52,8 @@
                         </div>
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.service.name }}</strong></p>
-                            <p class="my-0 small">{% if item.service.has_colors %}<strong>Colors:</strong> <i>(in development)</i>{{ item.color }}{% endif %}</p>
-                            <p class="my-0 small">{% if item.service.has_sizes %}<strong>Dimensions:</strong> <i>(in  development)</i>{{ item.size }}{% endif %}</p>
+                            <p class="my-0 small">{% if item.service.has_colors %}<strong>Colors:</strong> <i class="text-muted">in development</i>{{ item.color }}{% endif %}</p>
+                            <p class="my-0 small">{% if item.service.has_sizes %}<strong>Dimensions:</strong> <i class="text-muted">in development</i>{{ item.size }}{% endif %}</p>
                             <p class="my-0 small">{% if item.service.has_user_message %}<strong>Your Message:</strong> {{ item.user_message }}{% endif %}</p>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                         </div>

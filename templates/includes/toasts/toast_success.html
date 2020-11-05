@@ -20,7 +20,7 @@
             <p class="logo-font bg-white text-black py-1">Your Bag ({{ service_count }})</p>
             <div class="bag-notification-wrapper">
                 {% for item in bag_items %}
-                    <div class="row">
+                    <div class="row mb-1">
                         <div class="col-3 my-1">
                             {% if item.service.image %}
                             <img class="w-100" src="{{ item.service.image.url }}" alt="{{ item.service.name }}">
@@ -28,12 +28,12 @@
                             <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.service.name }}">
                             {% endif %}
                         </div>
-                        <div class="col-9 mt-1 mb-1">
+                        <div class="col-9">
                             <p class="my-0"><strong>{{ item.service.name }}</strong></p>
-                            <p class="my-0 small">{% if item.service.has_colors %}<strong>Colors:</strong> <i>(in development)</i>{{ item.service_color }}{% endif %}</p>
-                            <p class="my-0 small">{% if item.service.has_sizes %}<strong>Dimensions:</strong> <i>(in development)</i>{{ item.service_size }}{% endif %}</p>
-                            <p class="my-0 small">{% if item.service.has_user_message %}<strong>Your message:</strong> {{ item.service_user_message }}{% endif %}</p>
-                            <p class="my-0 small text-muted"><strong>Qty:</strong> {{ item.quantity }}</p>
+                            <p class="my-0 small">{% if item.service.has_colors %}Colors: <i class="text-muted">in development</i>{{ item.color }}{% else %}N/A{% endif %}</p>
+                            <p class="my-0 small">{% if item.service.has_sizes %}Dimensions: <i class="text-muted">in development</i>{{ item.size }}{% else %}N/A{% endif %}</p>
+                            <p class="my-0 small">{% if item.service.has_user_message %}Message: {{ item.user_message }}{% else %}N/A{% endif %}</p>
+                            <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                         </div>
                     </div>
                 {% endfor %}
