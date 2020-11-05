@@ -134,7 +134,7 @@
     "model": "webdevs.webdev",
     "fields": {
       "name": "Prana & Pixels",
-      "description": "A Wordpress hosted website, with the Genesis Platform and Woocommerce, for personal online brands",
+      "description": "A Wordpress hosted website, built on Genesis and Woocommerce, for personal online brands",
       "repo_url": null,
       "site_url": "http://www.kescardoso.com/",
       "category": 2,
