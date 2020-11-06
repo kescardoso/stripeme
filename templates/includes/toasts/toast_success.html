@@ -30,8 +30,8 @@
                         </div>
                         <div class="col-9">
                             <p class="my-0"><strong>{{ item.service.name }}</strong></p>
-                            <p class="my-0 small">{% if item.service.has_colors %}Colors: {% if item.service.color %}<i class="text-muted">in development</i>{{ item.color }}{% else %}N/A{% endif %}{% endif %}</p>
-                            <p class="my-0 small">{% if item.service.has_sizes %}Dimensions: {% if item.service.size %}<i class="text-muted">in development</i>{{ item.size }}{% else %}N/A{% endif %}{% endif %}</p>
+                            <p class="my-0 small">{% if item.service.has_colors %}Colors: <i class="text-muted">in development</i>{% endif %}</p>
+                            <p class="my-0 small">{% if item.service.has_sizes %}Dimensions: <i class="text-muted">in development</i>{% endif %}</p>
                             <p class="my-0 small">{% if item.service.has_user_message %}Message: {% if item.user_message %}{{ item.user_message }}{% else %}N/A{% endif %}{% endif %}</p>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                         </div>
