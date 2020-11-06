@@ -28,10 +28,10 @@
                             <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.service.name }}">
                             {% endif %}
                         </div>
-                        <div class="col-9">
+                        <div class="col-9 mb-2">
                             <p class="my-0"><strong>{{ item.service.name }}</strong></p>
-                            <p class="my-0 small">{% if item.color %}Colors: <i class="text-muted">in development</i>{% endif %}</p>
-                            <p class="my-0 small">{% if item.size %}Dimensions: <i class="text-muted">in development</i>{% endif %}</p>
+                            <p class="my-0 small">{% if item.service.has_colors %}Colors: <i class="text-muted">in development</i>{% endif %}</p>
+                            <p class="my-0 small">{% if item.service.has_sizes %}Dimensions: <i class="text-muted">in development</i>{% endif %}</p>
                             <p class="my-0 small">{% if item.service.has_user_message %}Message: {% if item.user_message %}{{ item.user_message }}{% else %}None{% endif %}{% endif %}</p>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                         </div>

@@ -16,7 +16,10 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+if os.environ.get("DEVELOPMENT"):
+    development = True
+else:
+    development = False
 
 ALLOWED_HOSTS = ['localhost',
                  'kika-stripe-me.herokuapp.com']
@@ -215,6 +218,10 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 # Email
 
 if 'DEVELOPMENT' in os.environ:
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+    )
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'stripeme@example.com'
 else:

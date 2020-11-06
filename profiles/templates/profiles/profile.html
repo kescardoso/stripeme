@@ -59,9 +59,7 @@
                                         <ul class="list-unstyled">
                                             {% for item in order.lineitems.all %}
                                                 <li class="small">
-                                                    {% if item.service.has_user_message %}
-                                                        Message {{ item.service.user_message|upper }}
-                                                    {% endif %}{{ item.service.name }} x{{ item.quantity }}
+                                                    {{ item.service.name }} x{{ item.quantity }}
                                                 </li>
                                             {% endfor %}
                                         </ul>

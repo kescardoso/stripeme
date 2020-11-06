@@ -61,27 +61,54 @@
                             <small class="text-muted">Order Details:</small>
                         </div>
                     </div>
+                    <!-- Item: name, quantity, price -->
                     {% for item in order.lineitems.all %}
                         <div class="row">
                             <div class="col-12 col-md-4 mt-1">
-                                <p class="mb-0 text-black font-weight-bold">Item:</p>
+                                <p class="mb-0 text-black font-weight-bold">Item</p>
                             </div>
-                            <div class="col-12 col-md-8 text-md-right mb-1">
-                                <!-- Item: name, quantity, price -->
-                                <p class="mb-0">
+                            <div class="col-12 col-md-8 text-md-right mt-1">
+                                <p class="small mb-0 font-weight-bold">
                                     {{ item.quantity }} x {{ item.service.name }} @ ${{ item.service.price }} each
                                 </p>
-                                <!-- Item: if color -->
-                                <p class="small mb-0 mt-1">
-                                    {% if item.service.has_colors %}<strong>Colors:</strong> <i class="text-muted">in development</i>{% endif %}
+                            </div>
+                        </div>
+                    	<!-- Item: if color -->
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <p class="small mb-0">
+                                    <strong>Colors</strong>
                                 </p>
-                                <!-- Item: if size -->
-                                <p class="small mb-0 mt-1">
-                                    {% if item.service.has_sizes %}<strong>Dimensions:</strong> <i class="text-muted">in development</i>{% endif %}
+                            </div>
+                            <div class="col-12 col-md-8 text-md-right">
+                                <p class="small mb-0">
+                                    {% if item.service.has_colors %}<i class="text-muted">in development</i>{% else %}N/A{% endif %}
                                 </p>
-                                <!-- Item: if user message -->
-                                <p class="small mb-0 mt-1">
-                                    {% if item.service.has_user_message %}<strong>Your message:</strong> {% if item.user_message %}{{ item.user_message }}{% else %}None{% endif %}{% endif %}
+                            </div>
+                        </div>
+                    	<!-- Item: if size -->
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <p class="small mb-0">
+                                    <strong>Dimensions</strong>
+                                </p>
+                            </div>
+                            <div class="col-12 col-md-8 text-md-right">
+                                <p class="small mb-0">
+                                    {% if item.service.has_sizes %}<i class="text-muted">in development</i>{% else %}N/A{% endif %}
+                                </p>
+                            </div>
+                        </div>
+                    	<!-- Item: if user message -->
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <p class="small mb-0">
+                                    <strong>Your Message</strong>
+                                </p>
+                            </div>
+                            <div class="col-12 col-md-8 text-md-right">
+                                <p class="small mb-0">
+                                    {% if item.service_user_message %}{{ item.service_user_message }}{% else %}None{% endif %}
                                 </p>
                             </div>
                         </div>
@@ -210,6 +237,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- If Logged in: ser Profile -->
         <div class="row">
 			<div class="col-12 col-lg-7 text-right">
             {% if from_profile %}
