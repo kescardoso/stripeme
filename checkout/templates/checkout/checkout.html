@@ -54,7 +54,7 @@
                             <p class="my-0"><strong>{{ item.service.name }}</strong></p>
                             <p class="my-0 small"><strong>Colors:</strong> {% if item.service.has_colors %}<i class="text-muted">in development</i>{% else %}N/A{% endif %}</p>
                             <p class="my-0 small"><strong>Dimensions:</strong> {% if item.service.has_sizes %}<i class="text-muted">in development</i>{% else %}N/A{% endif %}</p>
-                            <p class="my-0 small"><strong>Your Message:</strong> {% if item.service.has_user_message %}{% if item.user_message %}{{ item.user_message }}{% else %}N/A{% endif %}{% endif %}</p>
+                            <p class="my-0 small"><strong>Your Message:</strong> {% if item.service.has_user_message %}{% if item.user_message %}{{ item.user_message }}{% else %}None{% endif %}{% else %}N/A{% endif %}</p>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                         </div>
                         <div class="col-3 text-right">
