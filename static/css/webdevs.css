@@ -1,7 +1,9 @@
+/* Carousel Caption */
 .mycarousel-row {
     width: 75%;
 }
 
+/* Carousel Caption */
 .carousel-caption {
     position: relative;
     left: 0;
@@ -11,6 +13,7 @@
     margin-bottom: 2px;
 }
 
+/* Carousel controls: next / previous */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-image: none;
@@ -19,32 +22,30 @@
     font-weight: bold;
     font-size: 150%;
 }
-
 .carousel-control-next-icon:after
 {
     content: '⇢';
     color: black;
 }
-
 .carousel-control-prev-icon:after {
     content: '⇠';
     color: black;
 }
 
+/* Carousel indicators */
 .carousel-indicators li {
     background-color: grey;
 }
-
 .carousel-indicators .active{
     background-color: black;
 }
 
+/* Item positioning */
 .carousel-item {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .carousel-item:before {
   content: "";
   display: block;
