@@ -29,8 +29,54 @@
                 <!-- View List of bag content -->
                 {% if bag_items %}
 
-                    <div class="table-responsive rounded d-none d-md-block">
+                    <!-- bag > templates > bag > includes: html templates -->
+                    <!-- Includes: help render better UX and a more responsive mobile version  -->
+                    <!-- Mobile version with includes -->
+                    <div class="d-block d-md-none">
+                        <div class="row">
+                            <div class="col">
+                                {% include "bag/bag_total.html" %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                {% include "bag/checkout_buttons.html" %}
+                                <p class="text-muted mb-5">A summary of your bag contents is below</p>
+                            </div>
+                        </div>
 
+                        {% for item in bag_items %}
+                            <div class="row">
+                                <div class="col-12 col-sm-6 mb-2">
+                                    {% include "bag/service_image.html" %}
+                                </div>
+                                <div class="col-12 col-sm-6 mb-2">
+                                    {% include "bag/service_info.html" %}
+                                </div>
+                                <div class="col-12 col-sm-6 order-sm-last">
+                                    <p class="my-0">Price Each: ${{ item.service.price }}</p>
+                                    <p><strong>Subtotal: </strong>${{ item.service.price | calc_subtotal:item.quantity }}</p>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    {% include "bag/quantity_form.html" %}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <hr>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <!-- back to top -->
+                        <div class="btt-button shadow-sm rounded-0 border border-black">
+                            <a class="btt-link d-flex h-100">
+                                <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+                            </a>	
+                        </div>
+                    </div>
+                    <!-- End mobile version -->
+
+                    <div class="table-responsive rounded d-none d-md-block">
                         <table class="table table-sm table-borderless">
                             <thead class="text-black">
                                 <tr>
@@ -44,69 +90,25 @@
 
                             {% for item in bag_items %}
                                 <tr>
+                                    <!-- Item Image -->
                                     <td class="p-3 w-25">
-                                        {% if item.service.image %}
-                                        <img class="img-fluid rounded" src="{{ item.service.image.url }}" alt="{{ item.service.name }}">
-                                        {% else %}
-                                        <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.service.name }}">
-                                        {% endif %}
+                                        <!-- Include: service image -->
+                                        {% include "bag/service_image.html" %}
                                     </td>
+                                    <!-- Item Info -->
                                     <td class="py-3">
-                                        <!-- Service Name and SKU -->
-                                        <p class="my-0 logo-font text-black">{{ item.service.name }}</p>
-                                        <p class="my-0 mb-2 small text-muted">SKU: {{ item.service.sku|upper }}</p>
-                                        
-                                        <!-- If Color -->
-                                        <p class="my-0 small"><strong>Colors:</strong> {% if item.service.has_colors %}<i class="text-muted">in development</i>{% else %}N/A{% endif %}</p>
-
-                                        <!-- If Dimensions -->
-                                        <p class="my-0 small"><strong>Dimensions:</strong> {% if item.service.has_sizes %}<i class="text-muted">in development</i>{% else %}N/A{% endif %}</p>
-
-                                        <!-- If Message -->
-                                        <p class="my-0 small"><strong>Message:</strong> {% if item.service.has_user_message %}{% if item.user_message %}{{ item.user_message }}{% else %}None{% endif %}{% else %}N/A{% endif %}</p>
+                                        <!-- Include: service info -->
+                                        {% include "bag/service_info.html" %}
                                     </td>
-
                                     <!-- Item Price -->
                                     <td class="py-3">
                                         <p class="my-0">${{ item.service.price }}</p>
                                     </td>
-
                                     <!-- Item Quantity -->
                                     <td class="py-3 w-25">
-                                        <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
-                                            {% csrf_token %}
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <button class="decrement-qty btn btn-sm btn-black rounded-0" 
-                                                            data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                                                            <span>
-                                                                <i class="fas fa-minus fa-sm"></i>
-                                                            </span>
-                                                        </button>
-                                                    </div>
-                                                    <input class="form-control form-control-sm qty_input" type="number"
-                                                        name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                                        data-item_id="{{ item.item_id }}"
-                                                        id="id_qty_{{ item.item_id }}">
-                                                    <div class="input-group-append">
-                                                        <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                            data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                                                            <span>
-                                                                <i class="fas fa-plus fa-sm"></i>
-                                                            </span>
-                                                        </button>
-                                                    </div>
-                                                    {% if item.service.has_user_message %}
-                                                        <input type="hidden" name="service_user_message" value="{{ item.user_message }}">
-                                                    {% endif %}
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <a class="update-link text-info"><small>Update</small></a>
-                                        <a class="remove-link text-danger float-right" id="remove_{{ item.item_id }}" data-service_user_message="{{ item.user_message }}"><small>Remove</small></a>
+                                        <!-- Include: quantity form -->
+                                        {% include "bag/quantity_form.html" %}
                                     </td>
-
                                     <!-- SubTotal -->
                                     <td class="py-3">
                                         <p class="my-0">${{ item.service.price | calc_subtotal:item.quantity }}</p>
@@ -116,36 +118,17 @@
 
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
-                                    <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
-                                    <h6>Promo Disccount: ${{ promo|floatformat:2 }}</h6>
-                                    <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
-                                    {% if ten_off_delta > 0 %}
-                                        <p class="mb-1 text-danger">
-                                            You could get 10% off by spending just <strong>${{ ten_off_delta }}</strong> more!
-                                        </p>
-                                    {% endif %}
+                                    <!-- Include: bag total -->
+                                    {% include "bag/bag_total.html" %}
                                 </td>
                             </tr>
-
                             <tr>
                                 <td colspan="5" class="text-right">
-                                    <a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                                        <span class="icon">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </span>
-                                        <span class="text-uppercase">Keep Shopping</span>
-                                    </a>
-                                    <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                                        <span class="text-uppercase">Secure Checkout</span>
-                                        <span class="icon">
-                                            <i class="fas fa-lock"></i>
-                                        </span>
-                                    </a>
+                                    <!-- Include: checkout buttons -->
+                                    {% include "bag/checkout_buttons.html" %}
                                 </td>
                             </tr>
-
                         </table>
-
                     </div>
 
                 {% else %}
@@ -157,14 +140,13 @@
                         </span>
                         <span class="text-uppercase">Keep Shopping</span>
                     </a>
-                    
+                
                 {% endif %}
             </div>
         </div>
-
     </div>
 
-    <!-- Back to the top button -->
+    <!-- Back to top -->
     <div class="btt-button shadow-sm rounded-0 border border-black">
         <a class="btt-link d-flex h-100">
             <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
