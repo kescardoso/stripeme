@@ -45,7 +45,7 @@ def bag_contents(request):
 
     else:
         promo = 0
-        ten_off_delta = 0
+        ten_off_delta =  settings.TEN_OFF_THRESHOLD - total
 
     grand_total = total - promo
 
@@ -59,4 +59,9 @@ def bag_contents(request):
         'grand_total': grand_total,
     }
 
+    print(f"promo is: {promo}")
+    print(f"ten_off_delta: {ten_off_delta}")
+    print(f"ten_off_threshold: {settings.TEN_OFF_THRESHOLD}")
+    print(f"grand_total: {grand_total}")
+    
     return context

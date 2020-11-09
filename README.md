@@ -17,3 +17,35 @@ This project has both educational and entrepreneurial goals.
 Thanks for appreciating The Cryptopedia World with me!
 
 [Kes Cardoso](http://www.kescardoso.com/)
+
+## Contents table
+
+1.  [UX](https://github.com/kescardoso/stripeme#ux)
+    
+    -   [Wireframe](https://github.com/kescardoso/stripeme#wireframe)
+        
+    -   [Target User and What They Want to Achieve](https://github.com/kescardoso/stripeme#who-is-the-target-user)
+        
+    -   [Target User's Main Challenges](https://github.com/kescardoso/stripeme#main-challenges)
+        
+    -   [User Stories](https://github.com/kescardoso/stripeme#user-stories)
+        
+2.  [Features](https://github.com/kescardoso/stripeme#features)
+    
+    -   [Existing Features](https://github.com/kescardoso/stripeme#existing-features)
+        
+    -   [Features Left to Implement](https://github.com/kescardoso/stripeme#features-left-to-implement)
+        
+3.  [Technologies Used](https://github.com/kescardoso/stripeme#technologies-used)
+    
+4.  [Testing](https://github.com/kescardoso/stripeme#testing)
+    
+5.  [Deployment](https://github.com/kescardoso/stripeme#deployment)
+    
+6.  [Credits](https://github.com/kescardoso/stripeme#credits)
+    
+## UX
+
+### Wireframe
+
+Link to the wireframe on [Figma](https://www.figma.com/file/onwkxg3NFMtijcRfl83X8N/StripeMe?node-id=0%3A1)
