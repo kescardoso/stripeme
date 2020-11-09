@@ -1,72 +1,80 @@
 <!DOCTYPE html>
 
 <div class="collapse navbar-collapse" id="main-nav">
-    <ul class="navbar-nav w-auto mx-auto">
-        <!-- Menu: Home -->
-        <li class="nav-item d-block d-md-none">
-            <a class="logo-font font-weight-bold nav-link text-light mr-5" href="{% url 'home' %}" id="home-link">
-                Home
-            </a>
-        </li>
-        <!-- Menu Dropdown: Web Development -->
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="all-services-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                All Services
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-services-link">
-                <a href="{% url 'services' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'services' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
-                <a href="{% url 'services' %}?sort=name&direction=asc" class="dropdown-item ">By Name</a>
-                <a href="{% url 'services' %}" class="dropdown-item">All Services</a>
-            </div>
-        </li>
-        <!-- Menu Dropdown: Web Development -->
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="webdev-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Web Development
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="webdev-link">
-                <a href="{% url 'webdevs' %}" class="dropdown-item">Portfolio</a>
-                <a href="{% url 'service_detail' 1 %}" class="dropdown-item">Blogger Site</a>
-                <a href="{% url 'service_detail' 2 %}" class="dropdown-item">Wordpress Site</a>
-                <a href="{% url 'service_detail' 3 %}" class="dropdown-item">Custom WebApp</a>
-                <a href="{% url 'services' %}?category=blogger,wordpress,custom" class="dropdown-item">All WebDev Services</a>
-            </div>
-        </li>
-        <!-- Menu Dropdown: Design -->
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="design-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Graphic Design
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="design-link">
-                <a href="{% url 'designs' %}" class="dropdown-item">Portfolio</a>
-                <a href="{% url 'service_detail' 4 %}" class="dropdown-item">Logo</a>
-                <a href="{% url 'service_detail' 5 %}" class="dropdown-item">Cards & Flyers</a>
-                <a href="{% url 'service_detail' 6 %}" class="dropdown-item">Social Media</a>
-                <a href="{% url 'services' %}?category=logo,prints,social-media" class="dropdown-item">All Design Services</a>
-            </div>
-        </li>
-        <!-- Menu Dropdown: Consultancy -->
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="consultancy-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Consultancy
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="consultancy-link">
-                <a href="{% url 'service_detail' 7 %}" class="dropdown-item">Branding Session</a>
-                <a href="{% url 'service_detail' 8 %}" class="dropdown-item">UX Strategy Session</a>
-                <a href="{% url 'service_detail' 9 %}" class="dropdown-item">Master Session</a>
-                <a href="{% url 'services' %}?category=branding,ux-strategy,master" class="dropdown-item">All Consultancy Services</a>
-            </div>
-        </li>
-        <!-- Menu Dropdown: Portfolio -->
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link mr-5" href="#" id="portfolio-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Portfolio
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="portfolio-link">
-                <a href="{% url 'webdevs' %}" class="dropdown-item">Portfolio: WebDev</a>
-                <a href="{% url 'designs' %}" class="dropdown-item">Portfolio: Design</a>
-            </div>
-        </li>
-    </ul>
+	<ul class="navbar-nav w-auto mx-auto">
+		<!-- Menu: Home -->
+		<li class="nav-item d-block d-md-none">
+			<a class="logo-font font-weight-bold nav-link text-light mr-5" href="{% url 'home' %}" id="home-link">
+				Home
+			</a>
+		</li>
+		<!-- Menu Dropdown: Web Development -->
+		<li class="nav-item dropdown">
+			<a class="logo-font font-weight-bold nav-link mr-5" href="#" id="all-services-link" data-toggle="dropdown"
+				aria-haspopup="true" aria-expanded="false">
+				All Services
+			</a>
+			<div class="dropdown-menu border-0" aria-labelledby="all-services-link">
+				<a href="{% url 'services' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+				<a href="{% url 'services' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+				<a href="{% url 'services' %}?sort=name&direction=asc" class="dropdown-item ">By Name</a>
+				<a href="{% url 'services' %}" class="dropdown-item">All Services</a>
+			</div>
+		</li>
+		<!-- Menu Dropdown: Web Development -->
+		<li class="nav-item dropdown">
+			<a class="logo-font font-weight-bold nav-link mr-5" href="#" id="webdev-link" data-toggle="dropdown"
+				aria-haspopup="true" aria-expanded="false">
+				Web Development
+			</a>
+			<div class="dropdown-menu border-0" aria-labelledby="webdev-link">
+				<a href="{% url 'webdevs' %}" class="dropdown-item">Portfolio</a>
+				<a href="{% url 'service_detail' 1 %}" class="dropdown-item">Blogger Site</a>
+				<a href="{% url 'service_detail' 2 %}" class="dropdown-item">Wordpress Site</a>
+				<a href="{% url 'service_detail' 3 %}" class="dropdown-item">Custom WebApp</a>
+				<a href="{% url 'services' %}?category=blogger,wordpress,custom" class="dropdown-item">All WebDev
+					Services</a>
+			</div>
+		</li>
+		<!-- Menu Dropdown: Design -->
+		<li class="nav-item dropdown">
+			<a class="logo-font font-weight-bold nav-link mr-5" href="#" id="design-link" data-toggle="dropdown"
+				aria-haspopup="true" aria-expanded="false">
+				Graphic Design
+			</a>
+			<div class="dropdown-menu border-0" aria-labelledby="design-link">
+				<a href="{% url 'designs' %}" class="dropdown-item">Portfolio</a>
+				<a href="{% url 'service_detail' 4 %}" class="dropdown-item">Logo</a>
+				<a href="{% url 'service_detail' 5 %}" class="dropdown-item">Cards & Flyers</a>
+				<a href="{% url 'service_detail' 6 %}" class="dropdown-item">Social Media</a>
+				<a href="{% url 'services' %}?category=logo,prints,social-media" class="dropdown-item">All Design
+					Services</a>
+			</div>
+		</li>
+		<!-- Menu Dropdown: Consultancy -->
+		<li class="nav-item dropdown">
+			<a class="logo-font font-weight-bold nav-link mr-5" href="#" id="consultancy-link" data-toggle="dropdown"
+				aria-haspopup="true" aria-expanded="false">
+				Consultancy
+			</a>
+			<div class="dropdown-menu border-0" aria-labelledby="consultancy-link">
+				<a href="{% url 'service_detail' 7 %}" class="dropdown-item">Branding Session</a>
+				<a href="{% url 'service_detail' 8 %}" class="dropdown-item">UX Strategy Session</a>
+				<a href="{% url 'service_detail' 9 %}" class="dropdown-item">Master Session</a>
+				<a href="{% url 'services' %}?category=branding,ux-strategy,master" class="dropdown-item">All
+					Consultancy Services</a>
+			</div>
+		</li>
+		<!-- Menu Dropdown: Portfolio -->
+		<li class="nav-item dropdown">
+			<a class="logo-font font-weight-bold nav-link mr-5" href="#" id="portfolio-link" data-toggle="dropdown"
+				aria-haspopup="true" aria-expanded="false">
+				Portfolio
+			</a>
+			<div class="dropdown-menu border-0" aria-labelledby="portfolio-link">
+				<a href="{% url 'webdevs' %}" class="dropdown-item">Portfolio: WebDev</a>
+				<a href="{% url 'designs' %}" class="dropdown-item">Portfolio: Design</a>
+			</div>
+		</li>
+	</ul>
 </div>
