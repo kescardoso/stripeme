@@ -5,169 +5,168 @@
 {% load bag_tools %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+<div class="container header-container">
+	<div class="row">
+		<div class="col"></div>
+	</div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container mb-2">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Shopping Bag</h2>
-                <hr>
-            </div>
-        </div>
+<div class="overlay"></div>
+<div class="container mb-2">
+	<div class="row">
+		<div class="col">
+			<hr>
+			<h2 class="logo-font mb-4">Shopping Bag</h2>
+			<hr>
+		</div>
+	</div>
 
-        <div class="row">
-            <div class="col">
+	<div class="row">
+		<div class="col">
 
-                <!-- View List of bag content -->
-                {% if bag_items %}
+			<!-- View List of bag content -->
+			{% if bag_items %}
 
-                    <!-- bag > templates > bag > includes: html templates -->
-                    <!-- Includes: help render better UX and a more responsive mobile version  -->
-                    <!-- Mobile version with includes -->
-                    <div class="d-block d-md-none">
-                        <div class="row">
-                            <div class="col">
-                                {% include "bag/bag_total.html" %}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                {% include "bag/checkout_buttons.html" %}
-                                <p class="text-muted mb-5">A summary of your bag contents is below</p>
-                            </div>
-                        </div>
+			<!-- bag > templates > bag > includes: html templates -->
+			<!-- Includes: help render better UX and a more responsive mobile version  -->
+			<!-- Mobile version with includes -->
+			<div class="d-block d-md-none">
+				<div class="row">
+					<div class="col">
+						{% include "bag/bag_total.html" %}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						{% include "bag/checkout_buttons.html" %}
+						<p class="text-muted mb-5">A summary of your bag contents is below</p>
+					</div>
+				</div>
 
-                        {% for item in bag_items %}
-                            <div class="row">
-                                <div class="col-12 col-sm-6 mb-2">
-                                    {% include "bag/service_image.html" %}
-                                </div>
-                                <div class="col-12 col-sm-6 mb-2">
-                                    {% include "bag/service_info.html" %}
-                                </div>
-                                <div class="col-12 col-sm-6 order-sm-last">
-                                    <p class="my-0">Price Each: ${{ item.service.price }}</p>
-                                    <p><strong>Subtotal: </strong>${{ item.service.price | calc_subtotal:item.quantity }}</p>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    {% include "bag/quantity_form.html" %}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <hr>
-                                </div>
-                            </div>
-                        {% endfor %}
-                        <!-- back to top -->
-                        <div class="btt-button shadow-sm rounded-0 border border-black">
-                            <a class="btt-link d-flex h-100">
-                                <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-                            </a>	
-                        </div>
-                    </div>
-                    <!-- End mobile version -->
+				{% for item in bag_items %}
+				<div class="row">
+					<div class="col-12 col-sm-6 mb-2">
+						{% include "bag/service_image.html" %}
+					</div>
+					<div class="col-12 col-sm-6 mb-2">
+						{% include "bag/service_info.html" %}
+					</div>
+					<div class="col-12 col-sm-6 order-sm-last">
+						<p class="my-0">Price Each: ${{ item.service.price }}</p>
+						<p><strong>Subtotal: </strong>${{ item.service.price | calc_subtotal:item.quantity }}</p>
+					</div>
+					<div class="col-12 col-sm-6">
+						{% include "bag/quantity_form.html" %}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<hr>
+					</div>
+				</div>
+				{% endfor %}
+				<!-- back to top -->
+				<div class="btt-button shadow-sm rounded-0 border border-black">
+					<a class="btt-link d-flex h-100">
+						<i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+					</a>
+				</div>
+			</div>
+			<!-- End mobile version -->
 
-                    <div class="table-responsive rounded d-none d-md-block">
-                        <table class="table table-sm table-borderless">
-                            <thead class="text-black">
-                                <tr>
-                                    <th scope="col">Your Order Info</th>
-                                    <th scope="col"></th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Qty</th>
-                                    <th scope="col">Subtotal</th>
-                                </tr>
-                            </thead>
+			<div class="table-responsive rounded d-none d-md-block">
+				<table class="table table-sm table-borderless">
+					<thead class="text-black">
+						<tr>
+							<th scope="col">Your Order Info</th>
+							<th scope="col"></th>
+							<th scope="col">Price</th>
+							<th scope="col">Qty</th>
+							<th scope="col">Subtotal</th>
+						</tr>
+					</thead>
 
-                            {% for item in bag_items %}
-                                <tr>
-                                    <!-- Item Image -->
-                                    <td class="p-3 w-25">
-                                        <!-- Include: service image -->
-                                        {% include "bag/service_image.html" %}
-                                    </td>
-                                    <!-- Item Info -->
-                                    <td class="py-3">
-                                        <!-- Include: service info -->
-                                        {% include "bag/service_info.html" %}
-                                    </td>
-                                    <!-- Item Price -->
-                                    <td class="py-3">
-                                        <p class="my-0">${{ item.service.price }}</p>
-                                    </td>
-                                    <!-- Item Quantity -->
-                                    <td class="py-3 w-25">
-                                        <!-- Include: quantity form -->
-                                        {% include "bag/quantity_form.html" %}
-                                    </td>
-                                    <!-- SubTotal -->
-                                    <td class="py-3">
-                                        <p class="my-0">${{ item.service.price | calc_subtotal:item.quantity }}</p>
-                                    </td>
-                                </tr>
-                            {% endfor %}
+					{% for item in bag_items %}
+					<tr>
+						<!-- Item Image -->
+						<td class="p-3 w-25">
+							<!-- Include: service image -->
+							{% include "bag/service_image.html" %}
+						</td>
+						<!-- Item Info -->
+						<td class="py-3">
+							<!-- Include: service info -->
+							{% include "bag/service_info.html" %}
+						</td>
+						<!-- Item Price -->
+						<td class="py-3">
+							<p class="my-0">${{ item.service.price }}</p>
+						</td>
+						<!-- Item Quantity -->
+						<td class="py-3 w-25">
+							<!-- Include: quantity form -->
+							{% include "bag/quantity_form.html" %}
+						</td>
+						<!-- SubTotal -->
+						<td class="py-3">
+							<p class="my-0">${{ item.service.price | calc_subtotal:item.quantity }}</p>
+						</td>
+					</tr>
+					{% endfor %}
 
-                            <tr>
-                                <td colspan="5" class="pt-5 text-right">
-                                    <!-- Include: bag total -->
-                                    {% include "bag/bag_total.html" %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="5" class="text-right">
-                                    <!-- Include: checkout buttons -->
-                                    {% include "bag/checkout_buttons.html" %}
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+					<tr>
+						<td colspan="5" class="pt-5 text-right">
+							<!-- Include: bag total -->
+							{% include "bag/bag_total.html" %}
+						</td>
+					</tr>
+					<tr>
+						<td colspan="5" class="text-right">
+							<!-- Include: checkout buttons -->
+							{% include "bag/checkout_buttons.html" %}
+						</td>
+					</tr>
+				</table>
+			</div>
 
-                {% else %}
+			{% else %}
 
-                    <p class="lead mb-5">Your bag is empty.</p>
-                    <a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                        <span class="icon">
+			<p class="lead mb-5">Your bag is empty.</p>
+			<a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 btn-lg">
+				<span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>
-                        <span class="text-uppercase">Keep Shopping</span>
-                    </a>
-                
-                {% endif %}
-            </div>
-        </div>
-    </div>
+				<span class="text-uppercase">Keep Shopping</span>
+			</a>
 
-    <!-- Back to top -->
-    <div class="btt-button shadow-sm rounded-0 border border-black">
-        <a class="btt-link d-flex h-100">
-            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-        </a>	
-    </div>
+			{% endif %}
+		</div>
+	</div>
+</div>
+
+<!-- Back to top -->
+<div class="btt-button shadow-sm rounded-0 border border-black">
+	<a class="btt-link d-flex h-100">
+		<i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+	</a>
+</div>
 
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <!-- Back to Top Js -->
-    <script src="{% static 'js/backtop.js' %}"></script>
+{{ block.super }}
+<!-- Back to Top Js -->
+<script src="{% static 'js/backtop.js' %}"></script>
 
-    <!-- Quantity Box/Button Js -->
-    <script src="{% static 'js/quantity_input.js' %}"></script>
-    
-    <!-- Quantity Update/Remove Js
+<!-- Quantity Box/Button Js -->
+<script src="{% static 'js/quantity_input.js' %}"></script>
+
+<!-- Quantity Update/Remove Js
     This javascript portion has to stay in the HTML file for the code to work. -->
-    <script type="text/javascript">
-
-        // Update quantity on click
+<script type="text/javascript">
+	// Update quantity on click
         $('.update-link').click(function(e) {
             var form = $(this).prev('.update-form');
             form.submit();
@@ -187,5 +186,5 @@
             });
         })
 
-    </script>
+</script>
 {% endblock %}
