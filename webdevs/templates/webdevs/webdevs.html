@@ -4,75 +4,80 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/webdevs.css' %}">
+<link rel="stylesheet" href="{% static 'css/webdevs.css' %}">
 {% endblock %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+<div class="container header-container">
+	<div class="row">
+		<div class="col"></div>
+	</div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-        <div class="container h-100">
+<div class="overlay"></div>
+<div class="container h-100">
 
-            <div class="row">
-                <div class="col text-center mt-3 mb1">
-                    <h3 class="logo-font text-gray">Web Development Portfolio</h3>
-                    <hr class="w-50 mb-2">
-                </div>
-            </div>
-            
-            <div class="row mycarousel-row mx-auto my-auto">
+	<div class="row">
+		<div class="col text-center mt-3 mb1">
+			<h3 class="logo-font text-gray">Web Development Portfolio</h3>
+			<hr class="w-50 mb-2">
+		</div>
+	</div>
 
-                <div class="col mt-1 carousel slide" id="carouselExampleIndicators" data-ride="carousel">
+	<div class="row mycarousel-row mx-auto my-auto">
 
-                    <ol class="carousel-indicators my-4">
-                        {% for webdev in webdevs %}
-                            <li data-target="#carouselExampleIndicators" data-slide-to="{{forloop.counter0}}" class="{% if forloop.first%} active {%endif%}"></li>
-                        {% endfor %}
-                    </ol>
+		<div class="col mt-1 carousel slide" id="carouselExampleIndicators" data-ride="carousel">
 
-                    <div class="carousel-inner col-sm-10 mx-auto">
-                        {% for webdev in webdevs %}
-                            <!-- Webdev Carousel Loop -->
-                            <div class="carousel-item {% if forloop.first %} active {% endif %}">
-                                <!-- Image -->
-                                <img class="d-block w-100" src="{{ webdev.image.url }}">
-                                <!-- Name, Description, Links -->
-                                <div class="carousel-caption mb-4 d-block">
-                                    <h6 class="text-black mb-0 d-block">{{ webdev.name }}</h6>
-                                    <p class="mb-0 text-muted small d-none d-sm-block">{{ webdev.description }}</p>
-                                    {% if webdev.repo_url %}
-                                        <p class="link small mt-1 mb-0 p-2 mt-2 badge badge-white text-black rounded-0 border border-light">
-                                            <a href="{{ webdev.repo_url }}" target="_blank" class="text-black text-decoration-none">Repository</a>  
-                                        </p>
-                                    {% endif %}
-                                    {% if webdev.site_url %}
-                                        <p class="link small mt-1 mb-0 p-2 mt-2 badge badge-white text-black rounded-0 border border-light">
-                                            <a href="{{ webdev.site_url }}" target="_blank" class="text-black text-decoration-none">Demo Site</a>  
-                                        </p>
-                                    {% endif %}
-                                </div>
-                            </div> 
-                        {% endfor %}
-                    </div>
+			<ol class="carousel-indicators my-4">
+				{% for webdev in webdevs %}
+				<li data-target="#carouselExampleIndicators" data-slide-to="{{forloop.counter0}}"
+					class="{% if forloop.first%} active {%endif%}"></li>
+				{% endfor %}
+			</ol>
 
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+			<div class="carousel-inner col-sm-10 mx-auto">
+				{% for webdev in webdevs %}
+				<!-- Webdev Carousel Loop -->
+				<div class="carousel-item {% if forloop.first %} active {% endif %}">
+					<!-- Image -->
+					<img class="d-block w-100" src="{{ webdev.image.url }}">
+					<!-- Name, Description, Links -->
+					<div class="carousel-caption mb-4 d-block">
+						<h6 class="text-black mb-0 d-block">{{ webdev.name }}</h6>
+						<p class="mb-0 text-muted small d-none d-sm-block">{{ webdev.description }}</p>
+						{% if webdev.repo_url %}
+						<p
+							class="link small mt-1 mb-0 p-2 mt-2 badge badge-white text-black rounded-0 border border-light">
+							<a href="{{ webdev.repo_url }}" target="_blank"
+								class="text-black text-decoration-none">Repository</a>
+						</p>
+						{% endif %}
+						{% if webdev.site_url %}
+						<p
+							class="link small mt-1 mb-0 p-2 mt-2 badge badge-white text-black rounded-0 border border-light">
+							<a href="{{ webdev.site_url }}" target="_blank" class="text-black text-decoration-none">Demo
+								Site</a>
+						</p>
+						{% endif %}
+					</div>
+				</div>
+				{% endfor %}
+			</div>
 
-                </div>
-                      
-            </div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
 
-        </div>
+		</div>
+
+	</div>
+
+</div>
 {% endblock %}
