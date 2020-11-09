@@ -4,111 +4,104 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/designs.css' %}">
+<link rel="stylesheet" href="{% static 'css/designs.css' %}">
 {% endblock %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+<div class="container header-container">
+	<div class="row">
+		<div class="col"></div>
+	</div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container h-100">
+<div class="overlay"></div>
+<div class="container h-100">
 
-        <div class="row">
-            <div class="col text-center mt-3 mb-1">
-                <h3 class="logo-font text-gray">Design Portfolio</h3>
-                <hr class="w-50 mb-2">
-            </div>
-        </div>
+	<div class="row">
+		<div class="col text-center mt-3 mb-1">
+			<h3 class="logo-font text-gray">Design Portfolio</h3>
+			<hr class="w-50 mb-2">
+		</div>
+	</div>
 
-        <!--
+	<!--
         Design Gallery with Lightbox
         Code Credit: https://css-tricks.com/creating-a-modal-image-gallery-with-bootstrap-components/
         -->
-        <div class="row" 
-            id="gallery" 
-            data-toggle="modal" 
-            data-target="#exampleModal">
-            {% for design in designs %}
-                <div class="col-12 col-sm-6 col-lg-3 p-4">
-                    <img class="img-fluid w-100" 
-                        src="{{ design.image.url }}" 
-                        alt="{{ design.name }}" 
-                        data-target="#carouselExample" 
+	<div class="row" id="gallery" data-toggle="modal" data-target="#exampleModal">
+		{% for design in designs %}
+		<div class="col-12 col-sm-6 col-lg-3 p-4">
+			<img class="img-fluid w-100"
+                        src="{{ design.image.url }}"
+                        alt="{{ design.name }}"
+                        data-target="#carouselExample"
                         data-slide-to="{{ forloop.counter0 }}"
                     >
                 </div>
-            {% endfor %}
-        </div>
+			{% endfor %}
+		</div>
 
-        <!-- Bootstrap Modal (with carousel inside modal) -->
-        <div class="modal fade"
-            id="exampleModal" 
-            tabindex="-1" 
-            role="dialog" 
-            aria-hidden="true">
-            
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
+		<!-- Bootstrap Modal (with carousel inside modal) -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
 
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
-                        </div>
+					</div>
 
-                        <!-- Modal Body -->
-                        <div class="modal-body">
+					<!-- Modal Body -->
+					<div class="modal-body">
 
-                            <!-- Carousel -->
-                            <div id="carouselExample" class="carousel slide" data-ride="carousel">
+						<!-- Carousel -->
+						<div id="carouselExample" class="carousel slide" data-ride="carousel">
 
-                                <!-- Carousel Content -->
-                                <div class="carousel-inner">
-                                    {% for design in designs %}
-                                        <div class="carousel-item {% if forloop.first %} active {% endif %}">
-                                            <!-- Carousel Image -->
-                                            <img class="d-block w-100" src="{{ design.image.url }}" alt="{{ design.name }}">
-                                            <!-- Name, Description, Links -->
-                                            <div class="carousel-caption mb-2 d-block p-2">
-                                                <p class="mb-0 d-block small">{{ design.name }}</p>
-                                            </div>
-                                        </div>
-                                    {% endfor %}
-                                </div>
-                                <!-- Carousel Arrow Controls -->
-                                <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+							<!-- Carousel Content -->
+							<div class="carousel-inner">
+								{% for design in designs %}
+								<div class="carousel-item {% if forloop.first %} active {% endif %}">
+									<!-- Carousel Image -->
+									<img class="d-block w-100" src="{{ design.image.url }}" alt="{{ design.name }}">
+									<!-- Name, Description, Links -->
+									<div class="carousel-caption mb-2 d-block p-2">
+										<p class="mb-0 d-block small">{{ design.name }}</p>
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+							<!-- Carousel Arrow Controls -->
+							<a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
 
-        </div>
-    </div>
+		</div>
+	</div>
 
-<!-- Back to the top button -->
-    <div class="btt-button shadow-sm rounded-0 border border-black">
-        <a class="btt-link d-flex h-100">
-            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-        </a>	
-    </div>
+	<!-- Back to the top button -->
+	<div class="btt-button shadow-sm rounded-0 border border-black">
+		<a class="btt-link d-flex h-100">
+			<i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+		</a>
+	</div>
 
-{% endblock %}
+	{% endblock %}
 
-{% block postloadjs %}
-    {{ block.super }}
-    <!-- Back to Top Link Js -->
-    <script src="{% static 'js/backtop.js' %}"></script>
-{% endblock %}
+	{% block postloadjs %}
+	{{ block.super }}
+	<!-- Back to Top Link Js -->
+	<script src="{% static 'js/backtop.js' %}"></script>
+	{% endblock %}
