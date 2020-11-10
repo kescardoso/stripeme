@@ -41,7 +41,12 @@ Link to the wireframe on [Figma](https://www.figma.com/file/onwkxg3NFMtijcRfl83X
 *Stripe Me Favicon*
 ![enter image description here](https://raw.githubusercontent.com/kescardoso/stripeme/master/media/SripeMe-Favicon.png)
 
-### User and Their Goals
+## User Stories
+*Click on the image to see it larger:*
+![](https://raw.githubusercontent.com/kescardoso/stripeme/master/media/user-stories.png)
+
+
+## User and Their Goals
 
 Since Covid-19 became a global pandemic, many people around the world began to live through lockdowns. Many began to work from home; others lost their jobs. With uncertainty becoming a norm, we can't know when, or if, our societies will return to normal and what consequences the pandemic will leave behind.
 
@@ -53,13 +58,13 @@ Stripe Me provides easy and straightforward web-development, graphic design and 
 
 Here, available services are already formatted and able to be personalized: they are presented with a starter model and options, and the user can customize their order in terms of color scheme, dimensions, and content. Consultancy sessions are also available for users who wish to have higher control and a more professionally involved approach to their digital business development. By setting up basic formats and options that can be personalized, Stripe Me keeps prices affordable and delivery time optimized, and is therefore a great digital services provider for the pandemic times.
 
-#### User Avatar
+### User Avatar
 
 - Cross-cultural English-speaking men and women, affected or not by Covid-19;
 - Freelancers, entrepreneurs, small business owners looking for online alternatives for their jobs of entrepreneurial projects;
 - Travelers, digital nomads, independent culture and art contractors, without a business address and interested in building an online presence for their income activities.
         
-#### User's Main challenges
+### User's Main challenges
 
 Some of the main challenges regular people and non-technical professionals encounter are:
 
@@ -70,10 +75,6 @@ Some of the main challenges regular people and non-technical professionals encou
 - They are not sure what they need in technological terms, and they appreciate guidance.
 - They need a personalized e-commerce project that still keeps features basic and affordable.
 - They feel intimidated by traditional digital agencies, and they prefer a more friendly, one-to-one approach.
-
-#### User Stories
-*Click on the image to see it larger:*
-![](https://raw.githubusercontent.com/kescardoso/stripeme/master/media/user-stories.png)
 
 ## Features
 
