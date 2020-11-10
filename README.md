@@ -73,3 +73,10 @@ Some of the main challenges regular people and non-technical professionals encou
 - They need a personalized e-commerce project that still keeps features basic and affordable.
 - They feel intimidated by traditional digital agencies, and they prefer a more friendly, one-to-one approach.
 
+#### User Stories
+
+![](https://raw.githubusercontent.com/kescardoso/stripeme/master/media/user-stories.png)
+
+## Features
+
+### Existing Features
