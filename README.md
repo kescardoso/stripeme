@@ -47,6 +47,7 @@ As you read this document, you will find my complete development process, from U
 	 - [Local Deployment](https://github.com/kescardoso/stripeme#local-deployment)
 	 - [Heroku Deployment](https://github.com/kescardoso/stripeme#heroku-deployment)
  - [Credits](https://github.com/kescardoso/stripeme#credits)
+ - [Acknowledgements](https://github.com/kescardoso/stripeme#acknowledgements)
 
 ## UX
 
