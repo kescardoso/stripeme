@@ -44,6 +44,8 @@ As you read this document, you will find my complete development process, from U
 	 - [Validators and Formatters](https://github.com/kescardoso/stripeme#validators-and-formatters)
 	 - [Compatibility Tests](https://github.com/kescardoso/stripeme#compatibility-tests)
  - [Deployment](https://github.com/kescardoso/stripeme#deployment)
+	 - [Local Deployment](https://github.com/kescardoso/stripeme#local-deployment)
+	 - [Heroku Deployment](https://github.com/kescardoso/stripeme#heroku-deployment)
  - [Credits](https://github.com/kescardoso/stripeme#credits)
 
 ## UX
@@ -341,7 +343,8 @@ I tested this project on the following devices:
 
 ## Deployment
 
-#### Local Deployment
+### Local Deployment
+
 This project was developed using [Gitpod](https://gitpod.io) as the chosen IDE and [GitHub](https://github.com) as a remote repository. The Project's source files were regularly pushed to the [GitHub StripeMe Repository](https://github.com/kescardoso/stripeme) via the  `master`  branch. To reproduce this project within a local deployement, use the following steps and requirements:
 
 1. Have the following installed in your IDE of choice:
@@ -398,3 +401,62 @@ python3 manage.py runserver
 ```
 15.  Once you run your project locally, add '/admin' to the locally deployed project's URL. 
 16. Add the service categories and service items to the database. This information can be copied from each individual service's page of the deployed version of the project found here:  [StripeMe](https://kika-stripe-me.herokuapp.com/)
+
+### Heroku Deployment
+
+To deploy this project to Heroku, use the following steps as a continuitation from local deployment outlined above:
+
+1. Create a [AWS S3 Bucket](https://aws.amazon.com/s3/), as this will be necessary to store static files and media for deployment.
+2. Create an account and sign in to [Heroku](https://heroku.com).
+3. Inside the Heroku Dashboard, create a new app with a unique name and set the region to the closest to you, eg. 'Europe'.
+4. To use the Postgres database for deployment, select 'Heroku Postgres' as a free add-on.
+5. With the app created, go to the 'Settings' tab, click on the 'Reveal Config Variables' button, and input the following values:
+
+| **Key** | **Value** |
+--- | ---
+ AWS_ACCESS_KEY_ID | your AWS bucket ID
+ AWS_SECRET_ACCESS_KEY | your AWS secret key
+ DATABASE_URL | your Heroku Postgres database url
+ EMAIL_HOST_PASS | your password to use your gmail account for emails
+ EMAIL_HOST_USER | your email address
+ SECRET_KEY | secret key used for your Django project
+ STRIPE_PUBLIC_KEY | obtained through your Stripe account
+ STRIPE_SECRET_KEY | obtained through your Stripe account
+ STRIPE_WH_SECRET | obtained through your Stripe account
+ USE_AWS | True
+
+6. In Gitpod, create a requirements.txt file with the following command:
+```
+pip3 freeze --local > requirements.txt
+```
+7. Create a Procfile with the following content within (making sure that 'Procfile' was written with a capitalized 'P'):
+```
+echo web: gunicorn stripe_me.wsgi:application > Procfile
+```
+8. As with local deployment, set up the Postgres database with the following commands:
+```
+python3 manage.py makemigrations
+python3 manage.py migrate
+```
+8. Follow steps 11 to 13 from local deployment outlined above.
+9. Commit these changes with the following:
+```
+git add .
+```
+```
+git commit -m "<your commit message here>"
+```
+10. With these files committed, log in to Heroku from the terminal using this command and enter your details when prompt:
+```
+heroku login -i
+```
+11. Once logged in, link your Heroku app created above as the remote repository with this command:
+```
+heroku git:remote -a <your app name here>
+```
+12. Complete the deployment by pushing the projekt to Heroku:
+```
+git push heroku master
+``` 
+13. This completes the process of deploying the project to Heroku. Once deployed, continue to push all changes made to the project to Heroku with the final command listed above
+
