@@ -212,57 +212,72 @@ Friendly Name | friendly_name | Charfield | max_length=254, null=True, blank=Tru
 
 ### Existing Features
 
-1.  **Hero Image and Call to Action:** at site opening, the user begins by seeing the hero image of a workspace with a black button inviting to work together and check available services.
-
-2. **Navbar and Menu:** the top main navbar contains the logo, search box, and links to access user profile and shopping bag.  Just under the main nav, the menu contains links for easy access to services and portfolio pages, in lists by category, price, rating, and name.
-	- The Search box is dynamically connected to the database.
-	- These elements are consistent in design and are responsive throughout the website. However, the contents of the menu changes depending on if a user is logged in or not.
-	- The menu bar for users logged in features a 'Sign Out' link where the 'Sign Up' link usually is. When a user in session chooses to sign out, a toast message confirms this action and they are redirected back to the home page.
-	- Users with items added to their Bag notice an additional 'Checkout' link in their navbar, allowing them direct access to go straight to checkout.
-	- The authentication pages (Sign In, Sign Up & Sign Out) were built with Django, and therefore include all Django's builtin features (including requesting an email for forgotten passwords.)
-	- Extra authentication prevents users not authenticated from the Profile page and the order history.
-
-3. **Toasts:** All toast messages appear under the menu bar with the same fonts as used consistently in the theme.
-	- Depending on the type of message, the toast colour changes to reflect this message. 
-	- Across all 'Service' pages (Webdev, Design & Consultancy), toast messages appear to confirm the contents of a user's Bag when they add new service items. This message also includes the 'Go To Checkout' button:  to prompt users to check their bag content or proceed to checkout.
-
-4. **Sign In / Sign Up:** These pages feature the consistent white overlay as a background, to maintain simplicity and design clealiness.
-	- On the top left side, the user will find the respective Sign In or Sign Up forms, prompting them to access the parts of the website that require authentication.
-	- Regular registered users are able to check and edit their profile details and check their order history (they are currently not able to enter their full name)
-	- Admin with superuser priviledges are able to add, edite and delete services form the database.
-
-5. **Sign Out:** The content in this page displays a box that either prompts and verifies that a user wishes to leave the site, with a 'Sign Out' button. Once signed out, users are redirected back to the Home page.
-
-6. **Discount Notification:** it is a notification system on the home page, as well as on the checkout toast and bag page, to inform or remind users that they can get 10% off when total purchase is $500 or more.
-
-7. **Checkout Overlay:** A blue overlay with a spinner gif appears after checkout is initiated and while the transaction is being processed and until the checkout success page has fully loaded.
-
-8. **Service Pages (All Services, Webdev, Design, Consultancy):** Although different pages, Webdev, Design and Consultancy pages follow the same structure and are built upon the generic 'All Services' template to avoid repetitive code.
-	- Each page follows a Bootstrap responsive grid system, using the cards class.
-	- As the user scrolls down the page, they find cards for each service belonging to that category or to all services if the page is all services.
-	- Each card contains the service title, image, price, category and rating information; by clicking on the service image the user is redirected to the service details page.
-	- Services page include a filtering dropdwon box, as well as a top category badges selection to facilitate finsing the desired service page and details.
-	- Users can add the service to their bag from the service details page.
-
-9. **Service Details Pages:** Users access these pages by clicking on service image of the respective card.
-	- This page features the service image, title, description about it, customization options and the price.
-	- From this page users can add the service to their Bag.
-	- Service Option Fields: on each service detail page, there are boolean fields with color scheme, dimensions and user message options to be entered by the user. These are used to send information to the owner about desired user's customizations for that respective service (the fields color and dimensions are not dynamic and currently in development).
-
-10. **Profile Page:** The content of the page changes depending on if the user is logged in or not, if they have items in their Bag and if they have previous orders. Users who have items in their retreat see an overview of what they have selected and see a link to prompt them to go to the My Retreat page to make changes.
-	- Users can view and update their contact and billing details.
-	- If users have purchased services in the past, a table with their order history appears with a link (order number, in blue) to direct them to the initial 'booking success' page for that purchase.
-
-11. **Bag:** This page is similar to a shopping cart on e-commerce sites.
-	- The user can see each item in their bag.
-	- All information about service customization that a user has selected is included on this page, including price, quantity, subtotal and a thumbnail image.
-	- A 'checkout' button prompts the user to confirm the order through payment.
-
-12. **Checkout:** When a user has added items to their retreat, the 'Checkout' link appears in the dropdown navigation menu.
-	- Users can add their details to an input form and can select whether to save the information to their profile for future reservations.
-	- An order summary also includes the name, price, quantity and thumbail link of each item in their bag.
-	- Below these features, a user can either select the 'Keep Shopping' link or confirm the reservation with the 'Secure Checkout' button.
-
-13. **Checkout Success:** This page is accessed by completing the checkout process. However, it can also be accessed through the 'Profile' page when clicking on more information about a previous order. In this case, an alert message confirms that the user is viewing a previous order and that the confirmation email was sent at the time of payment.
-
+1. **Hero Image and Call to Action:** at site opening, the user begins by seeing the hero image of a workspace with a black button inviting to work together and check available services.  
+  
+2. **Navbar and Menu:** the top main navbar contains the logo, search box, and links to access user profile and shopping bag. Just under the main nav, the menu contains links for easy access to services and portfolio pages, in lists by category, price, rating, and name.  
+- The Search box is dynamically connected to the database.  
+- These elements are consistent in design and are responsive throughout the website. However, the contents of the menu changes depending on if a user is logged in or not.  
+- The menu bar for users logged-in features a 'Sign Out' link where the 'Sign Up' link usually is. When a user in session chooses to sign out, a toast message confirms this action, and they are redirected back to the home page.  
+- Users with items added to their Bag notice an additional 'Checkout' link in their navbar, allowing them direct access to go straight to check out.  
+- The authentication pages (Sign In, Sign Up & Sign Out) were built with Django, and therefore include all Django's built-in features (including requesting an email for forgotten passwords.)  
+- Extra authentication prevents users not authenticated from the Profile page and the order history.  
+  
+3. **Toasts:** All toast messages appear under the menu bar with the same fonts as used consistently in the theme.  
+- Depending on the type of message, the toast color changes to reflect this message.  
+- Across all 'Service' pages (Webdev, Design & Consultancy), toast messages appear to confirm the contents of a user's Bag when they add new service items. This message also includes the 'Go To Checkout' button: to prompt users to check their bag content or proceed to checkout.  
+  
+4. **Sign In / Sign Up:** These pages feature the consistent white overlay as a background, to maintain simplicity and design cleanliness.  
+- On the top-left side, the user will find the respective Sign In or Sign Up forms, prompting them to access the parts of the website that require authentication.  
+- Regular registered users can check and edit their profile details and check their order history (they can't currently enter their full name)  
+- Admin with superuser privileges can add, edit and delete services from the database.  
+  
+5. **Sign Out:** The content in this page displays a box that either prompts and verifies that a user wishes to leave the site, with a 'Sign Out' button. Once signed out, users are redirected back to the Home page.  
+  
+6. **Discount Notification:** it is a notification system on the home page, as well as on the checkout toast and bag page, to inform or remind users that they can get 10% off when total purchase is $500 or more.  
+  
+7. **Checkout Overlay:** A blue overlay with a spinner gif appears after checkout is initiated and while the transaction is being processed and until the checkout success page has fully loaded.  
+  
+8. **Service Pages (All Services, Webdev, Design, Consultancy):** Although different pages, Webdev, Design and Consultancy pages follow the same structure and are built upon the generic 'All Services' template to avoid repetitive code.  
+- Each page follows a Bootstrap responsive grid system, using the cards class.  
+- As the user scrolls down the page, they find cards for each service belonging to that category or to all services if the page is all services.  
+- Each card contains the service title, image, price, category and rating information; by clicking on the service image the user is redirected to the service details page.  
+- Services page include a filtering dropdown box, as well as a top category badges selection to facilitate finding the desired service page and details.  
+- Users can add the service to their bag from the service details page.  
+  
+9. **Service Details Pages:** Users access these pages by clicking on service image of the respective card.  
+- This page features the service image, title, description about it, customization options and the price.  
+- From this page users can add the service to their Bag.  
+- Service Option Fields: on each service detail page, there are boolean fields with color scheme, dimensions and user message options to be entered by the user. These are used to send information to the owner about desired user's customizations for that respective service (the fields color and dimensions are not dynamic and currently in development).  
+  
+10. **Profile Page:** The content of the page changes depending on if the user is logged in or not, if they have items in their Bag and if they have previous orders. Users who have items in their retreat see an overview of what they have selected and see a link to prompt them to go to the My Retreat page to make changes.  
+- Users can view and update their contact and billing details.  
+- If users have purchased services in the past, a table with their order history appears with a link (order number, in blue) to direct them to the initial 'booking success' page for that purchase.  
+  
+11. **Bag:** This page is similar to a shopping cart on e-commerce sites.  
+- The user can see each item in their bag.  
+- All information about service customization that a user has selected is included on this page, including price, quantity, subtotal and a thumbnail image.  
+- A 'checkout' button prompts the user to confirm the order through payment.  
+  
+12. **Checkout:** When a user has added items to their retreat, the 'Checkout' link appears in the dropdown navigation menu.  
+- Users can add their details to an input form and can select whether to save the information to their profile for future reservations.  
+- An order summary also includes the name, price, quantity and thumbnail link of each item in their bag.  
+- Below these features, a user can either select the 'Keep Shopping' link or confirm the reservation with the 'Secure Checkout' button.  
+  
+13. **Checkout Success:** This page is accessed by completing the checkout process. However, it can also be accessed through the 'Profile' page when clicking on more information about a previous order. In this case, an alert message confirms that the user is viewing a previous order and that the confirmation email was sent during payment.  
+  
 14. **Back to Top Button:** Long pages feature a 'scroll to top' arrow that becomes visible when the user has scrolled down the page.
+
+### Features Left to Implement
+
+1. **Colors and Dimensions** Currently the service details page include the dropdown fields for color scheme and project dimensions, but they are not dynamically functional (only the user message text field is fully functional and connected to the checkout model).  
+- The color scheme option is available for webdev and design services, and when these services are selected the order summary and history returns *in development*  
+- The dimension's option is only available for design services. When design services are selected the order summary and history returns *in development*  
+- When color scheme is not available for a service (consultancy sessions), and the service is selected the order summary and history returns N/A  
+- When dimensions are not available for a service (webdev and consultancy sessions), and the service is selected the order summary and history returns N/A.  
+- The message option is available for all services. When a service is selected and the user specifies a message in the text field, the exact text will appear in the order summary and history; if the user does not enter a message in the text field, the order summary and history will return None;  
+  
+After spending many days trying to find a plausible way to connect all boolean fields simultaneously, I have decided to only include them on the HTML template with if statements accordingly, as this feature at this point, requires me to restructure the bag and checkout dictionary logic and connect it to the Stripe API in a new way, which at the moment is beyond the capacity required for the scope of this project. However, this would be the first feature that I would consider working on to develop this project further.
+    
+2. **Portfolio Admin:** Currently the webdevs and designs portfolio are managed from the back end (from within the app in the fixture and models files). My goal was to install admin fields so both portfolios would be manageable from the Django admin with superuser privileges (following the example used in the service app). However, to respect the timeline and deadline of this project, this feature has been left for later implementation.
+
+3. **Full Name:** Currently, users cannot enter their full name in their details session; their name has to be entered at each new order. The implementation of this feature is beyond the scope of this project and planned to be developed in the future.
