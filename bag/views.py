@@ -34,17 +34,20 @@ def add_to_bag(request, item_id):
                 bag[item_id]['items_by_details'][user_message] = quantity
                 messages.success(
                     request,
-                    f'Added {service.name} to your bag')
+                    f'Added {service.name} to your bag'
+                )
         else:
             bag[item_id] = {'items_by_details': {user_message: quantity}}
             messages.success(
                 request,
-                f'Added {service.name} to your bag')
+                f'Added {service.name} to your bag'
+            )
     else:
         if item_id in list(bag.keys()):
             bag[item_id] += quantity
             messages.success(
-                request, f'Updated {service.name} quantity to {bag[item_id]}')
+                request, f'Updated {service.name} quantity to {bag[item_id]}'
+            )
         else:
             bag[item_id] = quantity
             messages.success(request, f'Added {service.name} to your bag')
@@ -76,12 +79,15 @@ def adjust_bag(request, item_id):
                 bag.pop(item_id)
                 messages.success(
                     request,
-                    f'Removed {service.name} from your bag')
+                    f'Removed {service.name} from your bag'
+                )
     else:
         if quantity > 0:
             bag[item_id] = quantity
             messages.success(
-                request, f'Updated {service.name} quantity to {bag[item_id]}')
+                request,
+                f'Updated {service.name} quantity to {bag[item_id]}'
+            )
         else:
             bag.pop(item_id)
             messages.success(request, f'Removed {service.name} from your bag')
@@ -106,7 +112,8 @@ def remove_from_bag(request, item_id):
                 bag.pop(item_id)
                 messages.success(
                     request,
-                    f'Removed {service.name} from your bag')
+                    f'Removed {service.name} from your bag'
+                )
         else:
             bag.pop(item_id)
             messages.success(request, f'Removed {service.name} from your bag')

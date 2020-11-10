@@ -45,10 +45,10 @@
 					<a href="{% url 'service_detail' item.service.id %}">
 						{% if item.service.image %}
 						<img class="w-100" src="{{ item.service.image.url }}" alt="{{ service.name }}">
-                                {% else %}
+                        {% else %}
 						<img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.name }}">
-                                {% endif %}
-                            </a>
+                        {% endif %}
+                    </a>
 				</div>
 				<div class="col-7 mb-2">
 					<p class="my-0"><strong>{{ item.service.name }}</strong></p>
@@ -109,9 +109,9 @@
 						<input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
 							{% else %}
 						<label class="form-check-label" for="id-save-info">
-                                    <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
-                                    <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
-                                </label>
+                            <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
+                            <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
+                        </label>
 						{% endif %}
 					</div>
 				</fieldset>
@@ -124,30 +124,30 @@
 					<!-- Used to display form errors -->
 					<div class="mb-3 text-danger" id="card-errors" role="alert"></div>
 					<input type="hidden" value="{{ client_secret }}" name="client_secret">
-                    </fieldset>
+                </fieldset>
 
-					<!-- Submit Button -->
-					<div class="submit-button text-right mt-5 mb-2">
-						<a href="{% url 'view_bag' %}" class="btn btn-outline-black rounded-0">
-							<span class="icon">
-								<i class="fas fa-chevron-left"></i>
-							</span>
-							<span class="font-weight-bold">Adjust Bag</span>
-						</a>
-						<button id="submit-button" class="btn btn-black rounded-0">
-							<span class="font-weight-bold">Complete Order</span>
-							<span class="icon">
-								<i class="fas fa-lock"></i>
-							</span>
-						</button>
-						<p class="small text-danger my-0">
-							<span class="icon">
-								<i class="fas fa-exclamation-circle"></i>
-							</span>
-							<!-- Card Charge notification -->
-							<span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
-						</p>
-					</div>
+                <!-- Submit Button -->
+                <div class="submit-button text-right mt-5 mb-2">
+                    <a href="{% url 'view_bag' %}" class="btn btn-outline-black rounded-0">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="font-weight-bold">Adjust Bag</span>
+                    </a>
+                    <button id="submit-button" class="btn btn-black rounded-0">
+                        <span class="font-weight-bold">Complete Order</span>
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </button>
+                    <p class="small text-danger my-0">
+                        <span class="icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </span>
+                        <!-- Card Charge notification -->
+                        <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+                    </p>
+                </div>
 			</form>
 		</div>
 	</div>
@@ -155,8 +155,8 @@
 <div id="loading-overlay">
 	<h1 class="text-light logo-font loading-spinner">
 		<span class="icon">
-                <i class="fas fa-3x fa-sync-alt fa-spin"></i>
-            </span>
+            <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+        </span>
 	</h1>
 </div>
 {% endblock %}

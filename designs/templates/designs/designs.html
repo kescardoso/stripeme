@@ -29,17 +29,17 @@
 	<!--
         Design Gallery with Lightbox
         Code Credit: https://css-tricks.com/creating-a-modal-image-gallery-with-bootstrap-components/
-        -->
+    -->
 	<div class="row" id="gallery" data-toggle="modal" data-target="#exampleModal">
 		{% for design in designs %}
 		<div class="col-12 col-sm-6 col-lg-3 p-4">
 			<img class="img-fluid w-100"
-                        src="{{ design.image.url }}"
-                        alt="{{ design.name }}"
-                        data-target="#carouselExample"
-                        data-slide-to="{{ forloop.counter0 }}"
-                    >
-                </div>
+                src="{{ design.image.url }}"
+                alt="{{ design.name }}"
+                data-target="#carouselExample"
+                data-slide-to="{{ forloop.counter0 }}"
+            >
+        </div>
 			{% endfor %}
 		</div>
 
@@ -52,7 +52,7 @@
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                            </button>
+                        </button>
 					</div>
 
 					<!-- Modal Body -->
@@ -98,10 +98,10 @@
 		</a>
 	</div>
 
-	{% endblock %}
+{% endblock %}
 
-	{% block postloadjs %}
-	{{ block.super }}
-	<!-- Back to Top Link Js -->
-	<script src="{% static 'js/backtop.js' %}"></script>
-	{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+<!-- Back to Top Link Js -->
+<script src="{% static 'js/backtop.js' %}"></script>
+{% endblock %}

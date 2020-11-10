@@ -136,8 +136,8 @@
 			<p class="lead mb-5">Your bag is empty.</p>
 			<a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 btn-lg">
 				<span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
+                    <i class="fas fa-chevron-left"></i>
+                </span>
 				<span class="text-uppercase">Keep Shopping</span>
 			</a>
 
@@ -163,28 +163,28 @@
 <!-- Quantity Box/Button Js -->
 <script src="{% static 'js/quantity_input.js' %}"></script>
 
-<!-- Quantity Update/Remove Js
-    This javascript portion has to stay in the HTML file for the code to work. -->
+<!--
+    Quantity Update/Remove Js
+    This javascript portion has to stay in the HTML file for the code to work.
+-->
 <script type="text/javascript">
 	// Update quantity on click
-        $('.update-link').click(function(e) {
-            var form = $(this).prev('.update-form');
-            form.submit();
-        })
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+    // Remove item and reload on click
+    $('.remove-link').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var user_message = $(this).data('service_user_message');
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'service_user_message': user_message};
 
-        // Remove item and reload on click
-        $('.remove-link').click(function(e) {
-            var csrfToken = "{{ csrf_token }}";
-            var itemId = $(this).attr('id').split('remove_')[1];
-            var user_message = $(this).data('service_user_message');
-            var url = `/bag/remove/${itemId}/`;
-            var data = {'csrfmiddlewaretoken': csrfToken, 'service_user_message': user_message};
-
-            $.post(url, data)
-            .done(function() {
-                location.reload();
-            });
-        })
-
+        $.post(url, data)
+        .done(function() {
+            location.reload();
+        });
+    })
 </script>
 {% endblock %}

@@ -1,16 +1,16 @@
 /* Code Credit: https://codepen.io/diegovogel/pen/bzddLv */
 /* Responsive Gallery Grid */
 #gallery img {
-  height: 75vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-     display: block;
-  margin: 15px 0;
-  border-radius: 300px 30px 300px 300px;
-  cursor: pointer;
+    height: 75vw;
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: block;
+    margin: 15px 0;
+    border-radius: 300px 30px 300px 300px;
+    cursor: pointer;
 }
 #gallery img:hover {
-  border-radius: 30px 90px 30px 30px;
+    border-radius: 30px 90px 30px 30px;
 }
 @media (min-width: 576px) {
   #gallery img {
@@ -25,21 +25,21 @@
 
 /* Modal background, header, button */
 #exampleModal .modal-content {
-  background: none;
-  border: none;
+    background: none;
+    border: none;
 }
 #exampleModal .modal-header {
-  border: none;
+    border: none;
 }
 #exampleModal .modal-header button {
-  background: none;
-  border-radius: 100px 100px 0 0;
-  padding: 5px 10px;
-  opacity: 1;
-  position: relative;
-  top: 2px;
-  left: -16px;
-  border: solid 2px #e8e8e8 ;
+    background: none;
+    border-radius: 100px 100px 0 0;
+    padding: 5px 10px;
+    opacity: 1;
+    position: relative;
+    top: 2px;
+    left: -16px;
+    border: solid 2px #e8e8e8 ;
 }
 @media (min-width: 992px) {
   #exampleModal .modal-header button {
@@ -47,20 +47,20 @@
   }
 }
 #exampleModal .modal-header button:hover {
-  top: 2px;
-  color: white;
+    top: 2px;
+    color: white;
 }
 #exampleModal .modal-header span {
-  color: white;
+    color: white;
 }
 
 /* Carousel controls: next / previous */
 #exampleModal .carousel-control-prev,
 #exampleModal .carousel-control-next {
-  font-size: 2em;
-  top: auto;
-  opacity: 1;
-  bottom: -52px;
+    font-size: 2em;
+    top: auto;
+    opacity: 1;
+    bottom: -52px;
 }
 @media (min-width: 768px) {
   #exampleModal .carousel-control-prev,
@@ -72,8 +72,8 @@
 }
 #exampleModal .carousel-control-next-icon,
 #exampleModal .carousel-control-prev-icon {
-  height: 30px;
-  width: 30px;
+    height: 30px;
+    width: 30px;
 }
 @media (min-width: 768px) {
   #exampleModal .carousel-control-prev {

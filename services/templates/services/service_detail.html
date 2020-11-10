@@ -4,201 +4,201 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-        <div class="container-fluid">
-            <div class="row">
+<div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
 
-                <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                    <div class="image-container m-5">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+                <div class="image-container m-5">
 
-                        <!-- Service Heading -->
-                        <h5 class="text-uppercase text-center mb-3">{{ service.name }}</h5>
-                        <!-- Service Image -->
-                        {% if service.image %}
-                            <a href="{{ service.image.url }}" target="_blank">
-                                <img class="card-img-top img-fluid" src="{{ service.image.url }}" alt="{{ service.name }}">
-                            </a>
-                        {% else %}
-                            <a href="">
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.name }}">
-                            </a>
-                        {% endif %}
-                        
-                    </div>
+                    <!-- Service Heading -->
+                    <h5 class="text-uppercase text-center mb-3">{{ service.name }}</h5>
+                    <!-- Service Image -->
+                    {% if service.image %}
+                        <a href="{{ service.image.url }}" target="_blank">
+                            <img class="card-img-top img-fluid" src="{{ service.image.url }}" alt="{{ service.name }}">
+                        </a>
+                    {% else %}
+                        <a href="">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.name }}">
+                        </a>
+                    {% endif %}
+                    
                 </div>
+            </div>
 
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="service-details-container mb-5 mt-md-5">
-                        <!-- Service Name -->
-                        <p class="mb-0">{{ service.name }}</p>
-                        <!-- Service Price -->    
-                        <p class="lead mb-0 text-left font-weight-bold">${{ service.price }}</p>
-                        <!-- Service Category -->           
-                        {% if service.category %}
-                            <p class="small mt-1 mb-0">
-                                <a class="text-muted" href="{% url 'services' %}?category={{ service.category.name }}">
-                                    <i class="fas fa-tag mr-1"></i>{{ service.category.friendly_name }}
-                                </a>
-                            </p>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="service-details-container mb-5 mt-md-5">
+                    <!-- Service Name -->
+                    <p class="mb-0">{{ service.name }}</p>
+                    <!-- Service Price -->    
+                    <p class="lead mb-0 text-left font-weight-bold">${{ service.price }}</p>
+                    <!-- Service Category -->           
+                    {% if service.category %}
+                        <p class="small mt-1 mb-0">
+                            <a class="text-muted" href="{% url 'services' %}?category={{ service.category.name }}">
+                                <i class="fas fa-tag mr-1"></i>{{ service.category.friendly_name }}
+                            </a>
+                        </p>
+                    {% endif %}
+                    <!-- Service Rating -->
+                    {% if service.rating %}
+                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ service.rating }} / 5</small>
+                    {% else %}
+                        <small class="text-muted">No Rating</small>
+                    {% endif %}
+                    <!-- Admin Privileges: Edit and Delete -->
+                    <div>
+                        {% if request.user.is_superuser %}
+                            <small class="ml-3">
+                                <a href="{% url 'edit_service' service.id %}">Edit</a> | 
+                                <a class="text-danger" href="{% url 'delete_service' service.id %}">Delete</a>
+                            </small>
                         {% endif %}
-                        <!-- Service Rating -->
-                        {% if service.rating %}
-                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ service.rating }} / 5</small>
-                        {% else %}
-                            <small class="text-muted">No Rating</small>
-                        {% endif %}
-                        <!-- Admin Privileges: Edit and Delete -->
-                        <div>
-                            {% if request.user.is_superuser %}
-                                <small class="ml-3">
-                                    <a href="{% url 'edit_service' service.id %}">Edit</a> | 
-                                    <a class="text-danger" href="{% url 'delete_service' service.id %}">Delete</a>
-                                </small>
-                            {% endif %}
-                        </div>
-                        <!-- Service Description -->    
-                        <p class="mt-3">{{ service.description }}</p>
+                    </div>
+                    <!-- Service Description -->    
+                    <p class="mt-3">{{ service.description }}</p>
 
-                        <!-- *** SERVICE FORM *** -->
-                        <form class="form" action="{% url 'add_to_bag' service.id %}" method="POST">
-                            {% csrf_token %} <!-- Form with POST method, needs csrf token for Django form's protection -->
+                    <!-- *** SERVICE FORM *** -->
+                    <form class="form" action="{% url 'add_to_bag' service.id %}" method="POST">
+                        {% csrf_token %} <!-- Form with POST method, needs csrf token for Django form's protection -->
 
-                            <div class="form-row">
+                        <div class="form-row">
 
-                                {% with service.has_sizes as s %}
-                                {% with service.has_colors as c %}
-                                {% with service.has_user_message as m %}
+                            {% with service.has_sizes as s %}
+                            {% with service.has_colors as c %}
+                            {% with service.has_user_message as m %}
 
-                                    <!-- Size (Dimensions) -->
-                                    {% if s %}
-                                        <div class="col-12 mt-3 mb-3">
-                                            <p><strong>Project's dimensions:</strong></p>
-                                            <select class="form-control rounded-0 w-65" name="service_size" id="id_service_size">
-                                                <option value="choose" selected disabled>Choose Dimensions:</option>
-                                                <optgroup label="- Logo -">
-                                                    <option value="square">Logo Square</option>
-                                                    <option value="rectangular">Logo Rectangular</option>
-                                                    <option value="round">Logo Round</option>
-                                                </optgroup>
-                                                <optgroup label="- Printables -">
-                                                    <option value="card">Business Card</option>
-                                                    <option value="coupon">Coupon Card</option>
-                                                    <option value="brochure">Flyer</option>
-                                                    <option value="poster">Poster</option>
-                                                </optgroup>
-                                                <optgroup label="- Social Media -">
-                                                    <option value="fb-event">Facebook Event Cover</option>
-                                                </optgroup>
-                                            </select>
-                                        </div>
-                                    {% endif %}
+                                <!-- Size (Dimensions) -->
+                                {% if s %}
+                                    <div class="col-12 mt-3 mb-3">
+                                        <p><strong>Project's dimensions:</strong></p>
+                                        <select class="form-control rounded-0 w-65" name="service_size" id="id_service_size">
+                                            <option value="choose" selected disabled>Choose Dimensions:</option>
+                                            <optgroup label="- Logo -">
+                                                <option value="square">Logo Square</option>
+                                                <option value="rectangular">Logo Rectangular</option>
+                                                <option value="round">Logo Round</option>
+                                            </optgroup>
+                                            <optgroup label="- Printables -">
+                                                <option value="card">Business Card</option>
+                                                <option value="coupon">Coupon Card</option>
+                                                <option value="brochure">Flyer</option>
+                                                <option value="poster">Poster</option>
+                                            </optgroup>
+                                            <optgroup label="- Social Media -">
+                                                <option value="fb-event">Facebook Event Cover</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                {% endif %}
 
-                                    <!-- Color Scheme -->
-                                    {% if c %}
-                                        <div class="col-12 mt-3 mb-3">
-                                            <p><strong>Project's color scheme:</strong></p>
-                                            <select class="form-control rounded-0 w-65" name="service_color" id="id_service_color">
-                                                <option value="choose" selected disabled>Choose Color Scheme:</option>
-                                                <option value="summer">SUMMER: muted warm tones</option>
-                                                    <option value="smr" disabled>(watered-green, peach-rose, vanilla, sand-beije, golden...)</option>
-                                                <option value="autumn">AUTUMN: neutral earth tones</option>
-                                                    <option value="atm" disabled>(rust-red, mustard-yellow, olive-green, wood-brown, camel...)</option>
-                                                <option value="winter">WINTER: deep cool tones</option>
-                                                    <option value="wtr" disabled>(berry-red, emerald-green, navy-blue, silver, charcoal...)</option>
-                                                <option value="spring">SPRING: fresh pastel tones</option>
-                                                    <option value="spg" disabled>(coral-pink, mint-green, lavander, mauve, lemony-yellow...)</option>
-                                            </select>
-                                        </div>
-                                    {% endif %}
+                                <!-- Color Scheme -->
+                                {% if c %}
+                                    <div class="col-12 mt-3 mb-3">
+                                        <p><strong>Project's color scheme:</strong></p>
+                                        <select class="form-control rounded-0 w-65" name="service_color" id="id_service_color">
+                                            <option value="choose" selected disabled>Choose Color Scheme:</option>
+                                            <option value="summer">SUMMER: muted warm tones</option>
+                                                <option value="smr" disabled>(watered-green, peach-rose, vanilla, sand-beije, golden...)</option>
+                                            <option value="autumn">AUTUMN: neutral earth tones</option>
+                                                <option value="atm" disabled>(rust-red, mustard-yellow, olive-green, wood-brown, camel...)</option>
+                                            <option value="winter">WINTER: deep cool tones</option>
+                                                <option value="wtr" disabled>(berry-red, emerald-green, navy-blue, silver, charcoal...)</option>
+                                            <option value="spring">SPRING: fresh pastel tones</option>
+                                                <option value="spg" disabled>(coral-pink, mint-green, lavander, mauve, lemony-yellow...)</option>
+                                        </select>
+                                    </div>
+                                {% endif %}
 
-                                    <!-- User Message -->
-                                    {% if m %}
-                                        <div class="col-12 mt-3 mb-3">
-                                            <p><strong>Please, enter your message below</strong>
-                                                <br/>
-                                                <spam class="mb-0 small text-muted">
-                                                <!-- If design project -->
-                                                {% if s %}
-                                                Type in the copy or content for your design project: company's name, contact details, events information, etc. Also, describe briefly the features you wish for your design project.
-                                                <!-- If webdev project -->
-                                                {% elif c %}
-                                                Describe briefly the features and functionality you wish for your webdevelopment project, as well as the main goal you wish to achieve with your new website.
-                                                <!-- If consultancy session -->
-                                                {% else %}
-                                                To prepare for your consultancy session, briefly introduce your company or new business idea and the three main goals you wish to achieve, or three issues for which you seek solutions or improvements:
-                                                {% endif %}
-                                                </spam>
-                                            </p>
-                                            <textarea class="form-control w-65" name="service_user_message" id="service_user_message" rows="4" maxlength="250"></textarea>
-                                        </div>
-                                    {% endif %}
+                                <!-- User Message -->
+                                {% if m %}
+                                    <div class="col-12 mt-3 mb-3">
+                                        <p><strong>Please, enter your message below</strong>
+                                            <br/>
+                                            <spam class="mb-0 small text-muted">
+                                            <!-- If design project -->
+                                            {% if s %}
+                                            Type in the copy or content for your design project: company's name, contact details, events information, etc. Also, describe briefly the features you wish for your design project.
+                                            <!-- If webdev project -->
+                                            {% elif c %}
+                                            Describe briefly the features and functionality you wish for your webdevelopment project, as well as the main goal you wish to achieve with your new website.
+                                            <!-- If consultancy session -->
+                                            {% else %}
+                                            To prepare for your consultancy session, briefly introduce your company or new business idea and the three main goals you wish to achieve, or three issues for which you seek solutions or improvements:
+                                            {% endif %}
+                                            </spam>
+                                        </p>
+                                        <textarea class="form-control w-65" name="service_user_message" id="service_user_message" rows="4" maxlength="250"></textarea>
+                                    </div>
+                                {% endif %}
 
-                                    <!-- Quantity Form -->
-                                    <div class="col-12">
-                                        <p class="mt-3"><strong>Quantity:</strong></p>
-                                        <div class="form-group w-50">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <button class="decrement-qty btn btn-black rounded-0" 
-                                                        data-item_id="{{ service.id }}" id="decrement-qty_{{ service.id }}">
-                                                        <span class="icon">
-                                                            <i class="fas fa-minus"></i>
-                                                        </span>
-                                                    </button>
-                                                </div>
-                                                <input class="form-control qty_input" type="number"
-                                                    name="quantity" value="1" min="1" max="99"
-                                                    data-item_id="{{ service.id }}"
-                                                    id="id_qty_{{ service.id }}">
-                                                <div class="input-group-append">
-                                                    <button class="increment-qty btn btn-black rounded-0"
-                                                        data-item_id="{{ service.id }}" id="increment-qty_{{ service.id }}">
-                                                        <span class="icon">
-                                                            <i class="fas fa-plus"></i>
-                                                        </span>
-                                                    </button>
-                                                </div>
+                                <!-- Quantity Form -->
+                                <div class="col-12">
+                                    <p class="mt-3"><strong>Quantity:</strong></p>
+                                    <div class="form-group w-50">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button class="decrement-qty btn btn-black rounded-0" 
+                                                    data-item_id="{{ service.id }}" id="decrement-qty_{{ service.id }}">
+                                                    <span class="icon">
+                                                        <i class="fas fa-minus"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <input class="form-control qty_input" type="number"
+                                                name="quantity" value="1" min="1" max="99"
+                                                data-item_id="{{ service.id }}"
+                                                id="id_qty_{{ service.id }}">
+                                            <div class="input-group-append">
+                                                <button class="increment-qty btn btn-black rounded-0"
+                                                    data-item_id="{{ service.id }}" id="increment-qty_{{ service.id }}">
+                                                    <span class="icon">
+                                                        <i class="fas fa-plus"></i>
+                                                    </span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <!-- Submit buttom and keep shopping button -->
-                                    <div class="col{% if s %}{% if c %}{% if m %}-12 mt-2{% endif %}{% endif %}{% endif %}">
-                                        <a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 mt-5">
-                                            <span class="icon">
-                                                <i class="fas fa-chevron-left"></i>
-                                            </span>
-                                            <span class="text-uppercase">Keep Shopping</span>
-                                        </a>
-                                        <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
-                                    </div>
-                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                <!-- Submit buttom and keep shopping button -->
+                                <div class="col{% if s %}{% if c %}{% if m %}-12 mt-2{% endif %}{% endif %}{% endif %}">
+                                    <a href="{% url 'services' %}" class="btn btn-outline-black rounded-0 mt-5">
+                                        <span class="icon">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </span>
+                                        <span class="text-uppercase">Keep Shopping</span>
+                                    </a>
+                                    <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                                </div>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
 
-                                {% endwith %}
-                                {% endwith %}
-                                {% endwith %}
+                            {% endwith %}
+                            {% endwith %}
+                            {% endwith %}
 
-                            </div>
-                        </form>
-                    </div>
-                </div>        
-            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>        
         </div>
+    </div>
 
-        <!-- Back to the top button -->
-        <div class="btt-button shadow-sm rounded-0 border border-black">
-            <a class="btt-link d-flex h-100">
-                <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-            </a>	
-        </div>
+    <!-- Back to the top button -->
+    <div class="btt-button shadow-sm rounded-0 border border-black">
+        <a class="btt-link d-flex h-100">
+            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+        </a>	
+    </div>
 {% endblock %}
 
 {% block postloadjs %}

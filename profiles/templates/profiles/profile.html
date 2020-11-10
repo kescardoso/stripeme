@@ -72,10 +72,9 @@
 			</div>
 		</div>
 	</div>
+{% endblock %}
 
-	{% endblock %}
-
-	{% block postloadjs %}
-	{{ block.super }}
-	<script type="text/javascript" src="{% static 'js/countryfield.js' %}"></script>
-	{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'js/countryfield.js' %}"></script>
+{% endblock %}

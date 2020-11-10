@@ -4,166 +4,166 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-        <div class="container-fluid">
+<div class="overlay"></div>
+    <div class="container-fluid">
 
-            <div class="row">
-                <div class="col text-center mt-3">
-                    <h2 class="logo-font text-gray">Services</h2>
-                    <!-- View top links to multiple categories when selected -->
-                    {% for c in current_categories %}
-                        <a class="category-badge text-decoration-none" href="{% url 'services' %}?category={{ c.name }}">
-                            <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-light">{{ c.friendly_name }}</span>
-                        </a>
-                    {% endfor %}
-                    <hr class="w-50 mb-1">
-                </div>
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font text-gray">Services</h2>
+                <!-- View top links to multiple categories when selected -->
+                {% for c in current_categories %}
+                    <a class="category-badge text-decoration-none" href="{% url 'services' %}?category={{ c.name }}">
+                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-light">{{ c.friendly_name }}</span>
+                    </a>
+                {% endfor %}
+                <hr class="w-50 mb-1">
             </div>
+        </div>
 
-            <div class="row">
-                <div class="service-container col-10 offset-1">
+        <div class="row">
+            <div class="service-container col-10 offset-1">
 
-                    <div class="row mt-1 mb-2">
+                <div class="row mt-1 mb-2">
 
-                        <!-- Box: sort service types in search results -->
-                        <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
-                            <div class="sort-select-wrapper w-50">
-                                <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                                    <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                                    <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                                    <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
-                                    <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
-                                    <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                                    <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                                </select>
-                            </div>
+                    <!-- Box: sort service types in search results -->
+                    <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                        <div class="sort-select-wrapper w-50">
+                            <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                                <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                            </select>
                         </div>
-
-                        <!-- Service count in search results, with link to main service page -->
-                        <div class="col-12 col-md-6 order-md-first">
-                            <p class="text-muted mt-3 text-center text-md-left">
-                                {% if search_term or current_categories or current_sorting != 'None_None' %}
-                                    <span class="small"><a href="{% url 'services' %}">All Services</a> | </span>
-                                {% endif %}
-                                {{ services|length }} Services{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
-                            </p>
-                        </div>
-
                     </div>
 
-                    <div class="row">
-                        {% for service in services %}
+                    <!-- Service count in search results, with link to main service page -->
+                    <div class="col-12 col-md-6 order-md-first">
+                        <p class="text-muted mt-3 text-center text-md-left">
+                            {% if search_term or current_categories or current_sorting != 'None_None' %}
+                                <span class="small"><a href="{% url 'services' %}">All Services</a> | </span>
+                            {% endif %}
+                            {{ services|length }} Services{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                        </p>
+                    </div>
 
-                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                </div>
 
-                                <!-- Service Card Loop -->
-                                <div class="card h-100 border-0">
+                <div class="row">
+                    {% for service in services %}
 
-                                    <!-- Service Image -->
-                                    {% if service.image %}
-                                        <a href="{% url 'service_detail' service.id %}">
-                                            <img class="card-img-top img-fluid" src="{{ service.image.url }}" alt="{{ service.name }}">
-                                        </a>
-                                    {% else %}
-                                        <a href="{% url 'service_detail' service.id %">
-                                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.name }}">
-                                        </a>
-                                    {% endif %}
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
 
-                                    <!-- Service Body: Name -->
-                                    <div class="card-body pb-0">
-                                        <p class="mb-0">{{ service.name }}</p>
-                                    </div>
+                            <!-- Service Card Loop -->
+                            <div class="card h-100 border-0">
 
-                                    <!-- Service Footer: Price, Category, Rating -->
-                                    <div class="card-footer bg-white pt-0 border-0 text-left">
-                                        <div class="row">
-                                            <div class="col">
-                                                <p class="lead mb-0 text-left font-weight-bold">${{ service.price }}</p>
-                                                <!-- Category Link Tag -->
-                                                {% if service.category %}
-                                                <p class="small mt-1 mb-0">
-                                                    <a class="text-muted" href="{% url 'services' %}?category={{ service.category.name }}">
-                                                        <i class="fas fa-tag mr-1"></i>{{ service.category.friendly_name }}
-                                                    </a>
-                                                </p>
+                                <!-- Service Image -->
+                                {% if service.image %}
+                                    <a href="{% url 'service_detail' service.id %}">
+                                        <img class="card-img-top img-fluid" src="{{ service.image.url }}" alt="{{ service.name }}">
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'service_detail' service.id %">
+                                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.name }}">
+                                    </a>
+                                {% endif %}
+
+                                <!-- Service Body: Name -->
+                                <div class="card-body pb-0">
+                                    <p class="mb-0">{{ service.name }}</p>
+                                </div>
+
+                                <!-- Service Footer: Price, Category, Rating -->
+                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="lead mb-0 text-left font-weight-bold">${{ service.price }}</p>
+                                            <!-- Category Link Tag -->
+                                            {% if service.category %}
+                                            <p class="small mt-1 mb-0">
+                                                <a class="text-muted" href="{% url 'services' %}?category={{ service.category.name }}">
+                                                    <i class="fas fa-tag mr-1"></i>{{ service.category.friendly_name }}
+                                                </a>
+                                            </p>
+                                            {% endif %}
+                                            {% if service.rating %}
+                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ service.rating }} / 5</small>
+                                            {% else %}
+                                                <small class="text-muted">No Rating</small>
+                                            {% endif %}
+                                            <!-- Admin Privileges: Edit and Delete -->
+                                            <div>
+                                                {% if request.user.is_superuser %}
+                                                    <small class="ml-3">
+                                                        <a href="{% url 'edit_service' service.id %}">Edit</a> | 
+                                                        <a class="text-danger" href="{% url 'delete_service' service.id %}">Delete</a>
+                                                    </small>
                                                 {% endif %}
-                                                {% if service.rating %}
-                                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ service.rating }} / 5</small>
-                                                {% else %}
-                                                    <small class="text-muted">No Rating</small>
-                                                {% endif %}
-                                                <!-- Admin Privileges: Edit and Delete -->
-                                                <div>
-                                                    {% if request.user.is_superuser %}
-                                                        <small class="ml-3">
-                                                            <a href="{% url 'edit_service' service.id %}">Edit</a> | 
-                                                            <a class="text-danger" href="{% url 'delete_service' service.id %}">Delete</a>
-                                                        </small>
-                                                    {% endif %}
-                                                </div>
-                                                
                                             </div>
+                                            
                                         </div>
                                     </div>
-
                                 </div>
 
                             </div>
 
-                            <!-- Responsive Grid System: with a loop to display/render service cards in all screens -->
-                            {% if forloop.counter|divisibleby:1 %}
-                                <div class="col-12 d-sm-none mb-5">
-                                    <hr>
-                                </div>
-                            {% endif %}                        
-                            {% if forloop.counter|divisibleby:2 %}
-                                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                    <hr>
-                                </div>
-                            {% endif %}
-                            {% if forloop.counter|divisibleby:3 %}
-                                <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                    <hr>
-                                </div>
-                            {% endif %}
-                            {% if forloop.counter|divisibleby:4 %}
-                                <div class="col-12 d-none d-xl-block mb-5">
-                                    <hr>
-                                </div>
-                            {% endif %}
+                        </div>
 
-                        {% endfor %}
-                    </div>
+                        <!-- Responsive Grid System: with a loop to display/render service cards in all screens -->
+                        {% if forloop.counter|divisibleby:1 %}
+                            <div class="col-12 d-sm-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}                        
+                        {% if forloop.counter|divisibleby:2 %}
+                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:4 %}
+                            <div class="col-12 d-none d-xl-block mb-5">
+                                <hr>
+                            </div>
+                        {% endif %}
 
+                    {% endfor %}
                 </div>
-                    
+
             </div>
-
+                
         </div>
 
-        <!-- Back to the top button -->
-        <div class="btt-button shadow-sm rounded-0 border border-black">
-            <a class="btt-link d-flex h-100">
-                <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-            </a>	
-        </div>
+    </div>
+
+    <!-- Back to the top button -->
+    <div class="btt-button shadow-sm rounded-0 border border-black">
+        <a class="btt-link d-flex h-100">
+            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+        </a>	
+    </div>
 
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <!-- Back to Top Link Js -->
-    <script src="{% static 'js/backtop.js' %}"></script>
-    <!-- Service Sorting Js -->
-    <script src="{% static 'js/service_sorting.js' %}"></script>
+{{ block.super }}
+<!-- Back to Top Link Js -->
+<script src="{% static 'js/backtop.js' %}"></script>
+<!-- Service Sorting Js -->
+<script src="{% static 'js/service_sorting.js' %}"></script>
 {% endblock %}
