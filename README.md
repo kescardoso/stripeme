@@ -13,35 +13,33 @@ As you read this document, you will find my complete development process, from U
 
 ## Contents table
 
-1.  [UX](https://github.com/kescardoso/stripeme#ux)
-    
-    -   [Wireframe](https://github.com/kescardoso/stripeme#wireframe)
-        
-    -   [User and Their Goals](https://github.com/kescardoso/stripeme#user-and-their-goals)
-	    - [User Avatar](https://github.com/kescardoso/stripeme#user-avatar)
-	    - [User's Main Challenges](https://github.com/kescardoso/stripeme#users-main-challenges)
-	    - [User Stories](https://github.com/kescardoso/stripeme#user-stories)
-        
-2.  [Features](https://github.com/kescardoso/stripeme#features)
-    
-    -   [Existing Features](https://github.com/kescardoso/stripeme#existing-features)
-        
-    -   [Features Left to Implement](https://github.com/kescardoso/stripeme#features-left-to-implement)
-        
-3.  [Technologies Used](https://github.com/kescardoso/stripeme#technologies-used)
-    
-4.  [Testing](https://github.com/kescardoso/stripeme#testing)
-    
-5.  [Deployment](https://github.com/kescardoso/stripeme#deployment)
-    
-6.  [Credits](https://github.com/kescardoso/stripeme#credits)
-    
+ - [UX](https://github.com/kescardoso/stripeme#ux)
+	 - [Wireframe](https://github.com/kescardoso/stripeme#wireframe)
+	 - [Color Palette](https://github.com/kescardoso/stripeme#color-palette)
+	 - [App Logo](https://github.com/kescardoso/stripeme#app-logo)
+ - [User Stories](https://github.com/kescardoso/stripeme#user-stories)
+ - [User and Their Goals](https://github.com/kescardoso/stripeme#user-and-their-goals)
+	 - [User Avatar](https://github.com/kescardoso/stripeme#user-avatar)
+	 - [User's Main Challenges](https://github.com/kescardoso/stripeme#users-main-challenges)
+ - [Features](https://github.com/kescardoso/stripeme#features)
+	 - [Existing Features](https://github.com/kescardoso/stripeme#existing-features)
+	 - [Features Left to Implement](https://github.com/kescardoso/stripeme#features-left-to-implement)
+ - [Technologies Used](https://github.com/kescardoso/stripeme#technologies-used)
+ - [Testing](https://github.com/kescardoso/stripeme#testing)
+ - [Deployment](https://github.com/kescardoso/stripeme#deployment)
+ - [Credits](https://github.com/kescardoso/stripeme#credits)
 
 ## UX
 
 ### Wireframe
-
 Link to the wireframe on [Figma](https://www.figma.com/file/onwkxg3NFMtijcRfl83X8N/StripeMe?node-id=0%3A1)
+
+### Color Palette
+![enter image description here](https://raw.githubusercontent.com/kescardoso/stripeme/master/media/color-palette.png)
+
+### App Logo
+*Stripe Me Favicon*
+![enter image description here](https://raw.githubusercontent.com/kescardoso/stripeme/master/media/SripeMe-Favicon.png)
 
 ### User and Their Goals
 
@@ -60,7 +58,7 @@ Here, available services are already formatted and able to be personalized: they
 - Cross-cultural English-speaking men and women, affected or not by Covid-19;
 - Freelancers, entrepreneurs, small business owners looking for online alternatives for their jobs of entrepreneurial projects;
 - Travelers, digital nomads, independent culture and art contractors, without a business address and interested in building an online presence for their income activities.
-
+        
 #### User's Main challenges
 
 Some of the main challenges regular people and non-technical professionals encounter are:
