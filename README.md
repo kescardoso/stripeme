@@ -64,7 +64,6 @@ Link to the wireframe on [Figma](https://www.figma.com/file/onwkxg3NFMtijcRfl83X
 *Click on the image to see it larger:*
 ![](https://raw.githubusercontent.com/kescardoso/stripeme/master/media/user-stories.png)
 
-
 ### User and Their Goals
 
 Since Covid-19 became a global pandemic, many people around the world began to live through lockdowns. Many began to work from home; others lost their jobs. With uncertainty becoming a norm, we can't know when, or if, our societies will return to normal and what consequences the pandemic will leave behind.
@@ -285,7 +284,6 @@ Friendly Name | friendly_name | Charfield | max_length=254, null=True, blank=Tru
 2. **Portfolio Admin:** Currently the webdevs and designs portfolio are managed from the back end (from within the app in the fixture and models files). My goal was to install admin fields so both portfolios would be manageable from the Django admin with superuser privileges (following the example used in the service app). However, to respect the timeline and deadline of this project, this feature has been left for later implementation.
 
 3. **Full Name:** Currently, users cannot enter their full name in their details session; their name has to be entered at each new order. The implementation of this feature is beyond the scope of this project and planned to be developed in the future.
-    
 
 ## Technologies Used
 
@@ -460,3 +458,32 @@ git push heroku master
 ``` 
 13. This completes the process of deploying the project to Heroku. Once deployed, continue to push all changes made to the project to Heroku with the final command listed above
 
+## Credits
+
+### Media
+
+All stock-free images were retrieved from [Unsplash](https://unsplash.com) and used with permission:
+
+- Hero, by [Jess Bailey](https://unsplash.com/photos/q10VITrVYUM)
+- Google Blogger Website, by [STIL](https://unsplash.com/photos/wvvD4EqDWHs) 
+- Wordpress Hosted Website, by [Christin Hume](https://unsplash.com/photos/Hcfwew744z4)
+- Custom Web App, by [Kewal](https://unsplash.com/photos/Yog2sjrOzq4)
+- Custom Logo, by [Diego PH](https://unsplash.com/photos/fIq0tET6llw)
+- Cards & Flyers, by [Andrea Rapuzzi](https://unsplash.com/photos/05vRaGI4VaQ)
+- Social Media Graphics, by [Linda Xu](https://unsplash.com/photos/iMf7bvcIIog)
+- Branding Session, by [Danielle MacInnes](https://unsplash.com/photos/IuLgi9PWETU)
+- UX Strategy Session, by [Brooke Lark](https://unsplash.com/photos/W1B2LpQOBxA) 
+- Master Session, by [Kevin Baghat](https://unsplash.com/photos/zNRITe8NPqY)
+
+## Acknowledgements
+
+Gratitude to the following people for their help, support and inspiration:  
+  
+- My mentor [Seun Owonikoko](https://github.com/seunkoko) for her patience and gentleness, for staying available and supportive through my unique process and special circumstances. I've learned a great deal working with her and am glad we are now connected.  
+- To [Code Institute](https://codeinstitute.net/), their team and staff, to the student services and advisors for their unconditional support and tough love, to the amazing tutors for their great didactics and good humor and ongoing 24hour support. My training experience couldn't have been more rewarding and uplifting. Thank you, from the bottom of my heart.  
+- To my family and friends for continually motivating me through struggles and challenges. I am grateful I am never alone and always supported. 
+- And to my cat Jasper, for always accompanying me and staying right by my side in the early dawn and late night, during my coding sprints and nuit blanches, and for teaching me about balance, gentleness and unconditional friendship.  
+  
+Thank you!
+
+> **_NOTE:_** This project was created for educational purposes only.
