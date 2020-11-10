@@ -137,6 +137,15 @@ The main database structure models are documented below.
  Original Retreat | original_retreat | TextField | null=False, blank=False, default=''
  Stripe Pid | stripe_pid | CharField | max_length=254, null=False, blank=False, default=''
 
+#### ---->> OrderLineItem Model
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+ Order | order | ForeignKey 'Order' | null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems'
+ Service | service | ForeignKey 'Service' | null=False, blank=False, on_delete=models.CASCADE
+ User Message | service_user_message | CharField | max_length=250, null=True, blank=True
+ Quantity | quantity | IntegerField | null=False, blank=False, default=0
+ Lineitem Total | lineitem_total | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False
+
 ### Services App
 
 #### ---->> Services Model
@@ -151,6 +160,9 @@ Image URL | image_url | URLField | max_length=300, null=True, blank=True
 Image | image | ImageField | null=True, blank=True
 Price | price | DecimalField | max_digits=6, decimal_places=2
 Rating | rating | DecimalField | max_digits=6, decimal_places=2, null=True, blank=True
+Sizes (Dimensions) | has_sizes | BooleanField | default=False, null=True, blank=True
+Colors (Color Scheme) | has_colors | BooleanField | default=False, null=True, blank=True
+Message | has_user_message | BooleanField | default=False, null=True, blank=True
 
 #### ---->> Category Model
 
@@ -209,3 +221,4 @@ Friendly Name | friendly_name | Charfield | max_length=254, null=True, blank=Tru
 4.  **Discount Banner:** it is a notification system on the home page, as well as on the checkout toast and bag page, to tell users that they can get 10% off when total purchase is $500 or more.
 
 5.  **Service Option Fields:** on each service detail page, there are boolean fields with color scheme, dimensions and user message options to be entered by the user. These are used to send information to the owner about desired user's customizations addressed to that service. The fields color and dimensions are not dynamic and currently in development.
+
