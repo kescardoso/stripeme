@@ -339,3 +339,62 @@ I tested this project on the following devices:
 - Apple iPhone 6
 - Apple iPad Air
 
+## Deployment
+
+#### Local Deployment
+This project was developed using [Gitpod](https://gitpod.io) as the chosen IDE and [GitHub](https://github.com) as a remote repository. The Project's source files were regularly pushed to the [GitHub StripeMe Repository](https://github.com/kescardoso/stripeme) via the  `master`  branch. To reproduce this project within a local deployement, use the following steps and requirements:
+
+1. Have the following installed in your IDE of choice:
+	 - Git (for version control)
+	 - pip (package installer for Python; pip3 was used at the time of production: October 2020)
+	 - Python3 (the programming language used to produce the backend logic of this project)
+2. Create an account with  [Stripe](https://stripe.com/en-se), necessary for payment features in the project.
+3. Use an email provider (I used [Gmail](https://www.google.com/intl/sv/gmail/about/#) for this project) and sign in and navigate to the  [Google Account Security](https://myaccount.google.com/security)  page.
+4. Create two-step authentication by creating an App password for your Django app.
+5. Use the same email values to set up your email username and password in the steps below:
+	- Scroll to the top of this repository and click on the "clone or download button".
+	- Decide whether you want to clone the project using HTTPS or an SSH key and do the following:
+    - HTTPS: click on the checklist icon to the right of the URL to copy it
+    - SSH key: first click on 'Use SSH' then click on the same icon as above
+
+6. Return to your IDE and open a new Terminal window.
+7. Change the current working directory to the location where you want the cloned directory.
+8. Enter the following command and press 'Enter' to create your local clone:
+```
+git clone https://github.com/kescardoso/stripeme.git
+```
+9.  Install the required dependencies with the following command:
+```
+pip3 install -r requirements.txt
+```
+10.  Create an env.py file and add the following, complete with your own values:
+```
+import os
+os.environ['AWS_ACCESS_KEY_ID'] = '<your value>'
+os.environ['AWS_SECRET_ACCESS_KEY'] = '<your value>'
+os.environ['DATABASE_URL'] = '<your value>'
+os.environ['EMAIL_HOST_PASS'] = '<your value>'
+os.environ['EMAIL_HOST_USER'] = '<your value>'
+os.environ['SECRET_KEY'] = '<your value>'
+os.environ['STRIPE_PUBLIC_KEY'] = '<your value>'
+os.environ['STRIPE_SECRET_KEY'] = '<your value>'
+os.environ['STRIPE_WH_SECRET'] = '<your value>'
+os.environ['DEVELOPMENT'] = 'True'
+os.environ['USE_AWS'] = 'True'
+```
+11.  Add your env.py file to .gitignore to make sure your database information is not viewable to others and to keep your values safe.
+12. To set up the Django SQLite3 tables required for this project, use the following commands:
+```
+python3 manage.py makemigrations
+python3 manage.py migrate
+```
+13.  With this complete, create a superuser for your project with the following command and follow the instructions in the Terminal (note: this will be necessary to add data to your locally deployed version):
+```
+python3 manage.py createsuperuser
+```
+14.  Your cloned version is now ready to run locally with the following command:
+```
+python3 manage.py runserver
+```
+15.  Once you run your project locally, add '/admin' to the locally deployed project's URL. 
+16. Add the service categories and service items to the database. This information can be copied from each individual service's page of the deployed version of the project found here:  [StripeMe](https://kika-stripe-me.herokuapp.com/)
