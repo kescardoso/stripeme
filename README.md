@@ -74,15 +74,19 @@ Some of the main challenges regular people and non-technical professionals encou
 - They feel intimidated by traditional digital agencies, and they prefer a more friendly, one-to-one approach.
 
 #### User Stories
-
+*Click on the image to see it larger:*
 ![](https://raw.githubusercontent.com/kescardoso/stripeme/master/media/user-stories.png)
 
 ## Features
 
 ### Existing Features
 
-1. **Navbar:** contains the logo, search box, and links to access user profile and shopping bag.
-2. **Menu:** just under the main nav, the menu contains links for easy access to services and portfolio pages, in lists by category, price, rating, and name.
-3. **Search Box:** dynamic search connected to the database.   
-4. **Discount Banner:** it is a notification system on the home page, as well as on the checkout toast and bag page, to tell users that they can get 10% off when total purchase is $500 or more.
-5. **Service Option Fields:** on each service detail page, there are boolean fields with color scheme, dimensions and user message options to be entered by the user. These are used to send information to the owner about desired user's customizations addressed to that service. The fields color and dimensions are not dynamic and currently in development.
+1.  **Navbar:** contains the logo, search box, and links to access user profile and shopping bag.
+
+2.  **Menu:** just under the main nav, the menu contains links for easy access to services and portfolio pages, in lists by category, price, rating, and name.
+
+3.  **Search Box:** dynamic search connected to the database.
+
+4.  **Discount Banner:** it is a notification system on the home page, as well as on the checkout toast and bag page, to tell users that they can get 10% off when total purchase is $500 or more.
+
+5.  **Service Option Fields:** on each service detail page, there are boolean fields with color scheme, dimensions and user message options to be entered by the user. These are used to send information to the owner about desired user's customizations addressed to that service. The fields color and dimensions are not dynamic and currently in development.
