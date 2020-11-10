@@ -30,6 +30,11 @@ As you read this document, you will find my complete development process, from U
 	 - [User Avatar](https://github.com/kescardoso/stripeme#user-avatar)
 	 - [User's Main Challenges](https://github.com/kescardoso/stripeme#users-main-challenges)
  - [Database Structure](https://github.com/kescardoso/stripeme#database-structure)
+	 - [Profiles App](https://github.com/kescardoso/stripeme#profiles-app)
+	 - [Checkout App](https://github.com/kescardoso/stripeme#checkout-app)
+	 - [Services App](https://github.com/kescardoso/stripeme#services-app)
+	 - [Designs App](https://github.com/kescardoso/stripeme#designs-app)
+	 - [Webdevs App](https://github.com/kescardoso/stripeme#webdevs-app)
  - [Features](https://github.com/kescardoso/stripeme#features)
 	 - [Existing Features](https://github.com/kescardoso/stripeme#existing-features)
 	 - [Features Left to Implement](https://github.com/kescardoso/stripeme#features-left-to-implement)
@@ -95,7 +100,9 @@ The structure of the Checkout and Services apps are inspired by one of Code Inst
 
 The main database structure models are documented below.
 
-#### Profiles App -- **UserProfile Model**
+### Profiles App
+
+#### ---->> UserProfile Model
 
 | **Name** | **Database Key** | **Field Type** | **Validation** |
 --- | --- | --- | --- 
@@ -108,4 +115,97 @@ The main database structure models are documented below.
  County | default_county | CharField | max_length=80, null=True, blank=True
  Country | default_country | CountryField | blank_label='Country', null=True, blank=True
 
- 
+### Checkout App
+
+#### ---->> Checkout Model
+
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+ Order Number | order_number | CharField | max_length=32, null=False, editable=False
+ User Profile | user_profile | ForeignKey 'UserProfile' | on_delete=models.SET_NULL, null=True, blank=True, related_name='orders'
+ Full Name | full_name | CharField | max_length=50, null=False, blank=False
+ Email | email | EmailField | max_length=254, null=False, blank=False
+ Country | country | CountryField | blank_label='Country*', null=False, blank=False
+ Postcode | postcode | CharField | max_length=20, null=True, blank=True
+ Town/City | town_or_city | CharField | max_length=40, null=False, blank=False
+ Phone number | phone_number | CharField | max_length=20, null=False, blank=False
+ Street Address 1 | street_address1 | CharField | max_length=80, null=False, blank=False
+ Street Address 2 | street_address2 | CharField | max_length=80, null=False, blank=True
+ County | county | CharField | max_length=80, null=True, blank=True
+ Date | date | DateTimeField | auto_now_add=True
+ Total Price | total_price | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
+ Original Retreat | original_retreat | TextField | null=False, blank=False, default=''
+ Stripe Pid | stripe_pid | CharField | max_length=254, null=False, blank=False, default=''
+
+### Services App
+
+#### ---->> Services Model
+
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | ---
+Category | category | ForeignKey 'Category' | null=True, blank=True, on_delete=models.SET_NULL
+Sku | sku | CharField | max_length=254, null=True, blank=True
+Name | name | CharField | max_length=254
+Description | description | TextField |max_length=700
+Image URL | image_url | URLField | max_length=300, null=True, blank=True
+Image | image | ImageField | null=True, blank=True
+Price | price | DecimalField | max_digits=6, decimal_places=2
+Rating | rating | DecimalField | max_digits=6, decimal_places=2, null=True, blank=True
+
+#### ---->> Category Model
+
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | ---
+Name | name | CharField | max_length=254
+Friendly Name | friendly_name | Charfield | max_length=254, null=True, blank=True
+
+### Designs App
+
+#### ---->> Designs Model
+
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | ---
+Category | category | ForeignKey 'Category' | null=True, blank=True, on_delete=models.SET_NULL
+Name | name | CharField | max_length=254
+Image URL | image_url | URLField | max_length=300, null=True, blank=True
+Image | image | ImageField | null=True, blank=True
+
+#### ---->> Category Model
+
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | ---
+Name | name | CharField | max_length=254
+Friendly Name | friendly_name | Charfield | max_length=254, null=True, blank=True
+
+### Webdevs App
+
+#### ---->> Webdevs Model
+
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | ---
+Category | category | ForeignKey 'Category' | null=True, blank=True, on_delete=models.SET_NULL
+Name | name | CharField | max_length=254
+Description | description | TextField |max_length=254
+Image URL | image_url | URLField | max_length=300, null=True, blank=True
+Image | image | ImageField | null=True, blank=True
+
+#### ---->> Category Model
+
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | ---
+Name | name | CharField | max_length=254
+Friendly Name | friendly_name | Charfield | max_length=254, null=True, blank=True
+
+## Features
+
+### Existing Features
+
+1.  **Navbar:** contains the logo, search box, and links to access user profile and shopping bag.
+
+2.  **Menu:** just under the main nav, the menu contains links for easy access to services and portfolio pages, in lists by category, price, rating, and name.
+
+3.  **Search Box:** dynamic search connected to the database.
+
+4.  **Discount Banner:** it is a notification system on the home page, as well as on the checkout toast and bag page, to tell users that they can get 10% off when total purchase is $500 or more.
+
+5.  **Service Option Fields:** on each service detail page, there are boolean fields with color scheme, dimensions and user message options to be entered by the user. These are used to send information to the owner about desired user's customizations addressed to that service. The fields color and dimensions are not dynamic and currently in development.
