@@ -40,6 +40,9 @@ As you read this document, you will find my complete development process, from U
 	 - [Features Left to Implement](https://github.com/kescardoso/stripeme#features-left-to-implement)
  - [Technologies Used](https://github.com/kescardoso/stripeme#technologies-used)
  - [Testing](https://github.com/kescardoso/stripeme#testing)
+	 - [Defensive Design](https://github.com/kescardoso/stripeme#defensive-design)
+	 - [Validators and Formatters](https://github.com/kescardoso/stripeme#validators-and-formatters)
+	 - [Compatibility Tests](https://github.com/kescardoso/stripeme#compatibility-tests)
  - [Deployment](https://github.com/kescardoso/stripeme#deployment)
  - [Credits](https://github.com/kescardoso/stripeme#credits)
 
@@ -80,7 +83,7 @@ Here, available services are already formatted and able to be personalized: they
         
 ### User's Main challenges
 
-Some of the main challenges regular people and non-technical professionals encounter are:
+Some main challenges regular people and non-technical professionals encounter are:
 
 - They find websites hard to understand and to build.
 - They don't have time to learn new technologies.
@@ -92,7 +95,7 @@ Some of the main challenges regular people and non-technical professionals encou
 
 ## Database Structure
 
-Stripe Me is built on Django, and primarily uses the SQLite3 database during all development stages. Through the deployment to Heroku, the database was changed to a PostgresSQL database as that is provided by Heroku as an add-on for production.
+Stripe Me is built on Django, and primarily uses the SQLite3 database during all development stages. Through the deployment to Heroku, the database was changed to a PostgreSQL database as that is provided by Heroku as an add-on for production.
 
 The Django’s default user model for authorization is also in use, which allows the project to meet one of the main requirements of separating features by anonymous users, users in session and superusers.
 
@@ -219,8 +222,7 @@ Friendly Name | friendly_name | Charfield | max_length=254, null=True, blank=Tru
 	- These elements are consistent in design and are responsive throughout the website. However, the contents of the menu changes depending on if a user is logged in or not.  
 	- The menu bar for users logged-in features a 'Sign Out' link where the 'Sign Up' link usually is. When a user in session chooses to sign out, a toast message confirms this action, and they are redirected back to the home page.  
 	- Users with items added to their Bag notice an additional 'Checkout' link in their navbar, allowing them direct access to go straight to check out.  
-	- The authentication pages (Sign In, Sign Up & Sign Out) were built with Django, and therefore include all Django's built-in features (including requesting an email for forgotten passwords.)  
-	- Extra authentication prevents users not authenticated from the Profile page and the order history.  
+	- The authentication pages (Sign In, Sign Up & Sign Out) were built with Django, and therefore include all Django's built-in features (including requesting an email for forgotten passwords.)
   
 3. **Toasts:** All toast messages appear under the menu bar with the same fonts as used consistently in the theme.  
 	- Depending on the type of message, the toast color changes to reflect this message.  
@@ -269,7 +271,7 @@ Friendly Name | friendly_name | Charfield | max_length=254, null=True, blank=Tru
 
 ### Features Left to Implement
 
-1. **Colors and Dimensions** Currently the service details page include the dropdown fields for color scheme and project dimensions, but they are not dynamically functional (only the user message text field is fully functional and connected to the checkout model).  
+1. **Colors and Dimensions:** Currently the service details page include the dropdown fields for color scheme and project dimensions, but they are not dynamically functional (only the user message text field is fully functional and connected to the checkout model).  
 	- The color scheme option is available for webdev and design services, and when these services are selected the order summary and history returns *in development*  
 	- The dimension's option is only available for design services. When design services are selected the order summary and history returns *in development*  
 	- When color scheme is not available for a service (consultancy sessions), and the service is selected the order summary and history returns N/A  
@@ -284,8 +286,6 @@ Friendly Name | friendly_name | Charfield | max_length=254, null=True, blank=Tru
     
 
 ## Technologies Used
-
-1.  ### Languages, libraries, databases, frameworks, editors, version control and deployment
 
 -   [HTML5](https://www.w3schools.com/html/)
 -   [CSS3](https://www.w3schools.com/css/)
@@ -309,4 +309,33 @@ Friendly Name | friendly_name | Charfield | max_length=254, null=True, blank=Tru
 -   [Figma](https://www.figma.com/)
 -   [FontAwesome](https://fontawesome.com/)
 -   [Google Fonts](https://fonts.google.com/)
+    
+## Testing
+
+### Defensive Design
+
+- I used a 'mobile first' approach to developing this project, and consistenly used Google Chrome's Dev Tools to view the view the output of my code on different screen sizes.
+- During debugging, my approach often included using print statements to check where an issue was coming from. 
+
+### Validators and Formatters
+
+- I used the built-in formatter feature in Gitpod to clean my HTML Code, as well as passed my code through the [W3C Markup Validation Service](https://validator.w3.org/)
+- I checked the CSS code with the [W3C Markup Validation Service](https://jigsaw.w3.org/css-validator/). 
+- I used  the Gitpod built in Flake8 input to check and format the Python code stored within each app.
+
+### Compatibility tests
+
+#### Using different browsers
+
+I manually tested this project on the following web browsers, checking that all aspects worked as planned:
+- Google Chrome
+- Mozilla Firefox
+-  Apple Safari
+
+#### Using different devices
+
+I tested this project on the following devices:
+- Apple MacBook Pro 15"
+- Apple iPhone 6
+- Apple iPad Air
 
