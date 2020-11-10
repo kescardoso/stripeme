@@ -2,21 +2,16 @@
 
 ## Introduction
 
-
 Stripe Me is an e-commerce and portfolio website about web-development and design services. This project is a Python-Django web application, backed by a Postgres and squlite3 database, and deployed via the Heroku PaaS. Stripe Me uses the Stripe Checkout API (in testing mode: not currently taking real card payments) and is a lightweight, responsive website designed with the Bootstrap Grid Systems.  
+
+-   [View the Stripe Me Heroku App](https://kika-stripe-me.herokuapp.com/)
+-   [View the repository on GitHub](https://github.com/kescardoso/stripeme)
   
 As you read this document, you will find my complete development process, from UX strategy to deployment. 
+Thank you reading!
+[Kes Cardoso](https://github.com/kescardoso)
 
 ![enter image description here](https://raw.githubusercontent.com/kescardoso/stripeme/master/media/project-present.png)
-
--   [View Stripe Me on Heroku](https://kika-stripe-me.herokuapp.com/)
-    
--   [View the repository on GitHub](https://github.com/kescardoso/stripeme)
-    
-This project has both educational and entrepreneurial goals.
-Thanks for appreciating The Cryptopedia World with me!
-
-[Kes Cardoso](http://www.kescardoso.com/)
 
 ## Contents table
 
@@ -24,9 +19,9 @@ Thanks for appreciating The Cryptopedia World with me!
     
     -   [Wireframe](https://github.com/kescardoso/stripeme#wireframe)
         
-    -   [Target User and What They Want to Achieve](https://github.com/kescardoso/stripeme#who-is-the-target-user)
+    -   [User and Their Goals](https://github.com/kescardoso/stripeme#users-and-their-goals)
         
-    -   [Target User's Main Challenges](https://github.com/kescardoso/stripeme#main-challenges)
+    -   [User's Main Challenges](https://github.com/kescardoso/stripeme#main-challenges)
         
     -   [User Stories](https://github.com/kescardoso/stripeme#user-stories)
         
@@ -44,8 +39,10 @@ Thanks for appreciating The Cryptopedia World with me!
     
 6.  [Credits](https://github.com/kescardoso/stripeme#credits)
     
+
 ## UX
 
 ### Wireframe
 
 Link to the wireframe on [Figma](https://www.figma.com/file/onwkxg3NFMtijcRfl83X8N/StripeMe?node-id=0%3A1)
+
