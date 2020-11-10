@@ -17,7 +17,7 @@ As you read this document, you will find my complete development process, from U
     
     -   [Wireframe](https://github.com/kescardoso/stripeme#wireframe)
         
-    -   [User and Their Goals](https://github.com/kescardoso/stripeme#users-and-their-goals)
+    -   [User and Their Goals](https://github.com/kescardoso/stripeme#user-and-their-goals)
 	    - [User Avatar](https://github.com/kescardoso/stripeme#user-avatar)
 	    - [User's Main Challenges](https://github.com/kescardoso/stripeme#users-main-challenges)
 	    - [User Stories](https://github.com/kescardoso/stripeme#user-stories)
@@ -60,4 +60,16 @@ Here, available services are already formatted and able to be personalized: they
 - Cross-cultural English-speaking men and women, affected or not by Covid-19;
 - Freelancers, entrepreneurs, small business owners looking for online alternatives for their jobs of entrepreneurial projects;
 - Travelers, digital nomads, independent culture and art contractors, without a business address and interested in building an online presence for their income activities.
+
+#### User's Main challenges
+
+Some of the main challenges regular people and non-technical professionals encounter are:
+
+- They find websites hard to understand and to build.
+- They don't have time to learn new technologies.
+- Their budget is limited due to current Covid-19 and the economic crisis.
+- They rely on free or limited website building services, but they miss the UX and development quality they desire.
+- They are not sure what they need in technological terms, and they appreciate guidance.
+- They need a personalized e-commerce project that still keeps features basic and affordable.
+- They feel intimidated by traditional digital agencies, and they prefer a more friendly, one-to-one approach.
 
