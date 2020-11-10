@@ -9,7 +9,7 @@ Stripe Me is an e-commerce and portfolio website about web-development and desig
   
 As you read this document, you will find my complete development process, from UX strategy to deployment. Thank you for reading! -- [Kes Cardoso](https://github.com/kescardoso)
 
-![enter image description here](https://raw.githubusercontent.com/kescardoso/stripeme/master/media/project-present.png)
+![](https://raw.githubusercontent.com/kescardoso/stripeme/master/media/project-present.png)
 
 ## Contents table
 
@@ -18,10 +18,9 @@ As you read this document, you will find my complete development process, from U
     -   [Wireframe](https://github.com/kescardoso/stripeme#wireframe)
         
     -   [User and Their Goals](https://github.com/kescardoso/stripeme#users-and-their-goals)
-        
-    -   [User's Main Challenges](https://github.com/kescardoso/stripeme#main-challenges)
-        
-    -   [User Stories](https://github.com/kescardoso/stripeme#user-stories)
+	    - [User Avatar](https://github.com/kescardoso/stripeme#user-avatar)
+	    - [User's Main Challenges](https://github.com/kescardoso/stripeme#users-main-challenges)
+	    - [User Stories](https://github.com/kescardoso/stripeme#user-stories)
         
 2.  [Features](https://github.com/kescardoso/stripeme#features)
     
@@ -54,4 +53,11 @@ For many people, including artists, artisans, small business owners or independe
 
 Stripe Me provides easy and straightforward web-development, graphic design and digital marketing consultancy services for English-speaking users around the world (payments in US dollar). This project gears towards freelancers, entrepreneurs, and small to medium business alike, leveraging their online inception and profits during pandemic crisis.
 
-Here available services are already formatted and able to be personalized: they are presented with a starter model and options, and the user can customize their order in terms of color scheme, dimensions and content. Consultancy sessions are also available for user who wish to have a more professional and involved approach to their digital business development. By setting up basic formats and options that can be personalized, Stripe Me keeps prices affordable and delivery time optimized.
+Here, available services are already formatted and able to be personalized: they are presented with a starter model and options, and the user can customize their order in terms of color scheme, dimensions, and content. Consultancy sessions are also available for users who wish to have higher control and a more professionally involved approach to their digital business development. By setting up basic formats and options that can be personalized, Stripe Me keeps prices affordable and delivery time optimized, and is therefore a great digital services provider for the pandemic times.
+
+#### User Avatar
+
+- Cross-cultural English-speaking men and women, affected or not by Covid-19;
+- Freelancers, entrepreneurs, small business owners looking for online alternatives for their jobs of entrepreneurial projects;
+- Travelers, digital nomads, independent culture and art contractors, without a business address and interested in building an online presence for their income activities.
+
