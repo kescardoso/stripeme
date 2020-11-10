@@ -483,7 +483,7 @@ Gratitude to the following people for their help, support and inspiration:
 - My mentor [Seun Owonikoko](https://github.com/seunkoko) for her patience and gentleness, for staying available and supportive through my unique process and special circumstances. I've learned a great deal working with her and am glad we are now connected.  
 - To [Code Institute](https://codeinstitute.net/), their team and staff, to the student services and advisors for their unconditional support and tough love, to the amazing tutors for their great didactics and good humor and ongoing 24hour support. My training experience couldn't have been more rewarding and uplifting. Thank you, from the bottom of my heart.  
 - To my family and friends for continually motivating me through struggles and challenges. I am grateful I am never alone and always supported. 
-- And to my cat Jasper, for always accompanying me and staying right by my side in the early dawn and late night, during my coding sprints and nuit blanches, and for teaching me about balance, gentleness and unconditional friendship.  
+- And to my cat [Jasper](https://raw.githubusercontent.com/kescardoso/stripeme/master/media/Jasper.jpg), for always accompanying me and staying right by my side in the early dawn and late night, during my coding sprints and nuit blanches, and for teaching me about balance, gentleness and unconditional friendship.  
   
 Thank you!
 
