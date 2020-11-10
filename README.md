@@ -2,14 +2,22 @@
 
 ## Introduction
 
-Stripe Me is an e-commerce and portfolio website about web-development and design services. This project is a Python-Django web application, backed by a Postgres and squlite3 database, and deployed via the Heroku PaaS. Stripe Me uses the Stripe Checkout API (in testing mode: not currently taking real card payments) and is a lightweight, responsive website designed with the Bootstrap Grid Systems.  
+Stripe Me is an e-commerce and portfolio website offering communication services, including web-development, graphic design and branding consultancy. 
 
 -   [View the Stripe Me Heroku App](https://kika-stripe-me.herokuapp.com/)
 -   [View the repository on GitHub](https://github.com/kescardoso/stripeme)
-  
-As you read this document, you will find my complete development process, from UX strategy to deployment. Thank you for reading! -- [Kes Cardoso](https://github.com/kescardoso)
 
 ![](https://raw.githubusercontent.com/kescardoso/stripeme/master/media/project-present.png)
+
+This is my final project of four Milestone Projects that make up the Full-Stack Web Development Diploma Training at Code Institute. Project main requirements are: to build a full-stack website with the use of HTML, CSS, JavaScript, Python, Django and a relational database; as well as the implementation of a checkout functionality, which has been achieved through the use of Stripe.
+
+Stripe Me is therefore a Python-Django web application, backed by a PostgreSQL (and SQLite3) database, and deployed via the Heroku PaaS. This project uses the Stripe Checkout API (for educational purposes only: not currently taking real card payments) and is styled using the Bootstrap Grid System. 
+
+**NOTE:** If you would like to test the payment functionality of this project, please create an account and use the card number 4242 4242 4242 4242 with any address details, expiry date and CVC that you choose.
+
+[Click here to view the project live.](https://kika-stripe-me.herokuapp.com/)
+  
+As you read this document, you will find my complete development process, from UX strategy to deployment. Thank you for reading! -- [Kes Cardoso](https://github.com/kescardoso)
 
 ## Contents table
 
@@ -18,9 +26,10 @@ As you read this document, you will find my complete development process, from U
 	 - [Color Palette](https://github.com/kescardoso/stripeme#color-palette)
 	 - [App Logo](https://github.com/kescardoso/stripeme#app-logo)
  - [User Stories](https://github.com/kescardoso/stripeme#user-stories)
- - [User and Their Goals](https://github.com/kescardoso/stripeme#user-and-their-goals)
+	 - [User and Their Goals](https://github.com/kescardoso/stripeme#user-and-their-goals)
 	 - [User Avatar](https://github.com/kescardoso/stripeme#user-avatar)
 	 - [User's Main Challenges](https://github.com/kescardoso/stripeme#users-main-challenges)
+ - [Database Structure](https://github.com/kescardoso/stripeme#database-structure)
  - [Features](https://github.com/kescardoso/stripeme#features)
 	 - [Existing Features](https://github.com/kescardoso/stripeme#existing-features)
 	 - [Features Left to Implement](https://github.com/kescardoso/stripeme#features-left-to-implement)
@@ -46,7 +55,7 @@ Link to the wireframe on [Figma](https://www.figma.com/file/onwkxg3NFMtijcRfl83X
 ![](https://raw.githubusercontent.com/kescardoso/stripeme/master/media/user-stories.png)
 
 
-## User and Their Goals
+### User and Their Goals
 
 Since Covid-19 became a global pandemic, many people around the world began to live through lockdowns. Many began to work from home; others lost their jobs. With uncertainty becoming a norm, we can't know when, or if, our societies will return to normal and what consequences the pandemic will leave behind.
 
@@ -76,16 +85,27 @@ Some of the main challenges regular people and non-technical professionals encou
 - They need a personalized e-commerce project that still keeps features basic and affordable.
 - They feel intimidated by traditional digital agencies, and they prefer a more friendly, one-to-one approach.
 
-## Features
+## Database Structure
 
-### Existing Features
+Stripe Me is built on Django, and primarily uses the SQLite3 database during all development stages. Through the deployment to Heroku, the database was changed to a PostgresSQL database as that is provided by Heroku as an add-on for production.
 
-1.  **Navbar:** contains the logo, search box, and links to access user profile and shopping bag.
+The Django’s default user model for authorization is also in use, which allows the project to meet one of the main requirements of separating features by anonymous users, users in session and superusers.
 
-2.  **Menu:** just under the main nav, the menu contains links for easy access to services and portfolio pages, in lists by category, price, rating, and name.
+The structure of the Checkout and Services apps are inspired by one of Code Institute's mini projects: _Boutique Ado_.
 
-3.  **Search Box:** dynamic search connected to the database.
+The main database structure models are documented below.
 
-4.  **Discount Banner:** it is a notification system on the home page, as well as on the checkout toast and bag page, to tell users that they can get 10% off when total purchase is $500 or more.
+#### Profiles App -- **UserProfile Model**
 
-5.  **Service Option Fields:** on each service detail page, there are boolean fields with color scheme, dimensions and user message options to be entered by the user. These are used to send information to the owner about desired user's customizations addressed to that service. The fields color and dimensions are not dynamic and currently in development.
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+ User | user | OneToOneField 'User' |  on_delete=models.CASCADE
+ Phone number | default_phone_number | CharField | max_length=20, null=True, blank=True
+ Address Line1 | default_street_address1 | CharField | max_length=80, null=True, blank=True
+ Address Line2 | default_street_address2 | CharField | max_length=80, null=True, blank=True
+ Postcode | default_postcode | CharField | max_length=20, null=True, blank=True
+ Town/City | default_town_or_city | CharField | max_length=40, null=True, blank=True
+ County | default_county | CharField | max_length=80, null=True, blank=True
+ Country | default_country | CountryField | blank_label='Country', null=True, blank=True
+
+ 
